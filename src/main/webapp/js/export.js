@@ -83,9 +83,7 @@ function render(data)
 		//Electron pdf export
 		try 
 		{
-			const { ipcRenderer } = require('electron');
-			
-			ipcRenderer.send('render-finished', null);
+			electron.sendMessage('render-finished', null);
 		}
 		catch(e)
 		{
@@ -96,28 +94,32 @@ function render(data)
 	}
 	
 	var xmlDoc = node.ownerDocument;
+	var origXmlDoc = xmlDoc;
 	var diagrams = null;
 	var from = 0;
 
+	function getFileXml(uncompressed)
+	{
+		var xml = mxUtils.getXml(origXmlDoc);
+		EditorUi.prototype.createUi = function(){};
+		EditorUi.prototype.addTrees = function(){};
+		EditorUi.prototype.updateActionStates = function(){};
+		var editorUi = new EditorUi();
+		var tmpFile = new LocalFile(editorUi, xml);
+		editorUi.setCurrentFile(tmpFile);
+		editorUi.setFileData(xml);
+		return editorUi.createFileData(editorUi.getXmlFileData(null, null, uncompressed));
+	};
+
 	if (mxIsElectron && data.format == 'xml')
 	{
-		const { ipcRenderer } = require('electron');
-
 		try
 		{
-			var xml = mxUtils.getXml(xmlDoc);
-			EditorUi.prototype.createUi = function(){};
-			EditorUi.prototype.addTrees = function(){};
-			EditorUi.prototype.updateActionStates = function(){};
-			var editorUi = new EditorUi();
-			var tmpFile = new LocalFile(editorUi, xml);
-			editorUi.setCurrentFile(tmpFile);
-			editorUi.setFileData(xml);
-			ipcRenderer.send('xml-data', mxUtils.getXml(editorUi.getXmlFileData(null, null, data.uncompressed)));
+			electron.sendMessage('xml-data', getFileXml(data.uncompressed));
 		}
 		catch(e)
 		{
-			ipcRenderer.send('xml-data-error');
+			electron.sendMessage('xml-data-error');
 		}
 		
 		return;
@@ -210,9 +212,7 @@ function render(data)
 				{
 					try 
 					{
-						const { ipcRenderer } = require('electron');
-						
-						ipcRenderer.on('get-svg-data', (event, arg) => 
+						electron.registerMsgListener('get-svg-data', (arg) => 
 						{
 							graph.mathEnabled = math; //Enable math such that getSvg works as expected
 							// Returns the exported SVG for the given graph (see EditorUi.exportSvg)
@@ -238,13 +238,33 @@ function render(data)
 							{
 								Editor.prototype.addMathCss(svgRoot);
 							}
-							
-							ipcRenderer.send('svg-data', '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n' +
-									mxUtils.getXml(svgRoot));
+						
+							function doSend() 
+							{
+								var editable = data.embedXml == '1';
+
+								if (editable)
+								{
+									svgRoot.setAttribute('content', getFileXml());
+								}
+
+								electron.sendMessage('svg-data', Graph.xmlDeclaration + '\n' + ((editable) ? Graph.svgFileComment + '\n' : '') +
+															 Graph.svgDoctype + '\n' + mxUtils.getXml(svgRoot));
+							};
+
+							if (data.embedImages == '1')
+							{
+								var tmpEditor = new Editor();
+								tmpEditor.convertImages(svgRoot, doSend);
+							}
+							else
+							{
+								doSend();
+							}
 						});
 						
 						//For some reason, Electron 9 doesn't send this object as is without stringifying. Usually when variable is external to function own scope
-						ipcRenderer.send('render-finished', {bounds: JSON.stringify(bounds), pageCount: pageCount});
+						electron.sendMessage('render-finished', {bounds: JSON.stringify(bounds), pageCount: pageCount});
 					}
 					catch(e)
 					{
@@ -429,7 +449,8 @@ function render(data)
 		if (bgImg != null)
 		{
 			bgImg = JSON.parse(bgImg);
-			graph.setBackgroundImage(new mxImage(bgImg.src, bgImg.width, bgImg.height));
+			graph.setBackgroundImage(new mxImage(bgImg.src, bgImg.width,
+				bgImg.height, bgImg.x, bgImg.y));
 		}
 		
 		// Parses XML into graph
@@ -468,7 +489,7 @@ function render(data)
 			}
 			
 			// Checks if export format supports transparent backgrounds
-			if (bg == null && data.format != 'gif' && data.format != 'png')
+			if (bg == null && data.format != 'gif' && data.format != 'png' && data.format != 'svg')
 			{
 				bg = '#ffffff';
 			}	
@@ -579,7 +600,7 @@ function render(data)
 			{
 				var size = this.getPageSize();
 				var bounds = this.getGraphBounds();
-				
+
 				if (bounds.width == 0 || bounds.height == 0)
 				{
 					return new mxRectangle(0, 0, 1, 1);
@@ -699,7 +720,15 @@ function render(data)
 		// Gets the diagram bounds and sets the document size
 		bounds = (graph.pdfPageVisible) ? graph.view.getBackgroundPageBounds() : graph.getGraphBounds();
 		bounds.width = Math.ceil(bounds.width + data.border) + 1; //The 1 extra pixels to prevent cutting the cells on the edges when crop is enabled
-		bounds.height = Math.ceil(bounds.height + data.border);
+		bounds.height = Math.ceil(bounds.height + data.border) + 1; //The 1 extra pixels to prevent starting a new page. TODO Not working in every case
+		
+		//Print to pdf fails for 1x1 pages
+		if (bounds.width <= 1 && bounds.height <= 1)
+		{
+			bounds.width = 2;
+			bounds.height = 2;
+		}
+
 		expScale = graph.view.scale || 1;
 		
 		// Converts the graph to a vertical sequence of pages for PDF export
@@ -718,8 +747,8 @@ function render(data)
 			// Applies print scale
 			pf = mxRectangle.fromRectangle(pf);
 			pf.width = Math.ceil(pf.width * printScale) + 1; //The 1 extra pixels to prevent cutting the cells on the right edge of the page
-			pf.height = Math.ceil(pf.height * printScale);
-			scale *= printScale;
+			pf.height = Math.ceil(pf.height * printScale) + 1; //The 1 extra pixels to prevent starting a new page. TODO Not working in every case
+			scale *= printScale;	
 			
 			// Starts at first visible page
 			if (!autoOrigin)
@@ -745,6 +774,7 @@ function render(data)
 				preview.autoOrigin = autoOrigin; 
 				preview.appendGraph(graph, scale, x0, y0);
 			}
+
 			// Adds shadow
 			// NOTE: Shadow rasterizes output
 			/*if (mxClient.IS_SVG && xmlDoc.documentElement.getAttribute('shadow') == '1')
@@ -768,6 +798,25 @@ function render(data)
 		}
 		else
 		{
+			var bgImg = graph.backgroundImage;
+
+			if (bgImg != null)
+			{
+				var t = graph.view.translate;
+				var s = graph.view.scale;
+
+				bounds.add(new mxRectangle(
+					(t.x + bgImg.x) * s, (t.y + bgImg.y) * s,
+					bgImg.width * s, bgImg.height * s));
+
+				if (t.x < 0 || t.y < 0)
+				{
+					graph.view.setTranslate(t.x < 0? -bgImg.x * s : t.x, t.y < 0? -bgImg.y * s : t.y);
+					bounds.x = 0.5;
+					bounds.y = 0.5;
+				}
+			}
+
 			// Adds shadow
 			// NOTE: PDF shadow rasterizes output so it's disabled
 			if (data.format != 'pdf' && mxClient.IS_SVG && xmlDoc.documentElement.getAttribute('shadow') == '1')
@@ -781,7 +830,7 @@ function render(data)
 			document.body.style.width = Math.ceil(bounds.x + bounds.width) + 'px';
 			document.body.style.height = Math.ceil(bounds.y + bounds.height) + 'px';
 		}
-	}
+	};
 	
 	if (diagrams != null && diagrams.length > 0)
 	{
@@ -882,11 +931,17 @@ if (mxIsElectron)
 {
 	try 
 	{
-		const { ipcRenderer } = require('electron');
-		
-		ipcRenderer.on('render', (event, arg) => 
+		electron.registerMsgListener('render', (arg) => 
 		{
-			render(arg);
+			try
+			{
+				render(arg);
+			}
+			catch(e)
+			{
+				console.log(e);
+				electron.sendMessage('render-finished', null);
+			}
 		});
 	}
 	catch(e)

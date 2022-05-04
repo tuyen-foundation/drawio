@@ -35,8 +35,8 @@ function mxRuler(editorUi, unit, isVertical, isSecondery)
     	guideClr: '#0000BB'
     } : {
     	bkgClr: '#202020',
-    	outBkgClr: '#2a2a2a',
-    	cornerClr: '#2a2a2a',
+    	outBkgClr: Editor.darkColor,
+    	cornerClr: Editor.darkColor,
     	strokeClr: '#505759',
     	fontClr: '#BBBBBB',
     	guideClr: '#0088cf'
@@ -68,8 +68,8 @@ function mxRuler(editorUi, unit, isVertical, isSecondery)
 	    	guideClr: '#0000BB'
 	    } : {
 	    	bkgClr: '#202020',
-	    	outBkgClr: '#2a2a2a',
-	    	cornerClr: '#2a2a2a',
+	    	outBkgClr: Editor.darkColor,
+	    	cornerClr: Editor.darkColor,
 	    	strokeClr: '#505759',
 	    	fontClr: '#BBBBBB',
 	    	guideClr: '#0088cf'
@@ -188,6 +188,11 @@ function mxRuler(editorUi, unit, isVertical, isSecondery)
                 len = 10;
                 tickStep = mxConstants.PIXELS_PER_MM;
                 tickSize = [5,3,3,3,3,6,3,3,3,3];
+                break;
+			case mxConstants.METERS:
+                len = 20;
+                tickStep = mxConstants.PIXELS_PER_MM;
+                tickSize = [5,3,3,3,3,6,3,3,3,3,10,3,3,3,3,6,3,3,3,3];
                 break;
             case mxConstants.INCHES:
             	if (scale <=0.5 || scale >=4)
@@ -538,6 +543,8 @@ mxRuler.prototype.formatText = function(pixels)
             return Math.round(pixels);
         case mxConstants.MILLIMETERS:
             return (pixels / mxConstants.PIXELS_PER_MM).toFixed(1);
+        case mxConstants.METERS:
+            return (pixels / (mxConstants.PIXELS_PER_MM * 1000)).toFixed(4);
         case mxConstants.INCHES:
             return (pixels / mxConstants.PIXELS_PER_INCH).toFixed(2);
     }
@@ -600,7 +607,7 @@ function mxDualRuler(editorUi, unit)
 				{
 					var menu = new mxPopupMenu(mxUtils.bind(this, function(menu, parent)
 					{
-						editorUi.menus.addMenuItems(menu, ['points', /*'inches',*/ 'millimeters'], parent);
+						editorUi.menus.addMenuItems(menu, ['points', 'inches', 'millimeters', 'meters'], parent);
 					}));
 					
 					menu.div.className += ' geMenubarMenu';

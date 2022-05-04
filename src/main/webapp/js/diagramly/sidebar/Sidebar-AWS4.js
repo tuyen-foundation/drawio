@@ -4,11 +4,11 @@
 	Sidebar.prototype.addAWS4Palette = function()
 	{
 		var pts = 'points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];';
-		var n = pts + 'outlineConnect=0;fontColor=#232F3E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n3 = 'outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n4 = pts + 'outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n5 = 'gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=#505863;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = pts + 'sketch=0;outlineConnect=0;fontColor=#232F3E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n3 = 'sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n4 = pts + 'sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n5 = 'sketch=0;gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=#505863;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var gn = 'mxgraph.aws4';
 		var sb = this;
 
@@ -37,8 +37,6 @@
 		this.addAWS4BlockchainPalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Business Applications');
 		this.addAWS4BusinessApplicationsPalette(s, w, h, w2, gn, sb);
-		this.setCurrentSearchEntryLibrary('aws4', 'aws4EC2 Instance Types');
-		this.addAWS4EC2InstanceTypePalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Compute');
 		this.addAWS4ComputePalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Containers');
@@ -53,6 +51,8 @@
 		this.addAWS4DeveloperToolsPalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4End User Computing');
 		this.addAWS4EndUserComputingPalette(s, w, h, w2, gn, sb);
+		this.setCurrentSearchEntryLibrary('aws4', 'aws4Front End Web Mobile');
+		this.addAWS4FrontEndWebMobilePalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Game Tech');
 		this.addAWS4GameTechPalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Internet of Things');
@@ -65,8 +65,6 @@
 		this.addAWS4MediaServicesPalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Migration Transfer');
 		this.addAWS4MigrationTransferPalette(s, w, h, w2, gn, sb);
-		this.setCurrentSearchEntryLibrary('aws4', 'aws4Mobile');
-		this.addAWS4MobilePalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Network Content Delivery');
 		this.addAWS4NetworkContentDeliveryPalette(s, w, h, w2, gn, sb);
 		this.setCurrentSearchEntryLibrary('aws4', 'aws4Quantum Technologies');
@@ -114,26 +112,40 @@
 	Sidebar.prototype.addAWS4GeneralResourcesPalette = function(s, gn, sb)
 	{
 		var dt = 'aws amazon web service general resources ';
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A6C86;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n3 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=#505863;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A6C86;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n3 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];gradientDirection=north;outlineConnect=0;fontColor=#232F3E;gradientColor=#505863;fillColor=#1E262E;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		
 		this.addPaletteFunctions('aws4General Resources', 'AWS / General Resources', false,
 		[
 			 this.createVertexTemplateEntry(n3 + 'resourceIcon;resIcon=' + gn + '.marketplace;',
 					 s * 78, s * 78, '', 'Marketplace', null, null, this.getTagsForStencil(gn, 'marketplace', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'marketplace;',
+					 s * 78, s * 78, '', 'Marketplace', null, null, this.getTagsForStencil(gn, 'marketplace', dt).join(' ')),
 			 this.createVertexTemplateEntry(n3 + 'resourceIcon;resIcon=' + gn + '.general;',
 					 s * 78, s * 78, '', 'General', null, null, this.getTagsForStencil(gn, 'general', dt).join(' ')),
+			 this.createVertexTemplateEntry(n3 + 'resourceIcon;resIcon=' + gn + '.all_products;',
+					 s * 78, s * 78, '', 'All Products', null, null, this.getTagsForStencil(gn, 'all products', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'all_products;',
+					 s * 78, s * 78, '', 'All Products', null, null, this.getTagsForStencil(gn, 'all products', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'camera2;',
+					 s * 78, s * 62, '', 'Camera', null, null, this.getTagsForStencil(gn, 'camera', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'client;',
 					 s * 78, s * 76, '', 'Client', null, null, this.getTagsForStencil(gn, 'client', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'corporate_data_center;',
 					 s * 53, s * 78, '', 'Corporate Data Center', null, null, this.getTagsForStencil(gn, 'corporate data center', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'disk;',
 					 s * 78, s * 78, '', 'Disk', null, null, this.getTagsForStencil(gn, 'disk', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'documents;',
+					 s * 64, s * 78, '', 'Documents', null, null, this.getTagsForStencil(gn, 'documents', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'documents2;',
+					 s * 67, s * 78, '', 'Documents', null, null, this.getTagsForStencil(gn, 'documents', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'email_2;',
 					 s * 78, s * 49, '', 'Email', null, null, this.getTagsForStencil(gn, 'email', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'forums;',
 					 s * 78, s * 76, '', 'Forums', null, null, this.getTagsForStencil(gn, 'forums', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'gear;',
+					 s * 78, s * 78, '', 'Gear', null, null, this.getTagsForStencil(gn, 'gear', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'generic_database;',
 					 s * 59, s * 78, '', 'Generic Database', null, null, this.getTagsForStencil(gn, 'generic database', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'generic_firewall;',
@@ -144,12 +156,16 @@
 					 s * 78, s * 48, '', 'Internet', null, null, this.getTagsForStencil(gn, 'internet', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'internet_alt2;',
 					 s * 78, s * 78, '', 'Internet', null, null, this.getTagsForStencil(gn, 'internet gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'internet_alt22;',
+					 s * 78, s * 78, '', 'Internet', null, null, this.getTagsForStencil(gn, 'internet gateway', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'mobile_client;',
 					 s * 41, s * 78, '', 'Mobile Client', null, null, this.getTagsForStencil(gn, 'mobile client', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'multimedia;',
 					 s * 78, s * 73, '', 'Multimedia', null, null, this.getTagsForStencil(gn, 'multimedia', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'office_building;',
 					 s * 50, s * 78, '', 'Office Building', null, null, this.getTagsForStencil(gn, 'office building', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'question;',
+					 s * 41, s * 78, '', 'Question', null, null, this.getTagsForStencil(gn, 'question', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'saml_token;',
 					 s * 78, s * 78, '', 'SAML Token', null, null, this.getTagsForStencil(gn, 'saml token', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'ssl_padlock;',
@@ -190,7 +206,8 @@
 
 	Sidebar.prototype.addAWS4GroupsPalette = function(s, gn, sb, pts)
 	{
-		var n4 = pts + 'outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n4 = pts + 'outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		
 		var dt = 'aws amazon web service groups group ';
 		
 		this.addPaletteFunctions('aws4Groups', 'AWS / Groups', false,
@@ -234,8 +251,8 @@
 
 	Sidebar.prototype.addAWS4AnalyticsPalette = function(s, w, h, w2, gn, sb, pts)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A30B5;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#4D27AA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service analytics ';
 		
 		this.addPaletteFunctions('aws4Analytics', 'AWS / Analytics', false,
@@ -250,12 +267,14 @@
 					 w2, w2, '', 'ElasticSearch Service', null, null, this.getTagsForStencil(gn, 'elasticsearch service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.emr;',
 					 w2, w2, '', 'EMR', null, null, this.getTagsForStencil(gn, 'emr', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.finspace;',
+					 w2, w2, '', 'FinSpace', null, null, this.getTagsForStencil(gn, 'finspace', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis;',
 					 w2, w2, '', 'Kinesis', null, null, this.getTagsForStencil(gn, 'kinesis', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis_data_analytics;',
 					 w2, w2, '', 'Kinesis Data Analytics', null, null, this.getTagsForStencil(gn, 'kinesis data analytics', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis_data_firehose;',
-					 w2, w2, '', 'Kinesis Data Firehose', null, null, this.getTagsForStencil(gn, 'kinesis data firehose', dt).join(' ')),
+					 w2, w2, '', 'Kinesis Firehose', null, null, this.getTagsForStencil(gn, 'kinesis firehose', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis_data_streams;',
 					 w2, w2, '', 'Kinesis Data Streams', null, null, this.getTagsForStencil(gn, 'kinesis data streams', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis_video_streams;',
@@ -270,6 +289,8 @@
 					 w2, w2, '', 'Managed Streaming for Kafka', null, null, this.getTagsForStencil(gn, 'managed streaming for kafka', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.glue;',
 					 w2, w2, '', 'Glue', null, null, this.getTagsForStencil(gn, 'glue', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.glue_databrew;',
+					 w2, w2, '', 'Glue DataBrew', null, null, this.getTagsForStencil(gn, 'glue databrew', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.glue_elastic_views;',
 					 w2, w2, '', 'Glue Elastic Views', null, null, this.getTagsForStencil(gn, 'glue elastic views', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lake_formation;',
@@ -283,6 +304,8 @@
 					 s * 68, s * 78, '', 'Search Documents', null, null, this.getTagsForStencil(gn, 'search documents', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'cluster;',
 					 s * 78, s * 78, '', 'Cluster', null, null, this.getTagsForStencil(gn, 'hdfs cluster', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'msk_amazon_msk_connect;',
+					 s * 78, s * 77, '', 'MSK Connect', null, null, this.getTagsForStencil(gn, 'msk amazon msk connect', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'data_lake_resource_icon;',
 					 s * 78, s * 78, '', 'Data Lake', null, null, this.getTagsForStencil(gn, 'data lake', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'emr_engine;',
@@ -301,6 +324,8 @@
 					 s * 78, s * 78, '', 'Dense Storage Node', null, null, this.getTagsForStencil(gn, 'dense storage node', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'redshift_ra3;',
 					 s * 78, s * 78, '', 'Redshift RA3', null, null, this.getTagsForStencil(gn, 'redshift ra3', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'data_exchange_for_apis;',
+					 s * 78, s * 67, '', 'Data Exchange for APIs', null, null, this.getTagsForStencil(gn, 'data exchange for apis', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'glue_crawlers;',
 					 s * 78, s * 78, '', 'Crawler', null, null, this.getTagsForStencil(gn, 'crawler', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'glue_databrew;',
@@ -314,9 +339,8 @@
 
 	Sidebar.prototype.addAWS4ApplicationIntegrationPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BC1356;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n3 = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service application integration ';
 		
 		this.addPaletteFunctions('aws4Application Integration', 'AWS / Application Integration', false,
@@ -358,6 +382,12 @@
 					 s * 78, s * 53, '', 'Default Event Bus', null, null, this.getTagsForStencil(gn, 'eventbridge default event bus resource', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'eventbridge_saas_partner_event_bus_resource;',
 					 s * 78, s * 78, '', 'SaaS Event Bus', null, null, this.getTagsForStencil(gn, 'eventbridge saas partner event bus resource', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'eventbridge_schema;',
+					 s * 78, s * 78, '', 'EventBridge Schema', null, null, this.getTagsForStencil(gn, 'eventbridge schema', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'eventbridge_schema_registry;',
+					 s * 78, s * 78, '', 'EventBridge Schema Registry', null, null, this.getTagsForStencil(gn, 'eventbridge schema registry', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mq_broker;',
+					 s * 78, s * 78, '', 'MQ Broker', null, null, this.getTagsForStencil(gn, 'mq broker', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'event_resource;',
 					 s * 78, s * 78, '', 'Event Resource', null, null, this.getTagsForStencil(gn, 'event resource', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'http_notification;',
@@ -376,8 +406,7 @@
 
 	Sidebar.prototype.addAWS4ARVRPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BC1356;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service ar vr augmented virtual reality ';
 		
 		this.addPaletteFunctions('aws4AR VR', 'AWS / AR \& VR', false,
@@ -391,20 +420,23 @@
 
 	Sidebar.prototype.addAWS4CostManagementPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#277116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service cost management ';
 		
 		this.addPaletteFunctions('aws4Cost Management', 'AWS / Cost Management', false,
 		[
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cost_management;',
 					 w2, w2, '', 'Cost Management', null, null, this.getTagsForStencil(gn, 'cost management', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.application_cost_profiler;',
+					 w2, w2, '', 'Application Cost Profiler', null, null, this.getTagsForStencil(gn, 'application cost profiler', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.budgets_2;',
 					 w2, w2, '', 'Budgets', null, null, this.getTagsForStencil(gn, 'budgets', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cost_and_usage_report;',
 					 w2, w2, '', 'Cost & Usage Report', null, null, this.getTagsForStencil(gn, 'cost and usage report', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cost_explorer;',
 					 w2, w2, '', 'Cost Explorer', null, null, this.getTagsForStencil(gn, 'cost explorer', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.custom_billing_manager;',
+					 w2, w2, '', 'Custom Billing Manager', null, null, this.getTagsForStencil(gn, 'custom billing manager', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.reserved_instance_reporting;',
 					 w2, w2, '', 'Reserved Instance Reporting', null, null, this.getTagsForStencil(gn, 'reserved instance reporting', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.savings_plans;',
@@ -414,8 +446,8 @@
 
 	Sidebar.prototype.addAWS4BlockchainPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service cost management ';
 		
 		this.addPaletteFunctions('aws4Blockchain', 'AWS / Blockchain', false,
@@ -434,8 +466,8 @@
 
 	Sidebar.prototype.addAWS4BusinessApplicationsPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF5252;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service business applications ';
 		
 		this.addPaletteFunctions('aws4Business Applications', 'AWS / Business Applications', false,
@@ -446,38 +478,139 @@
 					 w2, w2, '', 'Alexa for Business', null, null, this.getTagsForStencil(gn, 'alexa for business', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.chime;',
 					 w2, w2, '', 'Chime', null, null, this.getTagsForStencil(gn, 'chime', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.chime;',
+					 w2, w2, '', 'Chime SDK', null, null, this.getTagsForStencil(gn, 'chime sdk software development kit', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.chime;',
+					 w2, w2, '', 'Chime Voice Connector', null, null, this.getTagsForStencil(gn, 'chime voice connector', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.connect;',
+					 w2, w2, '', 'Connect', null, null, this.getTagsForStencil(gn, 'connect', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.honeycode;',
 					 w2, w2, '', 'Honeycode', null, null, this.getTagsForStencil(gn, 'honeycode', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.pinpoint;',
+					 w2, w2, '', 'Pinpoint', null, null, this.getTagsForStencil(gn, 'pinpoint', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.pinpoint;',
+					 w2, w2, '', 'Pinpoint APIs', null, null, this.getTagsForStencil(gn, 'pinpoint api application programming interface', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.simple_email_service;',
+					 w2, w2, '', 'Simple Email Service', null, null, this.getTagsForStencil(gn, 'simple email service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.workdocs;',
 					 w2, w2, '', 'WorkDocs', null, null, this.getTagsForStencil(gn, 'workdocs', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.workdocs;',
+					 w2, w2, '', 'WorkDocs SDKs', null, null, this.getTagsForStencil(gn, 'workdocs sdk software development kit', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.workmail;',
-					 w2, w2, '', 'WorkMail', null, null, this.getTagsForStencil(gn, 'workmail', dt).join(' '))
+					 w2, w2, '', 'WorkMail', null, null, this.getTagsForStencil(gn, 'workmail', dt).join(' ')),
+					 
+			 this.createVertexTemplateEntry(n + 'pinpoint_journey;',
+					 s * 78, s * 75, '', 'Pinpoint Journey', null, null, this.getTagsForStencil(gn, 'pinpoint journey', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'email;',
+					 s * 78, s * 69, '', 'Email', null, null, this.getTagsForStencil(gn, 'email', dt).join(' '))
 		]);
 	};
 
-	Sidebar.prototype.addAWS4EC2InstanceTypePalette = function(s, w, h, w2, gn, sb)
+	Sidebar.prototype.addAWS4ComputePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D86613;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var dt = 'aws amazon web service ec2 instance type ';
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var dt = 'aws amazon web service compute ';
 		
-		this.addPaletteFunctions('aws4EC2 Instance Types', 'AWS / EC2 Instance Types', false,
+		this.addPaletteFunctions('aws4Compute', 'AWS / Compute', false,
 		[
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.compute;',
+					 w2, w2, '', 'Compute', null, null, this.getTagsForStencil(gn, 'compute', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.ec2;',
+					 w2, w2, '', 'EC2', null, null, this.getTagsForStencil(gn, 'ec2', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.auto_scaling2;',
+					 w2, w2, '', 'EC2 Auto Scaling', null, null, this.getTagsForStencil(gn, 'ec2 auto scaling', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.auto_scaling3;',
+					 w2, w2, '', 'Auto Scaling', null, null, this.getTagsForStencil(gn, 'auto scaling', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.bottlerocket;',
+					 w2, w2, '', 'Bottlerocket', null, null, this.getTagsForStencil(gn, 'bottlerocket', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lightsail;',
+					 w2, w2, '', 'Lightsail', null, null, this.getTagsForStencil(gn, 'lightsail', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.app_runner;',
+					 w2, w2, '', 'App Runner', null, null, this.getTagsForStencil(gn, 'app application runner', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.batch;',
+					 w2, w2, '', 'Batch', null, null, this.getTagsForStencil(gn, 'batch', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.compute_optimizer;',
+					 w2, w2, '', 'Compute Optimizer', null, null, this.getTagsForStencil(gn, 'compute optimizer', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_beanstalk;',
+					 w2, w2, '', 'Elastic Beanstalk', null, null, this.getTagsForStencil(gn, 'elastic beanstalk', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_fabric_adapter;',
+					 w2, w2, '', 'Elastic Fabric Adapter', null, null, this.getTagsForStencil(gn, 'elastic fabric adapter', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fargate;',
+					 w2, w2, '', 'Fargate', null, null, this.getTagsForStencil(gn, 'fargate', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.ec2_image_builder;',
+					 w2, w2, '', 'EC2 Image Builder', null, null, this.getTagsForStencil(gn, 'ec2 image builder', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.genomics_cli;',
+					 w2, w2, '', 'Genomics CLI', null, null, this.getTagsForStencil(gn, 'genomics cli', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lambda;',
+					 w2, w2, '', 'Lambda', null, null, this.getTagsForStencil(gn, 'lambda', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.local_zones;',
+					 w2, w2, '', 'Local Zones', null, null, this.getTagsForStencil(gn, 'local zones', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nice_dcv;',
+					 w2, w2, '', 'NICE DCV', null, null, this.getTagsForStencil(gn, 'nice dcv', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nice_enginframe;',
+					 w2, w2, '', 'Nice EnginFrame', null, null, this.getTagsForStencil(gn, 'nice enginframe', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nitro_enclaves;',
+					 w2, w2, '', 'Nitro Enclaves', null, null, this.getTagsForStencil(gn, 'nitro enclaves', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.outposts_family;',
+					 w2, w2, '', 'Outposts Family', null, null, this.getTagsForStencil(gn, 'outposts family', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.outposts;',
+					 w2, w2, '', 'Outposts', null, null, this.getTagsForStencil(gn, 'outposts', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.outposts_1u_and_2u_servers;',
+					 w2, w2, '', 'Outposts 1u and 2u Servers', null, null, this.getTagsForStencil(gn, 'outposts 1u and 2u servers', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.parallel_cluster;',
+					 w2, w2, '', 'Parallel Cluster', null, null, this.getTagsForStencil(gn, 'parallel cluster', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.serverless_application_repository;',
+					 w2, w2, '', 'Serverless Application Repository', null, null, this.getTagsForStencil(gn, 'serverless application repository', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_deadline;',
+					 w2, w2, '', 'Thinkbox Deadline', null, null, this.getTagsForStencil(gn, 'thinkbox deadline', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_draft;',
+					 w2, w2, '', 'Thinkbox Draft', null, null, this.getTagsForStencil(gn, 'thinkbox draft', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_frost;',
+					 w2, w2, '', 'Thinkbox Frost', null, null, this.getTagsForStencil(gn, 'thinkbox frost', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_krakatoa;',
+					 w2, w2, '', 'Thinkbox Krakatoa', null, null, this.getTagsForStencil(gn, 'thinkbox krakatoa', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_sequoia;',
+					 w2, w2, '', 'Thinkbox Sequoia', null, null, this.getTagsForStencil(gn, 'thinkbox sequoia', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_stoke;',
+					 w2, w2, '', 'Thinkbox Stoke', null, null, this.getTagsForStencil(gn, 'thinkbox stoke', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_xmesh;',
+					 w2, w2, '', 'Thinkbox XMesh', null, null, this.getTagsForStencil(gn, 'thinkbox xmesh', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_load_balancing;',
+					 w2, w2, '', 'Elastic Load Balancing', null, null, this.getTagsForStencil(gn, 'elastic load balancing', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.vmware_cloud_on_aws;',
+					 w2, w2, '', 'VMware Cloud on AWS', null, null, this.getTagsForStencil(gn, 'vmware cloud on aws virtual machine vm', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.wavelength;',
+					 w2, w2, '', 'Wavelength', null, null, this.getTagsForStencil(gn, 'wavelength', dt).join(' ')),
+					 
 			 this.createVertexTemplateEntry(n + 'a1_instance;',
 					 s * 48, s * 48, '', 'A1 Instance', null, null, this.getTagsForStencil(gn, 'a1', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ami;',
+					 s * 48, s * 48, '', 'AMI Resource', null, null, this.getTagsForStencil(gn, 'ami resource', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'auto_scaling2;',
+					 s * 48, s * 48, '', 'Auto Scaling', null, null, this.getTagsForStencil(gn, 'autoscaling auto scaling', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c4_instance;',
 					 s * 48, s * 48, '', 'C4 Instance', null, null, this.getTagsForStencil(gn, 'c4', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c5_instance;',
 					 s * 48, s * 48, '', 'C5 Instance', null, null, this.getTagsForStencil(gn, 'c5', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c5a;',
 					 s * 48, s * 48, '', 'C5a Instance', null, null, this.getTagsForStencil(gn, 'c5a', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'c5ad;',
+					 s * 48, s * 48, '', 'C5ad Instance', null, null, this.getTagsForStencil(gn, 'c5ad', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c5d;',
 					 s * 48, s * 48, '', 'C5d Instance', null, null, this.getTagsForStencil(gn, 'c5d', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'c5n_instance;',
+					 s * 48, s * 48, '', 'C5n Instance', null, null, this.getTagsForStencil(gn, 'c5n', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c6gd;',
 					 s * 48, s * 48, '', 'C6gd Instance', null, null, this.getTagsForStencil(gn, 'c6gd', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'c6g_instance;',
 					 s * 48, s * 48, '', 'C6g Instance', null, null, this.getTagsForStencil(gn, 'c6g', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'c5n_instance;',
-					 s * 48, s * 48, '', 'C5n Instance', null, null, this.getTagsForStencil(gn, 'c5n', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_c6gn_instance;',
+					 s * 48, s * 48, '', 'C6gn Instance', null, null, this.getTagsForStencil(gn, 'c6gn', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_c6i_instance;',
+					 s * 48, s * 48, '', 'C6i Instance', null, null, this.getTagsForStencil(gn, 'c6i', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_c7g_instance;',
+					 s * 48, s * 48, '', 'C7g Instance', null, null, this.getTagsForStencil(gn, 'c7g', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'd2_instance;',
 					 s * 48, s * 48, '', 'D2 Instance', null, null, this.getTagsForStencil(gn, 'd2', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'd3en_instance;',
@@ -486,6 +619,16 @@
 					 s * 48, s * 48, '', 'D3 Instance', null, null, this.getTagsForStencil(gn, 'd3', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'db_on_instance2;',
 					 s * 48, s * 48, '', 'DB Instance', null, null, this.getTagsForStencil(gn, 'db on database', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_dl1_instance;',
+					 s * 48, s * 48, '', 'DL1 Instance', null, null, this.getTagsForStencil(gn, 'dl1', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'rescue;',
+					 s * 48, s * 48, '', 'Rescue', null, null, this.getTagsForStencil(gn, 'rescue', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'application;',
+					 s * 31, s * 48, '', 'Elastic Beanstalk Application', null, null, this.getTagsForStencil(gn, 'elastic beanstalk application', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'deployment;',
+					 s * 48, s * 46, '', 'Deployment', null, null, this.getTagsForStencil(gn, 'elastic beanstalk deployment', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'elastic_ip_address;',
+					 s * 48, s * 20, '', 'Elastic IP Address', null, null, this.getTagsForStencil(gn, 'elastic ip itnernet protocol address', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'f1_instance;',
 					 s * 48, s * 48, '', 'F1 Instance', null, null, this.getTagsForStencil(gn, 'f1', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'g3_instance;',
@@ -494,6 +637,10 @@
 					 s * 48, s * 48, '', 'G4ad Instance', null, null, this.getTagsForStencil(gn, 'g4ad', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'g4dn;',
 					 s * 48, s * 48, '', 'G4dn Instance', null, null, this.getTagsForStencil(gn, 'g4dn', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_g5g_instance;',
+					 s * 48, s * 48, '', 'G5g Instance', null, null, this.getTagsForStencil(gn, 'g5g', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_g5_instance;',
+					 s * 48, s * 48, '', 'G5 Instance', null, null, this.getTagsForStencil(gn, 'g5', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'h1_instance;',
 					 s * 48, s * 48, '', 'H1 Instance', null, null, this.getTagsForStencil(gn, 'h1', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'habana_gaudi;',
@@ -506,16 +653,28 @@
 					 s * 48, s * 48, '', 'I3en Instance', null, null, this.getTagsForStencil(gn, 'i3en', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'i3_instance;',
 					 s * 48, s * 48, '', 'I3 Instance', null, null, this.getTagsForStencil(gn, 'i3', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_i4i_instance;',
+					 s * 48, s * 48, '', 'I4i Instance', null, null, this.getTagsForStencil(gn, 'i4i', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_im4gn_instance;',
+					 s * 48, s * 48, '', 'Im4gn Instance', null, null, this.getTagsForStencil(gn, 'im4gn', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'inf1;',
 					 s * 48, s * 48, '', 'Inf1', null, null, this.getTagsForStencil(gn, 'inf1', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'inferentia;',
-					 s * 78, s * 74, '', 'Inferentia', null, null, this.getTagsForStencil(gn, 'inferentia', dt).join(' ')),
+					 s * 48, s * 48, '', 'Inferentia', null, null, this.getTagsForStencil(gn, 'inferentia', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_aws_microservice_extractor_for_net;',
+					 s * 48, s * 48, '', 'EC2 AWS Microservice Extractor for .NET', null, null, this.getTagsForStencil(gn, 'ec2 aws microservice extractor for net', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'instance2;',
 					 s * 48, s * 48, '', 'Instance', null, null, this.getTagsForStencil(gn, '', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'instances;',
 					 s * 48, s * 48, '', 'Instances', null, null, this.getTagsForStencil(gn, '', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'instance_with_cloudwatch2;',
 					 s * 48, s * 48, '', 'Instance with CloudWatch', null, null, this.getTagsForStencil(gn, 'instance with cloudwatch', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_is4gen_instance;',
+					 s * 48, s * 48, '', 'Is4gen Instance', null, null, this.getTagsForStencil(gn, 'is4gen', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_m1_mac_instance;',
+					 s * 48, s * 48, '', 'EC2 M1 Mac Instance', null, null, this.getTagsForStencil(gn, 'ec2 m1 mac instance', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'lambda_function;',
+					 s * 48, s * 48, '', 'Lambda Function', null, null, this.getTagsForStencil(gn, 'lambda function', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'm4_instance;',
 					 s * 48, s * 48, '', 'M4 Instance', null, null, this.getTagsForStencil(gn, 'm4', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'm5a_instance;',
@@ -530,10 +689,14 @@
 					 s * 48, s * 48, '', 'M5n Instance', null, null, this.getTagsForStencil(gn, 'm5n', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'm5zn_instance;',
 					 s * 48, s * 48, '', 'M5zn Instance', null, null, this.getTagsForStencil(gn, 'm5zn', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_m6a_instance;',
+					 s * 48, s * 48, '', 'M6a Instance', null, null, this.getTagsForStencil(gn, 'm6a', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'm6gd_instance;',
 					 s * 48, s * 48, '', 'M6gd Instance', null, null, this.getTagsForStencil(gn, 'm6gd', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'm6g_instance;',
 					 s * 48, s * 48, '', 'M6g Instance', null, null, this.getTagsForStencil(gn, 'm6g', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_m6i_instance;',
+					 s * 48, s * 48, '', 'M6i Instance', null, null, this.getTagsForStencil(gn, 'm6i', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'mac_instance;',
 					 s * 48, s * 48, '', 'Mac Instance', null, null, this.getTagsForStencil(gn, 'mac', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'optimized_instance;',
@@ -566,6 +729,8 @@
 					 s * 48, s * 48, '', 'R5n Instance', null, null, this.getTagsForStencil(gn, 'r5n', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'r6g_instance;',
 					 s * 48, s * 48, '', 'R6g Instance', null, null, this.getTagsForStencil(gn, 'r6g', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_r6i_instance;',
+					 s * 48, s * 48, '', 'R6i Instance', null, null, this.getTagsForStencil(gn, 'r6i', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'rdn_instance;',
 					 s * 48, s * 48, '', 'Rdn Instance', null, null, this.getTagsForStencil(gn, 'rdn', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'spot_instance;',
@@ -582,105 +747,31 @@
 					 s * 48, s * 48, '', 'T4g Instance', null, null, this.getTagsForStencil(gn, 't4g', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'trainium_instance;',
 					 s * 48, s * 48, '', 'Trainium Instance', null, null, this.getTagsForStencil(gn, 'trainium', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_trn1_instance;',
+					 s * 48, s * 48, '', 'Trn1 Instance', null, null, this.getTagsForStencil(gn, 'trn1', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_vt1_instance;',
+					 s * 48, s * 48, '', 'Vt1 Instance', null, null, this.getTagsForStencil(gn, 'vt1', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'x1e_instance;',
 					 s * 48, s * 48, '', 'X1e Instance', null, null, this.getTagsForStencil(gn, 'x1e', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'x1_instance2;',
 					 s * 48, s * 48, '', 'X1 Instance', null, null, this.getTagsForStencil(gn, 'x1', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_x2gd_instance;',
+					 s * 48, s * 48, '', 'X2gd Instance', null, null, this.getTagsForStencil(gn, 'x2gd', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_x2idn_instance;',
+					 s * 48, s * 48, '', 'X2idn Instance', null, null, this.getTagsForStencil(gn, 'x2idn', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_x2iedn_instance;',
+					 s * 48, s * 48, '', 'X2iedn Instance', null, null, this.getTagsForStencil(gn, 'x2eidn', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'ec2_x2iezn_instance;',
+					 s * 48, s * 48, '', 'X2iezn Instance', null, null, this.getTagsForStencil(gn, 'x2eizn', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'z1d_instance;',
 					 s * 48, s * 48, '', 'z1d Instance', null, null, this.getTagsForStencil(gn, 'z1d', dt).join(' '))
 		]);
 	};
 
-	Sidebar.prototype.addAWS4ComputePalette = function(s, w, h, w2, gn, sb)
-	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var dt = 'aws amazon web service compute ';
-		
-		this.addPaletteFunctions('aws4Compute', 'AWS / Compute', false,
-		[
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.compute;',
-					 w2, w2, '', 'Compute', null, null, this.getTagsForStencil(gn, 'compute', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.ec2;',
-					 w2, w2, '', 'EC2', null, null, this.getTagsForStencil(gn, 'ec2', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.auto_scaling2;',
-					 w2, w2, '', 'EC2 Auto Scaling', null, null, this.getTagsForStencil(gn, 'ec2 auto scaling', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.auto_scaling3;',
-					 w2, w2, '', 'Auto Scaling', null, null, this.getTagsForStencil(gn, 'auto scaling', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.bottlerocket;',
-					 w2, w2, '', 'Bottlerocket', null, null, this.getTagsForStencil(gn, 'bottlerocket', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lightsail;',
-					 w2, w2, '', 'Lightsail', null, null, this.getTagsForStencil(gn, 'lightsail', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.batch;',
-					 w2, w2, '', 'Batch', null, null, this.getTagsForStencil(gn, 'batch', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.compute_optimizer;',
-					 w2, w2, '', 'Compute Optimizer', null, null, this.getTagsForStencil(gn, 'compute optimizer', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_beanstalk;',
-					 w2, w2, '', 'Elastic Beanstalk', null, null, this.getTagsForStencil(gn, 'elastic beanstalk', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_fabric_adapter;',
-					 w2, w2, '', 'Elastic Fabric Adapter', null, null, this.getTagsForStencil(gn, 'elastic fabric adapter', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fargate;',
-					 w2, w2, '', 'Fargate', null, null, this.getTagsForStencil(gn, 'fargate', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.ec2_image_builder;',
-					 w2, w2, '', 'EC2 Image Builder', null, null, this.getTagsForStencil(gn, 'ec2 image builder', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lambda;',
-					 w2, w2, '', 'Lambda', null, null, this.getTagsForStencil(gn, 'lambda', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.local_zones;',
-					 w2, w2, '', 'Local Zones', null, null, this.getTagsForStencil(gn, 'local zones', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nice_dcv;',
-					 w2, w2, '', 'Nice DCV', null, null, this.getTagsForStencil(gn, 'nice dcv', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nitro_enclaves;',
-					 w2, w2, '', 'Nitro Enclaves', null, null, this.getTagsForStencil(gn, 'nitro enclaves', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.outposts;',
-					 w2, w2, '', 'Outposts', null, null, this.getTagsForStencil(gn, 'outposts', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.outposts_1u_and_2u_servers;',
-					 w2, w2, '', 'Outposts 1u and 2u Servers', null, null, this.getTagsForStencil(gn, 'outposts 1u and 2u servers', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.parallel_cluster;',
-					 w2, w2, '', 'Parallel Cluster', null, null, this.getTagsForStencil(gn, 'parallel cluster', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.serverless_application_repository;',
-					 w2, w2, '', 'Serverless Application Repository', null, null, this.getTagsForStencil(gn, 'serverless application repository', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_deadline;',
-					 w2, w2, '', 'Thinkbox Deadline', null, null, this.getTagsForStencil(gn, 'thinkbox deadline', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_draft;',
-					 w2, w2, '', 'Thinkbox Draft', null, null, this.getTagsForStencil(gn, 'thinkbox draft', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_frost;',
-					 w2, w2, '', 'Thinkbox Frost', null, null, this.getTagsForStencil(gn, 'thinkbox frost', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_krakatoa;',
-					 w2, w2, '', 'Thinkbox Krakatoa', null, null, this.getTagsForStencil(gn, 'thinkbox krakatoa', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_sequoia;',
-					 w2, w2, '', 'Thinkbox Sequoia', null, null, this.getTagsForStencil(gn, 'thinkbox sequoia', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_stoke;',
-					 w2, w2, '', 'Thinkbox Stoke', null, null, this.getTagsForStencil(gn, 'thinkbox stoke', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.thinkbox_xmesh;',
-					 w2, w2, '', 'Thinkbox XMesh', null, null, this.getTagsForStencil(gn, 'thinkbox xmesh', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_load_balancing;',
-					 w2, w2, '', 'Elastic Load Balancing', null, null, this.getTagsForStencil(gn, 'elastic load balancing', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.vmware_cloud_on_aws;',
-					 w2, w2, '', 'VMware Cloud on AWS', null, null, this.getTagsForStencil(gn, 'vmware cloud on aws virtual machine vm', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.wavelength;',
-					 w2, w2, '', 'Wavelength', null, null, this.getTagsForStencil(gn, 'wavelength', dt).join(' ')),
-					 
-			 this.createVertexTemplateEntry(n + 'ami;',
-					 s * 78, s * 78, '', 'AMI', null, null, this.getTagsForStencil(gn, 'ami', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'auto_scaling2;',
-					 s * 78, s * 78, '', 'Auto Scaling', null, null, this.getTagsForStencil(gn, 'autoscaling auto scaling', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'elastic_ip_address;',
-					 s * 78, s * 33, '', 'Elastic IP Address', null, null, this.getTagsForStencil(gn, 'elastic ip itnernet protocol address', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'rescue;',
-					 s * 78, s * 78, '', 'Rescue', null, null, this.getTagsForStencil(gn, 'rescue', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'application;',
-					 s * 50, s * 78, '', 'Application', null, null, this.getTagsForStencil(gn, 'elastic beanstalk application', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'deployment;',
-					 s * 78, s * 74, '', 'Deployment', null, null, this.getTagsForStencil(gn, 'elastic beanstalk deployment', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'lambda_function;',
-					 s * 78, s * 78, '', 'Lambda Function', null, null, this.getTagsForStencil(gn, 'lambda function', dt).join(' '))
-		]);
-	};
-
 	Sidebar.prototype.addAWS4ContainersPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service container containers ';
 		
 		this.addPaletteFunctions('aws4Containers', 'AWS / Containers', false,
@@ -705,30 +796,29 @@
 					 w2, w2, '', 'Red Hat OpenShift', null, null, this.getTagsForStencil(gn, 'red hat openshift', dt).join(' ')),
 					 
 			 this.createVertexTemplateEntry(n + 'ecs_copilot_cli;',
-					 s * 78, s * 73, '', 'ECS copilot CLI', null, null, this.getTagsForStencil(gn, 'ecs copilot cli', dt).join(' ')),
+					 s * 48, s * 44, '', 'ECS copilot CLI', null, null, this.getTagsForStencil(gn, 'ecs copilot cli', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'registry;',
-					 s * 78, s * 78, '', 'Registry', null, null, this.getTagsForStencil(gn, 'registry', dt).join(' ')),
+					 s * 48, s * 48, '', 'Registry', null, null, this.getTagsForStencil(gn, 'registry', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'container_registry_image;',
-					 s * 78, s * 78, '', 'Image', null, null, this.getTagsForStencil(gn, 'image', dt).join(' ')),
+					 s * 48, s * 48, '', 'Image', null, null, this.getTagsForStencil(gn, 'image', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'container_1;',
-					 s * 78, s * 50, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
+					 s * 48, s * 31, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'container_2;',
-					 s * 78, s * 50, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
+					 s * 48, s * 31, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'container_3;',
-					 s * 78, s * 50, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
+					 s * 48, s * 31, '', 'Container', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'ecs_anywhere;',
-					 s * 78, s * 78, '', 'ECS Anywhere', null, null, this.getTagsForStencil(gn, 'ecs anywhere', dt).join(' ')),
+					 s * 44, s * 48, '', 'ECS Anywhere', null, null, this.getTagsForStencil(gn, 'ecs anywhere', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'ecs_service;',
-					 s * 64, s * 78, '', 'Service', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
+					 s * 39, s * 48, '', 'Service', null, null, this.getTagsForStencil(gn, 'ecs elastic container service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'ecs_task;',
-					 s * 59, s * 78, '', 'Task', null, null, this.getTagsForStencil(gn, 'ecs elastic container service task', dt).join(' '))
+					 s * 37, s * 48, '', 'Task', null, null, this.getTagsForStencil(gn, 'ecs elastic container service task', dt).join(' '))
 		]);
 	};
 
 	Sidebar.prototype.addAWS4CustomerEnablementPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3334B9;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service customer enablement ';
 		
 		this.addPaletteFunctions('aws4Customer Enablement', 'AWS / Customer Enablement', false,
@@ -743,6 +833,8 @@
 					 w2, w2, '', 'Managed Services', null, null, this.getTagsForStencil(gn, 'managed services', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.professional_services;',
 					 w2, w2, '', 'Professional Services', null, null, this.getTagsForStencil(gn, 'professional services', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.repost;',
+					 w2, w2, '', 'rePost', null, null, this.getTagsForStencil(gn, 'repost', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.support;',
 					 w2, w2, '', 'Support', null, null, this.getTagsForStencil(gn, 'support', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.training_certification;',
@@ -752,8 +844,7 @@
 
 	Sidebar.prototype.addAWS4CustomerEngagementPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3334B9;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service customer engagement ';
 		
 		this.addPaletteFunctions('aws4Customer Engagement', 'AWS / Customer Engagement', false,
@@ -765,19 +856,14 @@
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.pinpoint;',
 					 w2, w2, '', 'Pinpoint', null, null, this.getTagsForStencil(gn, 'pinpoint', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.simple_email_service;',
-					 w2, w2, '', 'Simple Email Service', null, null, this.getTagsForStencil(gn, 'simple email service', dt).join(' ')),
-					 
-			 this.createVertexTemplateEntry(n + 'pinpoint_journey;',
-					 s * 78, s * 75, '', 'Pinpoint Journey', null, null, this.getTagsForStencil(gn, 'pinpoint journey', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'email;',
-					 s * 78, s * 69, '', 'Email', null, null, this.getTagsForStencil(gn, 'email', dt).join(' '))
+					 w2, w2, '', 'Simple Email Service', null, null, this.getTagsForStencil(gn, 'simple email service', dt).join(' '))
 		]);
 	};
 
 	Sidebar.prototype.addAWS4DatabasePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3334B9;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service db database ';
 		
 		this.addPaletteFunctions('aws4Database', 'AWS / Database', false,
@@ -810,6 +896,8 @@
 					 w2, w2, '', 'Database Migration Service', null, null, this.getTagsForStencil(gn, 'database migration service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.keyspaces;',
 					 w2, w2, '', 'Keyspaces', null, null, this.getTagsForStencil(gn, 'keyspaces', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.memorydb_for_redis;',
+					 w2, w2, '', 'MemoryDB for Redis', null, null, this.getTagsForStencil(gn, 'memorydb for redis', dt).join(' ')),
 					 
 			 this.createVertexTemplateEntry(n + 'attribute;',
 					 s * 78, s * 78, '', 'Attribute', null, null, this.getTagsForStencil(gn, 'dynamodb dynamo db database attribute', dt).join(' ')),
@@ -857,6 +945,12 @@
 					 s * 78, s * 78, '', 'Item', null, null, this.getTagsForStencil(gn, 'item', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'items;',
 					 s * 78, s * 78, '', 'Items', null, null, this.getTagsForStencil(gn, 'items', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'dynamodb_standard_access_table_class;',
+					 s * 75, s * 78, '', 'DynamoDB Standard Access Table Class', null, null, this.getTagsForStencil(gn, 'dynamodb standard access table class', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'dynamodb_standard_infrequent_access_table_class;',
+					 s * 75, s * 78, '', 'DynamoDB Standard Infrequent Access Table Class', null, null, this.getTagsForStencil(gn, 'dynamodb standard infrequent access table class', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'dynamodb_stream;',
+					 s * 78, s * 78, '', 'DynamoDB Stream', null, null, this.getTagsForStencil(gn, 'dynamodb stream', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'table;',
 					 s * 78, s * 78, '', 'Table', null, null, this.getTagsForStencil(gn, 'table', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'cache_node;',
@@ -876,8 +970,8 @@
 
 	Sidebar.prototype.addAWS4DeveloperToolsPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3334B9;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service dev developer tools ';
 		
 		this.addPaletteFunctions('aws4Developer Tools', 'AWS / Developer Tools', false,
@@ -886,6 +980,8 @@
 					 w2, w2, '', 'Developer Tools', null, null, this.getTagsForStencil(gn, 'developer tools', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloud9;',
 					 w2, w2, '', 'Cloud9', null, null, this.getTagsForStencil(gn, 'cloud9', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloud_control_api;',
+					 w2, w2, '', 'Cloud Control API', null, null, this.getTagsForStencil(gn, 'cloud control api application programming interface', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloud_development_kit;',
 					 w2, w2, '', 'Cloud Development Kit', null, null, this.getTagsForStencil(gn, 'cloud development kit', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloudshell;',
@@ -904,13 +1000,13 @@
 					 w2, w2, '', 'CodeStar', null, null, this.getTagsForStencil(gn, 'codestar', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.command_line_interface;',
 					 w2, w2, '', 'Command Line Interface', null, null, this.getTagsForStencil(gn, 'command line interface', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.corretto;',
+					 w2, w2, '', 'Corretto', null, null, this.getTagsForStencil(gn, 'corretto', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.tools_and_sdks;',
 					 w2, w2, '', 'Tools and SDKs', null, null, this.getTagsForStencil(gn, 'tools and sdks software development kit', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.xray;',
 					 w2, w2, '', 'X-Ray', null, null, this.getTagsForStencil(gn, 'ray xray', dt).join(' ')),
 					 
-			 this.createVertexTemplateEntry(n + 'dynamodb_dax;',
-					 s * 78, s * 72, '', 'DAX', null, null, this.getTagsForStencil(gn, 'dynamodb dynamo db database dax', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'cloud9;',
 					 s * 78, s * 50, '', 'Cloud9', null, null, this.getTagsForStencil(gn, 'cloud9', dt).join(' '))
 		]);
@@ -918,8 +1014,8 @@
 
 	Sidebar.prototype.addAWS4EndUserComputingPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#116D5B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#067F68;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service db database ';
 		
 		this.addPaletteFunctions('aws4End User Computing', 'AWS / End User Computing', false,
@@ -933,14 +1029,48 @@
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.worklink;',
 					 w2, w2, '', 'WorkLink', null, null, this.getTagsForStencil(gn, 'worklink', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.workdocs;',
-					 w2, w2, '', 'WorkDocs', null, null, this.getTagsForStencil(gn, 'workdocs', dt).join(' '))
+					 w2, w2, '', 'WorkDocs', null, null, this.getTagsForStencil(gn, 'workdocs', dt).join(' ')),
+				
+			 this.createVertexTemplateEntry(n + 'workspaces_workspaces_web;',
+					 s * 78, s * 74, '', 'Workspaces Web', null, null, this.getTagsForStencil(gn, 'workspaces web', dt).join(' '))
+		]);
+	};
+
+	Sidebar.prototype.addAWS4FrontEndWebMobilePalette = function(s, w, h, w2, gn, sb)
+	{
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var dt = 'aws amazon web service mobile ';
+		
+		this.addPaletteFunctions('aws4Front End Web Mobile', 'AWS / Front End Web Mobile', false,
+		[
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.mobile;',
+					 w2, w2, '', 'Mobile', null, null, this.getTagsForStencil(gn, 'mobile', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.amplify;',
+					 w2, w2, '', 'Amplify', null, null, this.getTagsForStencil(gn, 'amplify', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.device_farm;',
+					 w2, w2, '', 'Device Farm', null, null, this.getTagsForStencil(gn, 'device farm', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.location_service;',
+					 w2, w2, '', 'Location Service', null, null, this.getTagsForStencil(gn, 'location service', dt).join(' ')),
+					 
+			 this.createVertexTemplateEntry(n + 'location_service_geofence;',
+					 s * 48, s * 48, '', 'Location Service Geofence', null, null, this.getTagsForStencil(gn, 'location service geofence', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'location_service_map;',
+					 s * 48, s * 48, '', 'Location Service Map', null, null, this.getTagsForStencil(gn, 'location service map', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'location_service_place;',
+					 s * 37, s * 48, '', 'Location Service Place', null, null, this.getTagsForStencil(gn, 'location service place', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'location_service_routes;',
+					 s * 48, s * 48, '', 'Location Service Routes', null, null, this.getTagsForStencil(gn, 'location service routes', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'location_service_track;',
+					 s * 48, s * 48, '', 'Location Service Track', null, null, this.getTagsForStencil(gn, 'location service track', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'amplify_aws_amplify_studio;',
+					 s * 48, s * 44, '', 'Amplify Studio', null, null, this.getTagsForStencil(gn, 'amplify studio', dt).join(' '))
 		]);
 	};
 
 	Sidebar.prototype.addAWS4GameTechPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A30B5;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service game development ';
 		
 		this.addPaletteFunctions('aws4Game Tech', 'AWS / Game Tech', false,
@@ -950,14 +1080,16 @@
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.gamelift;',
 					 w2, w2, '', 'GameLift', null, null, this.getTagsForStencil(gn, 'gamelift', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.lumberyard;',
-					 w2, w2, '', 'Lumberyard', null, null, this.getTagsForStencil(gn, 'lumberyard', dt).join(' '))
+					 w2, w2, '', 'Lumberyard', null, null, this.getTagsForStencil(gn, 'lumberyard', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.open_3d_engine;',
+					 w2, w2, '', 'Open 3D Engine', null, null, this.getTagsForStencil(gn, 'open 3d engine', dt).join(' '))
 		]);
 	};
 
 	Sidebar.prototype.addAWS4InternetOfThingsPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#277116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service internet of things iot ';
 		
 		this.addPaletteFunctions('aws4Internet of Things', 'AWS / Internet of Things', false,
@@ -980,12 +1112,20 @@
 					 w2, w2, '', 'Device Management', null, null, this.getTagsForStencil(gn, 'device management', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_events;',
 					 w2, w2, '', 'Events', null, null, this.getTagsForStencil(gn, 'events', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_expresslink;',
+					 w2, w2, '', 'ExpressLink', null, null, this.getTagsForStencil(gn, 'expresslink', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_fleetwise;',
+					 w2, w2, '', 'FleetWise', null, null, this.getTagsForStencil(gn, 'fleetwise', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.greengrass;',
 					 w2, w2, '', 'Greengrass', null, null, this.getTagsForStencil(gn, 'greengrass', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_roborunner;',
+					 w2, w2, '', 'RoboRunner', null, null, this.getTagsForStencil(gn, 'roborunner', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_sitewise;',
 					 w2, w2, '', 'SiteWise', null, null, this.getTagsForStencil(gn, 'sitewise', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_things_graph;',
 					 w2, w2, '', 'Graph', null, null, this.getTagsForStencil(gn, 'graph', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.iot_twinmaker;',
+					 w2, w2, '', 'TwinMaker', null, null, this.getTagsForStencil(gn, 'twinmaker', dt).join(' ')),
 					 
 			 this.createVertexTemplateEntry(n + 'iot_lorawan_protocol;',
 					 s * 78, s * 78, '', 'LoRaWAN Protocol', null, null, this.getTagsForStencil(gn, 'iot lorawan protocol', dt).join(' ')),
@@ -1003,6 +1143,14 @@
 					 s * 68, s * 78, '', 'Notebook', null, null, this.getTagsForStencil(gn, 'notebook', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'connector;',
 					 s * 78, s * 29, '', 'Connector', null, null, this.getTagsForStencil(gn, 'notebook', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_interprocess_communication;',
+					 s * 78, s * 78, '', 'Greengrass Interprocess Communication', null, null, this.getTagsForStencil(gn, 'iot greengrass interprocess communication', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_protocol;',
+					 s * 78, s * 78, '', 'Greengrass Protocol', null, null, this.getTagsForStencil(gn, 'iot greengrass protocol', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_recipe;',
+					 s * 55, s * 78, '', 'Greengrass Recipe', null, null, this.getTagsForStencil(gn, 'iot greengrass recipe', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_stream_manager;',
+					 s * 78, s * 60, '', 'Greengrass Stream Manager', null, null, this.getTagsForStencil(gn, 'iot greengrass stream manager', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'action;',
 					 s * 78, s * 78, '', 'Action', null, null, this.getTagsForStencil(gn, 'action', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'actuator;',
@@ -1033,6 +1181,18 @@
 					 s * 78, s * 78, '', 'Device Gateway', null, null, this.getTagsForStencil(gn, 'device gateway', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'iot_device_jobs_resource;',
 					 s * 64, s * 78, '', 'Device Jobs', null, null, this.getTagsForStencil(gn, 'device jobs', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_artifact;',
+					 s * 69, s * 78, '', 'Greengrass Artifact', null, null, this.getTagsForStencil(gn, 'greengrass artifact', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_component;',
+					 s * 78, s * 78, '', 'Greengrass Component', null, null, this.getTagsForStencil(gn, 'greengrass component', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_component_machine_learning;',
+					 s * 78, s * 78, '', 'Greengrass Component Machine Learning', null, null, this.getTagsForStencil(gn, 'greengrass component machine learning', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_component_nucleus;',
+					 s * 78, s * 78, '', 'Greengrass Component Nucleus', null, null, this.getTagsForStencil(gn, 'greengrass component nucleus', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_component_private;',
+					 s * 78, s * 78, '', 'Greengrass Component Private', null, null, this.getTagsForStencil(gn, 'greengrass component private', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_greengrass_component_public;',
+					 s * 78, s * 78, '', 'Greengrass Component Public', null, null, this.getTagsForStencil(gn, 'greengrass component public', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'door_lock;',
 					 s * 78, s * 78, '', 'Door Lock', null, null, this.getTagsForStencil(gn, 'door lock', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'echo;',
@@ -1061,8 +1221,18 @@
 					 s * 78, s * 78, '', 'Medical Emergency', null, null, this.getTagsForStencil(gn, 'medical emergency', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'mqtt_protocol;',
 					 s * 78, s * 78, '', 'MQTT Protocol', null, null, this.getTagsForStencil(gn, 'mqtt protocol', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_sitewise_asset;',
+					 s * 77, s * 78, '', 'SiteWise Asset', null, null, this.getTagsForStencil(gn, 'sitewise asset', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_sitewise_asset_hierarchy;',
+					 s * 78, s * 78, '', 'SiteWise Asset Hierarchy', null, null, this.getTagsForStencil(gn, 'sitewise asset hierarchy', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_sitewise_asset_model;',
+					 s * 78, s * 78, '', 'SiteWise Asset Model', null, null, this.getTagsForStencil(gn, 'sitewise asset model', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_sitewise_asset_properties;',
+					 s * 78, s * 78, '', 'SiteWise Asset Properties', null, null, this.getTagsForStencil(gn, 'sitewise asset properties', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_sitewise_data_streams;',
+					 s * 78, s * 78, '', 'SiteWise Data Streams', null, null, this.getTagsForStencil(gn, 'sitewise data streams', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'iot_over_the_air_update;',
-					 s * 78, s * 78, '', 'Over-The-Air Update', null, null, this.getTagsForStencil(gn, 'over the air update', dt).join(' ')),
+					 s * 78, s * 63, '', 'Over-The-Air Update', null, null, this.getTagsForStencil(gn, 'over the air update', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'police_emergency;',
 					 s * 78, s * 78, '', 'Police Emergency', null, null, this.getTagsForStencil(gn, 'police emergency', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'policy;',
@@ -1079,6 +1249,26 @@
 					 s * 78, s * 77, '', 'Shadow', null, null, this.getTagsForStencil(gn, 'shadow', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'simulator;',
 					 s * 71, s * 78, '', 'Simulator', null, null, this.getTagsForStencil(gn, 'simulator', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_freertos_device;',
+					 s * 78, s * 78, '', 'FreeRTOS Device', null, null, this.getTagsForStencil(gn, 'device', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_humidity_sensor;',
+					 s * 78, s * 78, '', 'Humidity Sensor', null, null, this.getTagsForStencil(gn, 'humidity sensor', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_industrial_pc;',
+					 s * 78, s * 78, '', 'Industrial PC', null, null, this.getTagsForStencil(gn, 'industrial pc', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_plc;',
+					 s * 78, s * 78, '', 'PLC', null, null, this.getTagsForStencil(gn, 'plc programmable logic controller', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_relay;',
+					 s * 78, s * 78, '', 'Relay', null, null, this.getTagsForStencil(gn, 'relay', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_stacklight;',
+					 s * 78, s * 78, '', 'Stacklight', null, null, this.getTagsForStencil(gn, 'stacklight', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_temperature_humidity_sensor;',
+					 s * 78, s * 78, '', 'Temperature Humidity Sensor', null, null, this.getTagsForStencil(gn, 'temperature humidity sensor', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_temperature_sensor;',
+					 s * 78, s * 78, '', 'Temperature Sensor', null, null, this.getTagsForStencil(gn, 'temperature sensor', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_temperature_vibration_sensor;',
+					 s * 78, s * 78, '', 'Temperature Vibration Sensor', null, null, this.getTagsForStencil(gn, 'temperature vibration sensor', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'iot_thing_vibration_sensor;',
+					 s * 78, s * 78, '', 'Vibration Sensor', null, null, this.getTagsForStencil(gn, 'vibration sensor', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'thermostat;',
 					 s * 78, s * 78, '', 'Thermostat', null, null, this.getTagsForStencil(gn, 'thermostat', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'topic_2;',
@@ -1094,8 +1284,8 @@
 
 	Sidebar.prototype.addAWS4MachineLearningPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#116D5B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#067F68;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service machine learning ';
 		
 		this.addPaletteFunctions('aws4Machine Learning', 'AWS / Machine Learning', false,
@@ -1146,6 +1336,8 @@
 					 w2, w2, '', 'SageMaker', null, null, this.getTagsForStencil(gn, 'sagemaker', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.sagemaker_ground_truth;',
 					 w2, w2, '', 'SageMaker Ground Truth', null, null, this.getTagsForStencil(gn, 'sagemaker ground truth', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.sagemaker_studio_lab;',
+					 w2, w2, '', 'SageMaker Studio Lab', null, null, this.getTagsForStencil(gn, 'sagemaker studio lab', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.textract;',
 					 w2, w2, '', 'Textract', null, null, this.getTagsForStencil(gn, 'textract', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.transcribe;',
@@ -1173,6 +1365,8 @@
 					 s * 77, s * 78, '', 'Rekognition image', null, null, this.getTagsForStencil(gn, 'rekognition image', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'rekognition_video;',
 					 s * 77, s * 78, '', 'Rekognition video', null, null, this.getTagsForStencil(gn, 'rekognition video', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'sagemaker_canvas;',
+					 s * 78, s * 78, '', 'SageMaker Canvas', null, null, this.getTagsForStencil(gn, 'sagemaker canvas', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'sagemaker_model;',
 					 s * 78, s * 78, '', 'Model', null, null, this.getTagsForStencil(gn, 'sagemaker model', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'sagemaker_notebook;',
@@ -1184,8 +1378,8 @@
 
 	Sidebar.prototype.addAWS4ManagementGovernancePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BC1356;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service management governance ';
 		
 		this.addPaletteFunctions('aws4Management Governance', 'AWS / Management & Governance', false,
@@ -1242,10 +1436,14 @@
 					 w2, w2, '', 'Personal Health Dashboard', null, null, this.getTagsForStencil(gn, 'personal health dashboard', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.proton;',
 					 w2, w2, '', 'Proton', null, null, this.getTagsForStencil(gn, 'proton', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.resilience_hub;',
+					 w2, w2, '', 'Resilience Hub', null, null, this.getTagsForStencil(gn, 'resilience hub', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.service_catalog;',
 					 w2, w2, '', 'Service Catalog', null, null, this.getTagsForStencil(gn, 'service catalog', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.systems_manager;',
 					 w2, w2, '', 'Systems Manager', null, null, this.getTagsForStencil(gn, 'systems manager', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.systems_manager_incident_manager;',
+					 w2, w2, '', 'Systems Manager - Incident Manager', null, null, this.getTagsForStencil(gn, 'systems manager incident manager', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.trusted_advisor;',
 					 w2, w2, '', 'Trusted Advisor', null, null, this.getTagsForStencil(gn, 'trusted advisor', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.well_architect_tool;',
@@ -1257,10 +1455,18 @@
 					 s * 78, s * 78, '', 'Event (Event-Based)', null, null, this.getTagsForStencil(gn, 'cloudwatch event based', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'event_time_based;',
 					 s * 78, s * 78, '', 'Event (Time-Based)', null, null, this.getTagsForStencil(gn, 'cloudwatch event time based', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloudwatch_evidently;',
+					 s * 78, s * 78, '', 'CloudWatch Evidently', null, null, this.getTagsForStencil(gn, 'cloudwatch evidently', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'logs;',
 					 s * 78, s * 58, '', 'CloudWatch Logs', null, null, this.getTagsForStencil(gn, 'cloudwatch logs', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloudwatch_metrics_insights;',
+					 s * 77, s * 78, '', 'CloudWatch Metrics Insights', null, null, this.getTagsForStencil(gn, 'cloudwatch metrics insights', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'rule_2;',
 					 s * 78, s * 76, '', 'Rule', null, null, this.getTagsForStencil(gn, 'cloudwatch rule', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloudwatch_rum;',
+					 s * 78, s * 78, '', 'CloudWatch RUM', null, null, this.getTagsForStencil(gn, 'cloudwatch rum', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloudwatch_synthetics;',
+					 s * 78, s * 77, '', 'CloudWatch Synthetics', null, null, this.getTagsForStencil(gn, 'cloudwatch synthetics', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'change_set;',
 					 s * 65, s * 78, '', 'Change Set', null, null, this.getTagsForStencil(gn, 'cloudformation change set', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'stack;',
@@ -1291,10 +1497,14 @@
 					 s * 78, s * 78, '', 'Stack', null, null, this.getTagsForStencil(gn, 'stack', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'organizations_account;',
 					 s * 74, s * 78, '', 'Account', null, null, this.getTagsForStencil(gn, 'organizations account', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'organizations_account2;',
+					 s * 78, s * 78, '', 'Organizations Account', null, null, this.getTagsForStencil(gn, 'organizations account', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'organizations_management_account;',
 					 s * 74, s * 78, '', 'Organizations Management Account', null, null, this.getTagsForStencil(gn, 'organizations management account', dt).join(' ')),
-			 this.createVertexTemplateEntry(n + 'organizations_organizational_unit;',
-					 s * 78, s * 67, '', 'Organizational Unit', null, null, this.getTagsForStencil(gn, 'organizations organizational unit', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'organizations_management_account2;',
+					 s * 78, s * 78, '', 'Organizations Management Account', null, null, this.getTagsForStencil(gn, 'organizations management account', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'organizations_organizational_unit2;',
+					 s * 78, s * 78, '', 'Organizational Unit', null, null, this.getTagsForStencil(gn, 'organizations organizational unit', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'shield_shield_advanced;',
 					 s * 70, s * 78, '', 'Shield Advanced', null, null, this.getTagsForStencil(gn, 'shield advanced', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'automation;',
@@ -1330,20 +1540,22 @@
 
 	Sidebar.prototype.addAWS4MediaServicesPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service media services ';
 		
 		this.addPaletteFunctions('aws4Media Services', 'AWS / Media Services', false,
 		[
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.media_services;',
 					 w2, w2, '', 'Media Services', null, null, this.getTagsForStencil(gn, 'media services', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elemental;',
-					 w2, w2, '', 'Appliances & Software', null, null, this.getTagsForStencil(gn, 'appliances software', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elastic_transcoder;',
 					 w2, w2, '', 'Elastic Transcoder', null, null, this.getTagsForStencil(gn, 'elastic transcoder', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.kinesis_video_streams;',
 					 w2, w2, '', 'Kinesis Video Streams', null, null, this.getTagsForStencil(gn, 'kinesis video streams', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.nimble_studio;',
+					 w2, w2, '', 'Nimble Studio', null, null, this.getTagsForStencil(gn, 'nimble studio', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elemental;',
+					 w2, w2, '', 'Elemental Appliances & Software', null, null, this.getTagsForStencil(gn, 'elemental appliances software', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elemental_mediaconnect;',
 					 w2, w2, '', 'Elemental MediaConnect', null, null, this.getTagsForStencil(gn, 'elemental mediaconnect', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elemental_mediaconvert;',
@@ -1367,14 +1579,17 @@
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.interactive_video;',
 					 w2, w2, '', 'Interactive Video', null, null, this.getTagsForStencil(gn, 'interactive video', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.elemental_link;',
-					 w2, w2, '', 'Elemental Link', null, null, this.getTagsForStencil(gn, 'elemental link', dt).join(' '))
+					 w2, w2, '', 'Elemental Link', null, null, this.getTagsForStencil(gn, 'elemental link', dt).join(' ')),
+				
+			 this.createVertexTemplateEntry(n + 'cloud_digital_interface;',
+					 s * 78, s * 78, '', 'Cloud Digital Interface', null, null, this.getTagsForStencil(gn, 'cloud digital interface', dt).join(' '))
 		]);
 	};
 
 	Sidebar.prototype.addAWS4MigrationTransferPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#116D5B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#067F68;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service migration transfer ';
 		
 		this.addPaletteFunctions('aws4Migration Transfer', 'AWS / Migration & Transfer', false,
@@ -1387,6 +1602,8 @@
 					 w2, w2, '', 'Database Migration Service', null, null, this.getTagsForStencil(gn, 'db database migration service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.datasync;',
 					 w2, w2, '', 'DataSync', null, null, this.getTagsForStencil(gn, 'datasync', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.mainframe_modernization;',
+					 w2, w2, '', 'Mainframe Modernization', null, null, this.getTagsForStencil(gn, 'mainframe modernization', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.migration_evaluator;',
 					 w2, w2, '', 'Migration Evaluator', null, null, this.getTagsForStencil(gn, 'migration evaluator', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.migration_hub;',
@@ -1408,6 +1625,22 @@
 					 
 			 this.createVertexTemplateEntry(n + 'agent2;',
 					 s * 78, s * 78, '', 'Agent', null, null, this.getTagsForStencil(gn, 'agent', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mainframe_modernization_analyzer;',
+					 s * 78, s * 78, '', 'Mainframe Modernization Analyzer', null, null, this.getTagsForStencil(gn, 'mainframe modernization analyzer', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mainframe_modernization_compiler;',
+					 s * 78, s * 78, '', 'Mainframe Modernization Compiler', null, null, this.getTagsForStencil(gn, 'mainframe modernization compiler', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mainframe_modernization_converter;',
+					 s * 78, s * 78, '', 'Mainframe Modernization Converter', null, null, this.getTagsForStencil(gn, 'mainframe modernization converter', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mainframe_modernization_developer;',
+					 s * 78, s * 78, '', 'Mainframe Modernization Developer', null, null, this.getTagsForStencil(gn, 'mainframe modernization developer', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'mainframe_modernization_runtime;',
+					 s * 78, s * 78, '', 'Mainframe Modernization Runtime', null, null, this.getTagsForStencil(gn, 'mainframe modernization runtime', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'migration_hub_refactor_spaces_applications;',
+					 s * 78, s * 78, '', 'Migration Hub Refactor Spaces Applications', null, null, this.getTagsForStencil(gn, 'migration hub refactor spaces applications', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'migration_hub_refactor_spaces_environments;',
+					 s * 78, s * 78, '', 'Migration Hub Refactor Spaces Environments', null, null, this.getTagsForStencil(gn, 'migration hub refactor spaces environments', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'migration_hub_refactor_spaces_services;',
+					 s * 78, s * 78, '', 'Migration Hub Refactor Spaces Services', null, null, this.getTagsForStencil(gn, 'migration hub refactor spaces services', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'transfer_for_ftp_resource;',
 					 s * 76, s * 78, '', 'FTP', null, null, this.getTagsForStencil(gn, 'transfer for ftp resource', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'transfer_for_ftps_resource;',
@@ -1417,38 +1650,10 @@
 		]);
 	};
 
-	Sidebar.prototype.addAWS4MobilePalette = function(s, w, h, w2, gn, sb)
-	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var dt = 'aws amazon web service mobile ';
-		
-		this.addPaletteFunctions('aws4Mobile', 'AWS / Mobile', false,
-		[
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.mobile;',
-					 w2, w2, '', 'Mobile', null, null, this.getTagsForStencil(gn, 'mobile', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.api_gateway;',
-					 w2, w2, '', 'API Gateway', null, null, this.getTagsForStencil(gn, 'api application programming interface gateway', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.pinpoint;',
-					 w2, w2, '', 'Pinpoint', null, null, this.getTagsForStencil(gn, 'pinpoint', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.amplify;',
-					 w2, w2, '', 'Amplify', null, null, this.getTagsForStencil(gn, 'amplify', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.appsync;',
-					 w2, w2, '', 'AppSync', null, null, this.getTagsForStencil(gn, 'appsync', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.device_farm;',
-					 w2, w2, '', 'Device Farm', null, null, this.getTagsForStencil(gn, 'device farm', dt).join(' ')),
-			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.pinpoint_journey;',
-					 w2, w2, '', 'Pinpoint Journey', null, null, this.getTagsForStencil(gn, 'pinpoint journey', dt).join(' ')),
-					 
-			 this.createVertexTemplateEntry(n + 'endpoint;',
-					 s * 78, s * 78, '', 'Endpoint', null, null, this.getTagsForStencil(gn, 'endpoint', dt).join(' '))
-		]);
-	};
-
 	Sidebar.prototype.addAWS4NetworkContentDeliveryPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A30B5;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#4D27AA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service netowrk content delivery ';
 		
 		this.addPaletteFunctions('aws4Network Content Delivery', 'AWS / Network & Content Delivery', false,
@@ -1477,10 +1682,14 @@
 					 w2, w2, '', 'Elastic Load Balancing', null, null, this.getTagsForStencil(gn, 'elastic load balancing', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloud_map;',
 					 w2, w2, '', 'Cloud Map', null, null, this.getTagsForStencil(gn, 'cloud map', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.cloud_wan;',
+					 w2, w2, '', 'Cloud WAN', null, null, this.getTagsForStencil(gn, 'cloud wan', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.direct_connect;',
 					 w2, w2, '', 'Direct Connect', null, null, this.getTagsForStencil(gn, 'direct connect', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.global_accelerator;',
 					 w2, w2, '', 'Global Accelerator', null, null, this.getTagsForStencil(gn, 'global accelerator', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.private_5g;',
+					 w2, w2, '', 'Private 5G', null, null, this.getTagsForStencil(gn, 'private 5g', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.transit_gateway;',
 					 w2, w2, '', 'Transit Gateway', null, null, this.getTagsForStencil(gn, 'transit gateway', dt).join(' ')),
 					 
@@ -1494,10 +1703,24 @@
 					 s * 78, s * 78, '', 'Edge Location', null, null, this.getTagsForStencil(gn, 'edge location', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'streaming_distribution;',
 					 s * 78, s * 78, '', 'Streaming Distribution', null, null, this.getTagsForStencil(gn, 'streaming distribution', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_application_recovery_controller;',
+					 s * 78, s * 78, '', 'Route 53 Application Recovery Controller', null, null, this.getTagsForStencil(gn, 'route 53 application recovery controller', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_readiness_checks;',
+					 s * 78, s * 78, '', 'Route 53 Readiness Checks', null, null, this.getTagsForStencil(gn, 'route 53 readiness checks', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'hosted_zone;',
 					 s * 78, s * 77, '', 'Hosted Zone', null, null, this.getTagsForStencil(gn, 'hosted zone', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'vpc_carrier_gateway;',
+					 s * 78, s * 78, '', 'VPC Carrier Gateway', null, null, this.getTagsForStencil(gn, 'vpc carrier gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_resolver;',
+					 s * 78, s * 78, '', 'Route 53 Resolver', null, null, this.getTagsForStencil(gn, 'route 53 resolver', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_resolver_dns_firewall;',
+					 s * 78, s * 78, '', 'Route 53 Resolver DNS Firewall', null, null, this.getTagsForStencil(gn, 'route 53 resolver dns firewall', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_resolver_query_logging;',
+					 s * 78, s * 78, '', 'Route 53 Resolver Query Logging', null, null, this.getTagsForStencil(gn, 'route 53 resolver query logging', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'route_table;',
 					 s * 78, s * 76, '', 'Route Table', null, null, this.getTagsForStencil(gn, 'route table', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'route_53_routing_controls;',
+					 s * 78, s * 78, '', 'Route 53 Routing Controls', null, null, this.getTagsForStencil(gn, 'route 53 routing controls', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'customer_gateway;',
 					 s * 78, s * 78, '', 'Router', null, null, this.getTagsForStencil(gn, 'vpc virtual private cloud customer gateway', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'elastic_network_adapter;',
@@ -1516,6 +1739,8 @@
 					 s * 78, s * 77, '', 'Mesh', null, null, this.getTagsForStencil(gn, 'mesh', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'nat_gateway;',
 					 s * 78, s * 78, '', 'NAT Gateway', null, null, this.getTagsForStencil(gn, 'vpc virtual private cloud nat gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'vpc_network_access_analyzer;',
+					 s * 77, s * 78, '', 'VPC Network Access Analyzer', null, null, this.getTagsForStencil(gn, 'vpc network access analyzer', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'namespace;',
 					 s * 78, s * 78, '', 'Namespace', null, null, this.getTagsForStencil(gn, 'namespace', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'network_access_control_list;',
@@ -1526,6 +1751,10 @@
 					 s * 78, s * 78, '', 'VPC Reachability Analyzer', null, null, this.getTagsForStencil(gn, 'vpc reachability analyzer', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'resource;',
 					 s * 76, s * 78, '', 'Resource', null, null, this.getTagsForStencil(gn, 'resource', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloud_wan_segment_network;',
+					 s * 78, s * 78, '', 'Cloud WAN Segment Network', null, null, this.getTagsForStencil(gn, 'cloud wan segment network wide area network', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'cloud_wan_virtual_pop;',
+					 s * 78, s * 78, '', 'Cloud WAN Virtual Pop', null, null, this.getTagsForStencil(gn, 'cloud wan virtual pop', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'service;',
 					 s * 78, s * 76, '', 'Service', null, null, this.getTagsForStencil(gn, 'service', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'application_load_balancer;',
@@ -1557,8 +1786,8 @@
 
 	Sidebar.prototype.addAWS4QuantumTechnologiesPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service quantum technologies ';
 		
 		this.addPaletteFunctions('aws4Quantum Technologies', 'AWS / Quantum Technologies', false,
@@ -1572,6 +1801,8 @@
 					 s * 78, s * 78, '', 'Braket Chandelier', null, null, this.getTagsForStencil(gn, 'braket chandelier', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'braket_chip;',
 					 s * 78, s * 78, '', 'Braket Chip', null, null, this.getTagsForStencil(gn, 'braket chip', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'braket_noise_simulator;',
+					 s * 78, s * 78, '', 'Braket Noise Simulator', null, null, this.getTagsForStencil(gn, 'braket noise simulator', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'braket_qpu;',
 					 s * 78, s * 78, '', 'Braket QPU', null, null, this.getTagsForStencil(gn, 'braket qpu', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'braket_simulator;',
@@ -1593,8 +1824,8 @@
 
 	Sidebar.prototype.addAWS4RoboticsPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BE0917;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FE5151;gradientDirection=north;fillColor=#BE0917;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FE5151;gradientDirection=north;fillColor=#BE0917;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service robotics ';
 		
 		this.addPaletteFunctions('aws4Robotics', 'AWS / Robotics', false,
@@ -1617,8 +1848,7 @@
 	
 	Sidebar.prototype.addAWS4SatellitePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2F29AF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#517DFD;gradientDirection=north;fillColor=#2F29AF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#517DFD;gradientDirection=north;fillColor=#2F29AF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web satellite ';
 		
 		this.addPaletteFunctions('aws4Satellite', 'AWS / Satellite', false,
@@ -1632,8 +1862,8 @@
 	
 	Sidebar.prototype.addAWS4SecurityIdentityCompliancePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service security identity compliance ';
 		
 		this.addPaletteFunctions('aws4Security Identity Compliance', 'AWS / Security, Identity & Compliance', false,
@@ -1727,6 +1957,18 @@
 					 s * 70, s * 78, '', 'Finding', null, null, this.getTagsForStencil(gn, 'finding', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'shield_shield_advanced;',
 					 s * 70, s * 78, '', 'Shield Advanced', null, null, this.getTagsForStencil(gn, 'shield advanced', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_bad_bot;',
+					 s * 78, s * 71, '', 'WAF Bad Bot', null, null, this.getTagsForStencil(gn, 'waf bad bot', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_bot;',
+					 s * 78, s * 78, '', 'WAF Bot', null, null, this.getTagsForStencil(gn, 'waf bot', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_bot_control;',
+					 s * 78, s * 78, '', 'WAF Bot Control', null, null, this.getTagsForStencil(gn, 'waf bot control', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_labels;',
+					 s * 78, s * 78, '', 'WAF Labels', null, null, this.getTagsForStencil(gn, 'waf labels', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_managed_rule;',
+					 s * 78, s * 78, '', 'WAF Managed Rule', null, null, this.getTagsForStencil(gn, 'waf managed rule', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'waf_rule;',
+					 s * 78, s * 78, '', 'WAF Rule', null, null, this.getTagsForStencil(gn, 'waf rule', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'filtering_rule;',
 					 s * 78, s * 78, '', 'Filtering Rule', null, null, this.getTagsForStencil(gn, 'filtering rule', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'simple_ad;',
@@ -1736,8 +1978,7 @@
 
 	Sidebar.prototype.addAWS4ServerlessPalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#5A30B5;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web serverless ';
 		
 		this.addPaletteFunctions('aws4Serverless', 'AWS / Serverless', false,
@@ -1749,8 +1990,8 @@
 	
 	Sidebar.prototype.addAWS4StoragePalette = function(s, w, h, w2, gn, sb)
 	{
-		var n = 'outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#277116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
-		var n2 = 'points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n = 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
+		var n2 = 'sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;' + mxConstants.STYLE_SHAPE + "=mxgraph.aws4.";
 		var dt = 'aws amazon web service storage ';
 		
 		this.addPaletteFunctions('aws4Storage', 'AWS / Storage', false,
@@ -1765,6 +2006,10 @@
 					 w2, w2, '', 'FSx', null, null, this.getTagsForStencil(gn, 'fsx', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fsx_for_lustre;',
 					 w2, w2, '', 'FSx for Lustre', null, null, this.getTagsForStencil(gn, 'fsx for lustre', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fsx_for_netapp_ontap;',
+					 w2, w2, '', 'FSx for NetApp ONTAP', null, null, this.getTagsForStencil(gn, 'fsx for netapp ontap', dt).join(' ')),
+			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fsx_for_openzfs;',
+					 w2, w2, '', 'FSx for OpenZFS', null, null, this.getTagsForStencil(gn, 'fsx for openzfs', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.fsx_for_windows_file_server;',
 					 w2, w2, '', 'FSx for Windows File Server', null, null, this.getTagsForStencil(gn, 'fsx for windows file server', dt).join(' ')),
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.s3_on_outposts_storage;',
@@ -1794,6 +2039,8 @@
 			 this.createVertexTemplateEntry(n2 + 'resourceIcon;resIcon=' + gn + '.snowcone;',
 					 w2, w2, '', 'Snowcone', null, null, this.getTagsForStencil(gn, 'snowcone', dt).join(' ')),
 					 
+			 this.createVertexTemplateEntry(n + 'elastic_block_store_amazon_data_lifecycle_manager;',
+					 s * 76, s * 78, '', 'Elastic Block Store Amazon Data Lifecycle Manager', null, null, this.getTagsForStencil(gn, 'elastic block store amazon data lifecycle manager', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'snapshot;',
 					 s * 56, s * 78, '', 'Snapshot', null, null, this.getTagsForStencil(gn, 'snapshot', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'volume;',
@@ -1802,8 +2049,16 @@
 					 s * 64, s * 78, '', 'Elastic Block Store Volume gp3', null, null, this.getTagsForStencil(gn, 'elastic block store volume gp3', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'file_gateway;',
 					 s * 69, s * 78, '', 'File Gateway', null, null, this.getTagsForStencil(gn, 'file gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'fsx_file_gateway;',
+					 s * 78, s * 78, '', 'FSx File Gateway', null, null, this.getTagsForStencil(gn, 'fsx file gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 's3_file_gateway;',
+					 s * 78, s * 78, '', 'S3 File Gateway', null, null, this.getTagsForStencil(gn, 's3 file gateway', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'file_system;',
 					 s * 78, s * 73, '', 'File System', null, null, this.getTagsForStencil(gn, 'file system', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'elastic_file_system_intelligent_tiering;',
+					 s * 78, s * 77, '', 'Elastic File System Intelligent Tiering', null, null, this.getTagsForStencil(gn, 'elastic file system intelligent tiering', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'elastic_file_system_one_zone;',
+					 s * 78, s * 78, '', 'Elastic File System One Zone', null, null, this.getTagsForStencil(gn, 'elastic file system one zone', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'elastic_file_system_infrequent_access;',
 					 s * 78, s * 76, '', 'Elastic File System Infrequent Access', null, null, this.getTagsForStencil(gn, 'efs elastic file system infrequent access', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'elastic_file_system_one_zone_infrequent_access;',
@@ -1814,12 +2069,44 @@
 					 s * 65, s * 78, '', 'Access Points', null, null, this.getTagsForStencil(gn, 'access points', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'archive;',
 					 s * 63, s * 78, '', 'Vault', null, null, this.getTagsForStencil(gn, 's3 simple storage service glacier archive', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_aws_backup_support_for_amazon_s3;',
+					 s * 78, s * 78, '', 'Backup AWS Backup Support for Amazon S3', null, null, this.getTagsForStencil(gn, 'backup aws backup support for amazon s3', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_aws_backup_support_for_vmware_workloads;',
+					 s * 78, s * 78, '', 'Backup AWS Backup Support for VMware Workloads', null, null, this.getTagsForStencil(gn, 'backup aws backup support for vmware workloads', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_plan;',
+					 s * 60, s * 78, '', 'Backup Plan', null, null, this.getTagsForStencil(gn, 'backup plan', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_restore;',
+					 s * 78, s * 78, '', 'Backup Restore', null, null, this.getTagsForStencil(gn, 'backup restore', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_vault;',
+					 s * 78, s * 78, '', 'Backup Vault', null, null, this.getTagsForStencil(gn, 'backup vault', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_compliance_reporting;',
+					 s * 64, s * 78, '', 'Backup Compliance Reporting', null, null, this.getTagsForStencil(gn, 'backup compliance reporting', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_compute;',
+					 s * 78, s * 77, '', 'Backup Compute', null, null, this.getTagsForStencil(gn, 'backup compute', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_database;',
+					 s * 78, s * 77, '', 'Backup Database', null, null, this.getTagsForStencil(gn, 'backup database', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_gateway;',
+					 s * 78, s * 77, '', 'Backup Gateway', null, null, this.getTagsForStencil(gn, 'backup gateway', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_recovery_point_objective;',
+					 s * 78, s * 77, '', 'Backup Recovery Point Objective', null, null, this.getTagsForStencil(gn, 'backup recovery point objective', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_recovery_time_objective;',
+					 s * 78, s * 75, '', 'Backup Recovery Time Objective', null, null, this.getTagsForStencil(gn, 'backup recovery time objective', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_storage;',
+					 s * 78, s * 77, '', 'Backup Storage', null, null, this.getTagsForStencil(gn, 'backup storage', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_virtual_machine;',
+					 s * 78, s * 78, '', 'Backup Virtual Machine', null, null, this.getTagsForStencil(gn, 'backup virtual machine', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'backup_virtual_machine_monitor;',
+					 s * 70, s * 78, '', 'Backup Virtual Machine Monitor', null, null, this.getTagsForStencil(gn, 'backup virtual machine monitor', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'vault;',
 					 s * 62, s * 78, '', 'Archive', null, null, this.getTagsForStencil(gn, 's3 simple storage service glacier vault', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'bucket;',
 					 s * 75, s * 78, '', 'Bucket', null, null, this.getTagsForStencil(gn, 's3 simple storage service bucket', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'intelligent_tiering;',
 					 s * 75, s * 78, '', 'Intelligent Tiering', null, null, this.getTagsForStencil(gn, 'intelligent tiering', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 's3_object_lambda;',
+					 s * 53, s * 78, '', 'S3 Object Lambda', null, null, this.getTagsForStencil(gn, 's3 object lambda', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 's3_object_lambda_access_points;',
+					 s * 78, s * 78, '', 'S3 Object Lambda Access Points', null, null, this.getTagsForStencil(gn, 's3 object lambda access points', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 's3_on_outposts;',
 					 s * 78, s * 78, '', 'S3 On Outposts', null, null, this.getTagsForStencil(gn, 's3 on outposts', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'standard_ia;',
@@ -1830,6 +2117,8 @@
 					 s * 75, s * 78, '', 'One Zone IA', null, null, this.getTagsForStencil(gn, 'one zone ia', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'glacier;',
 					 s * 75, s * 78, '', 'Glacier', null, null, this.getTagsForStencil(gn, 'glacier', dt).join(' ')),
+			 this.createVertexTemplateEntry(n + 'simple_storage_service_s3_glacier_instant_retrieval;',
+					 s * 78, s * 78, '', 'Glacier Instant Retrieval', null, null, this.getTagsForStencil(gn, 'glacier instant retrieval', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'glacier_deep_archive;',
 					 s * 75, s * 78, '', 'Glacier Deep Archive', null, null, this.getTagsForStencil(gn, 'glacier deep archive', dt).join(' ')),
 			 this.createVertexTemplateEntry(n + 'bucket_with_objects;',
