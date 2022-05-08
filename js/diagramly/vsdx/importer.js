@@ -60,24 +60,26 @@ var com;
                 
                 mxVsdxCodec.parsererrorNS_$LI$ = function ()
                 {
-            		if (mxVsdxCodec.parsererrorNS == null)
-            		{
-            			mxVsdxCodec.parsererrorNS = "";
-            			
-            			if (window.DOMParser) 
-            			{
-	            			var parser = new DOMParser();
-	            			
-	            			try
-	            			{
-	            				mxVsdxCodec.parsererrorNS = parser.parseFromString('<', 'text/xml').getElementsByTagName("parsererror")[0].namespaceURI;
-	            			}
-	            			catch(e)
-	            			{
-	            				//ignore! IE11 throw an exception on XML syntax error
-	            			}
-            			}
-        			}
+					mxVsdxCodec.parsererrorNS = mxConstants.NS_XHTML;
+	
+//            		if (mxVsdxCodec.parsererrorNS == null)
+//            		{
+//            			mxVsdxCodec.parsererrorNS = "";
+//            			
+//            			if (window.DOMParser) 
+//            			{
+//	            			var parser = new DOMParser();
+//	            			
+//	            			try
+//	            			{
+//	            				mxVsdxCodec.parsererrorNS = parser.parseFromString('<', 'text/xml').getElementsByTagName("parsererror")[0].namespaceURI;
+//	            			}
+//	            			catch(e)
+//	            			{
+//	            				//ignore! IE11 throw an exception on XML syntax error
+//	            			}
+//            			}
+//        			}
 
             		return mxVsdxCodec.parsererrorNS;
                 };
@@ -275,7 +277,7 @@ var com;
 		                    		
 		                    		if (onerror != null) 
 		                    		{
-		                    			onerror();
+		                    			onerror(e);
 		                    		}
 		                    		else
 		                    		{
@@ -506,7 +508,8 @@ var com;
                         //var pageName_1 = org.apache.commons.lang3.StringEscapeUtils.escapeXml11(page.getPageName());
                     	//TODO FIXME htmlEntities is not exactly as escapeXml11 but close
                         var pageName_1 = mxUtils.htmlEntities(page.getPageName()) + (page.isBackground()? ' (Background)' : '');
-                        output += '<diagram name="' + pageName_1 + '" id="' + pageName_1.replace(/\s/g, '_') + '">';
+                        var pageNameU = mxUtils.htmlEntities(page.getPageNameU());
+                        output += '<diagram name="' + pageName_1 + '" id="' + pageNameU.replace(/\s/g, '_') + '">';
                     }
                     
                     output += Graph.compress(modelString);
@@ -754,18 +757,29 @@ var com;
                 	{
                 		var me = this;
                 		var toCropImgs = [];
-	                	var shapes = page.getShapes().entries || [];
 	                	
-	                	for (var i = 0; i < shapes.length; i++)
-	            		{
-	                		var shape = shapes[i].value || {};
-	                		
-	                		if (shape.toBeCroppedImg)
-	                		{
-	                			toCropImgs.push(shape);
-	                		}
-	            		}
-	                	
+                        function checkShapes(shapes)
+                        {
+                            if (shapes != null)
+                            {
+                                shapes = shapes.entries || [];
+
+                                for (var i = 0; i < shapes.length; i++)
+                                {
+                                    var shape = shapes[i].value || {};
+                                    
+                                    if (shape.toBeCroppedImg)
+                                    {
+                                        toCropImgs.push(shape);
+                                    }
+
+                                    checkShapes(shape.getChildShapes());
+                                }
+                            }
+                        }
+
+                        checkShapes(page.getShapes());
+
 	                	if (toCropImgs.length > 0)
                 		{
 	                		function cropImage(index, callback)
@@ -902,7 +916,7 @@ var com;
                             }
                             else if (lnkObj.pageLink)
                         	{
-                            	graph.setLinkForCell(v1, 'data:page/id,' + lnkObj.pageLink);
+                            	graph.setLinkForCell(v1, 'data:page/id,' + lnkObj.pageLink.replace(/\s/g, '_'));
                         	}
                             
 							// Add Shape properties
@@ -910,7 +924,14 @@ var com;
 							
 							for (var i = 0; i < props.length; i++)
 							{
-								graph.setAttributeForCell(v1, props[i].key, props[i].val);
+								try
+								{
+									graph.setAttributeForCell(v1, props[i].key, props[i].val);	
+								}
+								catch(e)
+								{
+									console.log('Attribute: "', props[i].key, '" with value "', props[i].val, '" not allowed in HTML');
+								}
 							}
 							
                             return v1;
@@ -971,6 +992,7 @@ var com;
                         var textLabel = shape.getTextLabel();
                         group = graph.insertVertex(parent, null, textLabel, Math.floor(Math.round(o.x * 100) / 100), Math.floor(Math.round(o.y * 100) / 100), Math.floor(Math.round(d.x * 100) / 100), Math.floor(Math.round(d.y * 100) / 100), style);
                     }
+                    var potH = group.geometry.height;
                     var entries = (function (a) { var i = 0; return { next: function () { return i < a.length ? a[i++] : null; }, hasNext: function () { return i < a.length; } }; })(/* entrySet */ (function (m) { if (m.entries == null)
                         m.entries = []; return m.entries; })(children));
                     while ((entries.hasNext())) {
@@ -997,11 +1019,17 @@ var com;
                             } })(type, com.mxgraph.io.vsdx.mxVsdxConstants.FOREIGN))) {
                                 if (subShape.isVertex()) {
                                     subShape.propagateRotation(shape.getRotation());
+                                    var tmpV;
                                     if (subShape.isGroup()) {
-                                        this.addGroup(graph, subShape, group, pageId, d.y);
+                                        tmpV = this.addGroup(graph, subShape, group, pageId, d.y);
                                     }
                                     else {
-                                        this.addVertex(graph, subShape, group, pageId, d.y);
+                                        tmpV = this.addVertex(graph, subShape, group, pageId, d.y);
+                                    }
+
+                                    if (tmpV && tmpV.geometry)
+                                    {
+                                        potH = Math.max(tmpV.geometry.height, potH);
                                     }
                                 }
                             }
@@ -1035,6 +1063,19 @@ var com;
                         }
                     }
                     ;
+                    if (group.children && group.geometry.height == 0 && potH > 0) 
+                    {
+                        group.geometry.height = potH;
+
+                        for (var i = 0; i < group.children.length; i++)
+                        {
+                            var child = group.children[i];
+                            if (child.geometry)
+                            {
+                                child.geometry.y += potH;
+                            }
+                        }
+                    }
                     if (subLabel) {
                         shape.createLabelSubShape(graph, group);
                     }
@@ -2862,6 +2903,17 @@ var com;
                             this.closePath(parsedGeom, lastGeoStyle);
                         }
                         /* append */ (function (sb) { return sb.str = sb.str.concat("</foreground></shape>"); })(parsedGeom);
+						
+						//If the geomertry has no move, it will cause errors in SVG. So, ignore this shape 
+						//A path with no move in the beginning is invalid
+						//https://www.w3.org/TR/SVG11/paths.html#PathDataMovetoCommands
+						//https://stackoverflow.com/questions/56275231/do-all-svg-paths-have-to-start-with-a-move
+						//TODO Find a faster technique, then enable this
+						/*if (parsedGeom.str.indexOf('<move') < 0)
+						{
+							return '';
+						}*/
+						
                         return parsedGeom.str;
                     };
                     /*private*/ mxVsdxGeometryList.prototype.processGeo = function (shape, p, parsedGeom, lastGeoStyle, withFill) {
@@ -3523,6 +3575,8 @@ var com;
                         }
                         this.Id = parseFloat(pageElem.getAttribute(com.mxgraph.io.vsdx.mxVsdxConstants.ID));
                         this.pageName = pageElem.getAttribute(com.mxgraph.io.vsdx.mxVsdxConstants.NAME) || "";
+						this.pageNameU = pageElem.getAttribute(com.mxgraph.io.vsdx.mxVsdxConstants.NAME_U) || this.pageName;
+
                         var pageSheets = com.mxgraph.io.vsdx.mxVsdxUtils.getDirectChildNamedElements(pageElem, "PageSheet");
                         if (pageSheets.length > 0) {
                             var pageSheet = pageSheets[0];
@@ -3835,6 +3889,9 @@ var com;
                     mxVsdxPage.prototype.getPageName = function () {
                         return this.pageName;
                     };
+                    mxVsdxPage.prototype.getPageNameU = function () {
+                        return this.pageNameU;
+                    };
                     mxVsdxPage.prototype.getShapes = function () {
                         return this.shapes;
                     };
@@ -4138,7 +4195,7 @@ var com;
                             ;
                         }
                         catch (e) {
-                            console.error(e.message, e);
+                           // console.error(e.message, e);
                         }
                         ;
                         this.isProcessed = true;
@@ -4967,7 +5024,7 @@ var com;
                                     style = style + key + asig;
                                 }
                                 catch (e) {
-                                	console.error("mxVsdxUtils.getStyleString," + e + ",style.length=" + style.length + ",key.length=" + key.length + ",asig.length=" + asig.length);
+                                	//console.error("mxVsdxUtils.getStyleString," + e + ",style.length=" + style.length + ",key.length=" + key.length + ",asig.length=" + asig.length);
                                 }
                                 ;
                             }
@@ -4982,8 +5039,8 @@ var com;
                      * @param {string} tag Name of the tag.
                      * @return {string} &lt tag &gt text &lt /tag &gt
                      */
-                    mxVsdxUtils.surroundByTags = function (text, tag) {
-                        return "<" + tag + ">" + text + "</" + tag + ">";
+                    mxVsdxUtils.surroundByTags = function (text, tag, style) {
+                        return "<" + tag + (style? ' style="' + style + '"' : '') + ">" + text + "</" + tag + ">";
                     };
                     /**
                      * Converts the ampersand, quote, prime, less-than and greater-than
@@ -7748,7 +7805,7 @@ var com;
                                     return Math.round(parsedValue * 100.0) / 100.0;
                                 }
                                 catch (e) {
-                                    console.error(e.message, e);
+                                    //console.error(e.message, e);
                                 }
                                 ;
                             }
@@ -7764,7 +7821,7 @@ var com;
                                     return this.getScreenNumericalValue$double(parsedValue);
                                 }
                                 catch (e) {
-                                    console.error(e.message, e);
+                                    //console.error(e.message, e);
                                 }
                                 ;
                             }
@@ -9184,16 +9241,43 @@ var com;
                                         }
                                         if (!(value.length === 0)) {
                                             try {
-                                                if ((function (str, searchString, position) {
-                                                    if (position === void 0) { position = 0; }
-                                                    return str.substr(position, searchString.length) === searchString;
-                                                })(format, "{{")) {
+                                            	//Date can be in string date format or a number
+                                            	var date = isNaN(value)? new Date(value) : new Date(Shape.VSDX_START_TIME + Math.floor((parseFloat(value) * 24 * 60 * 60 * 1000)));
+
+												if (format == 'c')
+												{
+													if (date.getHours() + date.getMinutes() + date.getSeconds() + date.getMilliseconds() == 0)
+													{
+														format = 'm/d/yyyy';
+													}
+													else
+													{
+														format = 'm/d/yyyy h:MM:ss tt';															
+													}
+												}
+												else if (format == 'ddddd')
+												{
+													format = 'm/d/yyyy';
+												}
+												else if (format == 'dddddd')
+												{
+													format = 'dddd, mmmm dd, yyyy';
+												}
+												else if (format == 'C')
+												{
+													format = 'dddd, mmmm dd, yyyy h:MM:ss tt';
+												}
+												else if (format == 'T')
+												{
+													format = 'h:MM:ss tt';
+												}
+												else
+												{
                                                 	//Our date format function swaps M/m meaning
-                                                	format = format.replace(/m/g, '@').replace(/M/g, 'm').replace(/@/g, 'M');
-                                                	//Date can be in string date format or a number
-                                                	var date = isNaN(value)? new Date(value) : new Date(Shape.VSDX_START_TIME + Math.floor((parseFloat(value) * 24 * 60 * 60 * 1000)));
-                                                	value = Graph.prototype.formatDate(date, /* replaceAll */ format.replace(new RegExp("\\{|\\}", 'g'), ""));
+                                                	format = format.replace(/am\/pm/g, 'tt').replace(/m/g, '@').replace(/M/g, 'm').replace(/@/g, 'M');
                                                 }
+
+                                               	value = Graph.prototype.formatDate(date, /* replaceAll */ 'UTC:' + format.replace(new RegExp("\\{|\\}", 'g'), ""));
                                             }
                                             catch (e) {
                                             }
@@ -9237,6 +9321,19 @@ var com;
                      * @return {number} Numerical value of the width element.
                      */
                     Shape.prototype.getWidth = function () {
+                        if (this.width < 1 && this.childShapes != null)
+                        {
+                            try
+                            {
+                                for (var i = 0; i < this.childShapes.entries.length; i++)
+                                {
+                                    var c = this.childShapes.entries[i].value;
+                                    this.width = Math.max(c.width, this.width);
+                                }
+                            }
+                            catch(e){}
+                        }
+
                         return this.width === 0 && this.height > 0 ? 1 : this.width;
                     };
                     /**
@@ -9244,6 +9341,19 @@ var com;
                      * @return {number} Numerical value of the height element.
                      */
                     Shape.prototype.getHeight = function () {
+                        if (this.height < 1 && this.childShapes != null)
+                        {
+                            try
+                            {
+                                for (var i = 0; i < this.childShapes.entries.length; i++)
+                                {
+                                    var c = this.childShapes.entries[i].value;
+                                    this.height = Math.max(c.height, this.height);
+                                }
+                            }
+                            catch(e){}
+                        }
+
                         return this.height === 0 && this.width > 0 ? 1 : this.height;
                     };
                     /**
@@ -9631,7 +9741,7 @@ var com;
                     Shape.prototype.getTextSize = function (index) {
                         var sizeElem = this.getCellElement$java_lang_String$java_lang_String$java_lang_String(com.mxgraph.io.vsdx.mxVsdxConstants.SIZE, index, com.mxgraph.io.vsdx.mxVsdxConstants.CHARACTER);
                         var size = this.getScreenNumericalValue$org_w3c_dom_Element$double(sizeElem, 12);
-                        return ('' + (Math.floor(Math.round(size * 100) / 100)));
+                        return ('' + (Math.round(size * 100) / 100));
                     };
                     /**
                      * Returns the vertical align of the label.<br/>
@@ -9682,9 +9792,55 @@ var com;
                     Shape.prototype.setLastKnot = function (lastKnot) {
                         this.lastKnot = lastKnot;
                     };
+
+                    Shape.prototype.getConnections = function () 
+                    {
+						var connections = [];
+
+                    	if (this.sections && this.sections['Connection'])
+                    	{
+                            var h = this.getHeight(), w = this.getWidth();
+	                    	var rows = com.mxgraph.io.vsdx.mxVsdxUtils.getDirectChildNamedElements(this.sections['Connection'].elem, "Row");
+
+	                    	for (var i = 0; i < rows.length; i++)
+	                    	{
+								var cells = com.mxgraph.io.vsdx.mxVsdxUtils.getDirectChildElements(rows[i]);
+                                var x, y;
+
+                        		for (var j = 0; j < cells.length; j++)
+                    			{
+                            		var cell = cells[j];
+									var cn = cell.getAttribute("N");
+                                    var val = this.getScreenNumericalValue$org_w3c_dom_Element$double(cell, 0);
+                        			
+                        			if (cn == 'X')
+                        			{
+                            			x = mxUtils.format(val / w);
+                        			}
+                                    else if (cn == 'Y')
+                                    {
+                                        y = mxUtils.format(1 - val / h);
+                                    }
+                        		}
+
+                                if (x != null && y != null)
+                                {
+                                    connections.push({x: x, y: y});
+                                }
+		                    }
+                    	}
+
+                        if (connections.length == 0 && this.master && this.master.masterShape)
+                        {
+                            connections = this.master.masterShape.getConnections();
+                        }
+
+						return connections;
+                    };
+
                     return Shape;
                 }(com.mxgraph.io.vsdx.Style));
-                Shape.VSDX_START_TIME = -2209168800000;
+                Shape.VSDX_START_TIME = new Date('1899-12-30T00:00:00Z').getTime();
                 vsdx.Shape = Shape;
                 Shape["__class"] = "com.mxgraph.io.vsdx.Shape";
             })(vsdx = io.vsdx || (io.vsdx = {}));
@@ -10410,8 +10566,7 @@ var com;
                         
                         var end = first ? "" : "</p>";
                         ret += end;
-                        com.mxgraph.io.vsdx.mxVsdxUtils.surroundByTags(ret, "div");
-                        return ret;
+                        return com.mxgraph.io.vsdx.mxVsdxUtils.surroundByTags(ret, "div", "font-size: 1px");
                     };
                     
                     /**
@@ -10892,6 +11047,26 @@ var com;
                         } })("1", flibY)) {
                             /* put */ (this.styleMap[mxConstants.STYLE_FLIPV] = "1");
                         }
+
+                        //Connection points
+                        try
+                        {
+                            var connections = this.getConnections();
+                            var cPoints = [];
+
+                            for (var i = 0; i < connections.length; i++)
+                            {
+                                //TODO Does vsdx connections points needs dx/dy?
+                                cPoints.push('[' + connections[i].x + ',' + connections[i].y + ',0]');
+                            }
+
+                            this.styleMap['points'] = '[' + cPoints.join(',') + ']';
+                        }
+                        catch(e)
+                        {
+                            console.log(e);
+                        }
+
                         this.resolveCommonStyles();
                         return this.styleMap;
                     };
@@ -11449,7 +11624,7 @@ var com;
                                 /* put */ (result[mxConstants.STYLE_SHAPE] = "stencil(" + enc + ")");
                             }
                             catch (e) {
-                                console.error(e.message, e);
+                                //console.error(e.message, e);
                             }
                             ;
                         }

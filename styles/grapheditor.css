@@ -1,5 +1,5 @@
 .geEditor {
-	font-family:Helvetica,Arial,sans-serif;
+	font-family:-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, ui-sans-serif, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	font-size:14px;
 	border:none;
 	margin:0px;
@@ -86,21 +86,29 @@
 	filter:alpha(opacity=80);
 	font-size:9pt;
 }
-.geStatusAlert {
+.geStatus > * {
+	overflow:hidden;
 	white-space:nowrap;
-	margin-top:-5px;
+	vertical-align:middle;
+	display:inline-block;
 	font-size:12px;
-	padding:4px 6px 4px 6px;
+	margin-right:8px;
+}
+.geStatus img {
+	max-width:16px;
+	vertical-align:bottom;
+}
+.geStatusAlert {
+	padding:4px 8px;
+	margin-top:-4px;
 	background-color:#f2dede;
 	border:1px solid #ebccd1;
 	color:#a94442 !important;
 	border-radius:3px;
 }
 .geStatusAlertOrange {
-	white-space:nowrap;
-	margin-top:-5px;
-	font-size:12px;
-	padding:4px 6px 4px 6px;
+	padding:4px 8px;
+	margin-top:-4px;
 	background-color:rgb(242, 147, 30);
 	border:rgb(240, 135, 5);
 	color:#000000 !important;
@@ -111,9 +119,8 @@
 	opacity:1;
 }
 .geStatusMessage {
-	white-space:nowrap;
-	margin-top:-5px;
 	padding:4px 6px 4px 6px;
+	margin-top:-4px;
 	font-size:12px;
 	background: -webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
     background: -o-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
@@ -242,7 +249,7 @@
 }
 .geActivePage {
 	font-weight:bold;
-	color:#188038 !important;
+	color:#DF6C0C !important;
 }
 .geMenubarContainer, .geToolbarContainer, .geHsplit, .geVsplit {
 	background-color:#fbfbfb;
@@ -289,7 +296,8 @@
 }
 .geMenubar a.geStatus {
 	color:#888888;
-	padding-left:12px;
+	padding-top:5px;
+	padding-left:8px;
 	display:inline-block;
 	cursor:default !important;
 }
@@ -751,7 +759,7 @@ html table.mxPopupMenu {
 }
 html td.mxPopupMenuItem {
 	padding:7px 30px 7px 30px;
-	font-family:Helvetica Neue,Helvetica,Arial Unicode MS,Arial;
+	font-family:-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, ui-sans-serif, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	font-size:10pt;
 }
 html td.mxPopupMenuIcon {
@@ -786,11 +794,14 @@ table.mxPopupMenu tr {
 	font-size:4pt;
 }
 html td.mxWindowTitle {
-	font-family:Helvetica Neue,Helvetica,Arial Unicode MS,Arial;
+	font-family:-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, ui-sans-serif, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
  	text-align:left;
  	font-size:12px;
  	color:rgb(112, 112, 112);
  	padding:4px;
+}
+table.geProperties {
+	table-layout:fixed;
 }
 table.geProperties tr td {
 	height:21px;
@@ -819,7 +830,10 @@ table.geProperties tr td {
 }
 .gePropRowCell {
     border-left: 1px solid #f3f3f3;
-    width: 50%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+    max-width: 50%;
 }
 .gePropRow>.gePropRowCell {
     background: #fff;
@@ -1839,4 +1853,71 @@ table.geProperties tr td {
   cursor: pointer;
   user-select: none;
   transition: all 0.5s;
+}
+
+/*Electron Window Controls*/
+#geWindow-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  height: 22px;
+  -webkit-app-region: no-drag;
+}
+
+#geWindow-controls .button {
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+#min-button {
+  grid-column: 1;
+}
+#max-button, #restore-button {
+  grid-column: 2;
+}
+#close-button {
+  grid-column: 3;
+}
+#geWindow-controls .button.dark:hover {
+  background: rgba(255,255,255,0.1);
+}
+#geWindow-controls .button.dark:active {
+  background: rgba(255,255,255,0.2);
+}
+
+#geWindow-controls .button.white:hover {
+  background: rgba(0,0,0,0.1);
+}
+#geWindow-controls .button.white:active {
+  background: rgba(0,0,0,0.2);
+}
+
+#close-button:hover {
+  background: #E81123 !important;
+}
+#close-button:active {
+  background: #F1707A !important;
+}
+
+#restore-button {
+  display: none !important;
+}
+/*
+.geMaximized #titlebar {
+  width: 100%;
+  padding: 0;
+}
+*/
+.geMaximized #restore-button {
+  display: flex !important;
+}
+
+.geMaximized #max-button {
+  display: none;
 }

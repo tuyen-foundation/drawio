@@ -13,6 +13,71 @@ Format = function(editorUi, container)
 Format.inactiveTabBackgroundColor = '#f1f3f4';
 
 /**
+ * Icons for markers (24x16).
+ */
+Format.classicFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 10 2 L 5 8 L 10 14 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.classicThinFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 4 L 3 8 L 8 12 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.openFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 8 0 L 0 8 L 8 16 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.openThinFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 8 4 L 0 8 L 8 12 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.openAsyncFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 8 4 L 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.blockFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 2 L 8 14 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.blockThinFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 4 L 8 12 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.asyncFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 6 8 L 6 4 L 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.ovalFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 A 5 5 0 0 1 5 3 A 5 5 0 0 1 11 8 A 5 5 0 0 1 5 13 A 5 5 0 0 1 0 8 Z M 10 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.diamondFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 6 2 L 12 8 L 6 14 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.diamondThinFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 3 L 16 8 L 8 13 Z M 0 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+Format.classicMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 10 2 L 5 8 L 10 14 Z M 5 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.classicThinMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 4 L 5 8 L 8 12 Z M 5 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.blockMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 2 L 8 14 Z M 8 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.blockThinMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 4 L 8 12 Z M 8 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.asyncMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 6 8 L 6 4 L 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ovalMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 A 5 5 0 0 1 5 3 A 5 5 0 0 1 11 8 A 5 5 0 0 1 5 13 A 5 5 0 0 1 0 8 Z M 10 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.diamondMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 6 2 L 12 8 L 6 14 Z M 12 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.diamondThinMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 3 L 16 8 L 8 13 Z M 16 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.boxMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 3 L 10 3 L 10 13 L 0 13 Z M 10 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.halfCircleMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 3 A 5 5 0 0 1 5 8 A 5 5 0 0 1 0 13 M 5 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.dashMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 2 L 12 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.crossMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 2 L 12 14 M 12 2 L 0 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.circlePlusMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 A 6 6 0 0 1 6 2 A 6 6 0 0 1 12 8 A 6 6 0 0 1 6 14 A 6 6 0 0 1 0 8 Z M 6 2 L 6 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.circleMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 A 6 6 0 0 1 6 2 A 6 6 0 0 1 12 8 A 6 6 0 0 1 6 14 A 6 6 0 0 1 0 8 Z M 12 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ERmandOneMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 6 2 L 6 14 M 9 2 L 9 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ERmanyMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 2 L 12 8 L 0 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ERoneToManyMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 2 L 12 8 L 0 14 M 15 2 L 15 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ERzeroToOneMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 8 8 A 5 5 0 0 1 13 3 A 5 5 0 0 1 18 8 A 5 5 0 0 1 13 13 A 5 5 0 0 1 8 8 Z M 0 8 L 8 8 M 18 8 L 24 8 M 4 3 L 4 13" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.ERzeroToManyMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 8 8 A 5 5 0 0 1 13 3 A 5 5 0 0 1 18 8 A 5 5 0 0 1 13 13 A 5 5 0 0 1 8 8 Z M 0 8 L 8 8 M 18 8 L 24 8 M 0 3 L 8 8 L 0 13" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.EROneMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 5 2 L 5 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.baseDashMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 2 L 0 14 M 0 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.doubleBlockMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 2 L 8 14 Z M 8 8 L 16 2 L 16 14 Z M 16 8 L 24 8" stroke="#404040" fill="transparent"/>', 32, 20);
+Format.doubleBlockFilledMarkerImage = Graph.createSvgImage(20, 22, '<path transform="translate(4,2)" stroke-width="2" d="M 0 8 L 8 2 L 8 14 Z M 8 8 L 16 2 L 16 14 Z M 16 8 L 24 8" stroke="#404040" fill="#404040"/>', 32, 20);
+
+/**
+ * Adds a style change item to the given menu.
+ */
+Format.processMenuIcon = function(elt, transform)
+{
+	 var imgs = elt.getElementsByTagName('img');
+ 
+	 if (imgs.length > 0)
+	 {
+		 if (Editor.isDarkMode())
+		 {
+			 imgs[0].style.filter = 'invert(100%)';
+		 }
+ 
+		 imgs[0].className = 'geIcon';
+		 imgs[0].style.padding = '0px';
+		 imgs[0].style.margin = '0 0 0 2px';
+
+		 if (transform != null)
+		 {
+		 	mxUtils.setPrefixedStyle(imgs[0].style, 'transform', transform);
+		 }
+	 }
+ 
+	 return elt;
+};
+ 
+/**
  * Returns information about the current selection.
  */
 Format.prototype.labelIndex = 0;
@@ -33,14 +98,6 @@ Format.prototype.currentIndex = 0;
 Format.prototype.showCloseButton = true;
 
 /**
- * Background color for inactive tabs.
- */
-Format.prototype.roundableShapes = ['label', 'rectangle', 'internalStorage', 'corner',
-	'parallelogram', 'swimlane', 'triangle', 'trapezoid', 'ext', 'step', 'tee', 'process',
-	'link', 'rhombus', 'offPageConnector', 'loopLimit', 'hexagon', 'manualInput', 'card',
-	'curlyBracket', 'singleArrow', 'callout', 'doubleArrow', 'flexArrow', 'umlLifeline'];
-
-/**
  * Adds the label menu items to the given menu and parent.
  */
 Format.prototype.init = function()
@@ -51,284 +108,19 @@ Format.prototype.init = function()
 	
 	this.update = mxUtils.bind(this, function(sender, evt)
 	{
-		this.clearSelectionState();
 		this.refresh();
 	});
 	
 	graph.getSelectionModel().addListener(mxEvent.CHANGE, this.update);
+	graph.getModel().addListener(mxEvent.CHANGE, this.update);
 	graph.addListener(mxEvent.EDITING_STARTED, this.update);
 	graph.addListener(mxEvent.EDITING_STOPPED, this.update);
-	graph.getModel().addListener(mxEvent.CHANGE, this.update);
 	graph.getView().addListener('unitChanged', this.update);
-	
-	graph.addListener(mxEvent.ROOT, mxUtils.bind(this, function()
-	{
-		this.refresh();
-	}));
-	
-	ui.addListener('styleChanged', mxUtils.bind(this, function(sender, evt)
-	{
-		this.refresh();
-	}));
-	
-	editor.addListener('autosaveChanged', mxUtils.bind(this, function()
-	{
-		this.refresh();
-	}));
+	editor.addListener('autosaveChanged', this.update);
+	graph.addListener(mxEvent.ROOT, this.update);
+	ui.addListener('styleChanged', this.update);
 	
 	this.refresh();
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.clearSelectionState = function()
-{
-	this.selectionState = null;
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.getSelectionState = function()
-{
-	if (this.selectionState == null)
-	{
-		this.selectionState = this.createSelectionState();
-	}
-	
-	return this.selectionState;
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.createSelectionState = function()
-{
-	var cells = this.editorUi.editor.graph.getSelectionCells();
-	var result = this.initSelectionState();
-	var initial = true;
-	
-	for (var i = 0; i < cells.length; i++)
-	{
-		var style = this.editorUi.editor.graph.getCurrentCellStyle(cells[i]);
-	
-		if (mxUtils.getValue(style, mxConstants.STYLE_EDITABLE, '1') != '0')
-		{
-			this.updateSelectionStateForCell(result, cells[i], cells, initial);
-			initial = false;
-		}
-	}
-	
-	return result;
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.initSelectionState = function()
-{
-	return {vertices: [], edges: [], cells: [], x: null, y: null, width: null, height: null,
-		style: {}, containsImage: false, containsLabel: false, fill: true, glass: true,
-		rounded: true, autoSize: false, image: true, shadow: true, lineJumps: true, resizable: true,
-		table: false, cell: false, row: false, movable: true, rotatable: true, stroke: true};
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.updateSelectionStateForCell = function(result, cell, cells, initial)
-{
-	var graph = this.editorUi.editor.graph;
-	result.cells.push(cell);
-	
-	if (graph.getModel().isVertex(cell))
-	{
-		result.resizable = result.resizable && graph.isCellResizable(cell);
-		result.rotatable = result.rotatable && graph.isCellRotatable(cell);
-		result.movable = result.movable && graph.isCellMovable(cell) &&
-			!graph.isTableRow(cell) && !graph.isTableCell(cell);
-		result.table = result.table || graph.isTable(cell);
-		result.cell = result.cell || graph.isTableCell(cell);
-		result.row = result.row || graph.isTableRow(cell);
-		result.vertices.push(cell);
-		var geo = graph.getCellGeometry(cell);
-		
-		if (geo != null)
-		{
-			if (geo.width > 0)
-			{
-				if (result.width == null)
-				{
-					result.width = geo.width;
-				}
-				else if (result.width != geo.width)
-				{
-					result.width = '';
-				}
-			}
-			else
-			{
-				result.containsLabel = true;
-			}
-			
-			if (geo.height > 0)
-			{
-				if (result.height == null)
-				{
-					result.height = geo.height;
-				}
-				else if (result.height != geo.height)
-				{
-					result.height = '';
-				}
-			}
-			else
-			{
-				result.containsLabel = true;
-			}
-			
-			if (!geo.relative || geo.offset != null)
-			{
-				var x = (geo.relative) ? geo.offset.x : geo.x;
-				var y = (geo.relative) ? geo.offset.y : geo.y;
-				
-				if (result.x == null)
-				{
-					result.x = x;
-				}
-				else if (result.x != x)
-				{
-					result.x = '';
-				}
-				
-				if (result.y == null)
-				{
-					result.y = y;
-				}
-				else if (result.y != y)
-				{
-					result.y = '';
-				}
-			}
-		}
-	}
-	else if (graph.getModel().isEdge(cell))
-	{
-		result.edges.push(cell);
-		result.resizable = false;
-		result.rotatable = false;
-		result.movable = false;
-	}
-
-	var state = graph.view.getState(cell);
-	
-	if (state != null)
-	{
-		result.autoSize = result.autoSize || this.isAutoSizeState(state);
-		result.glass = result.glass && this.isGlassState(state);
-		result.rounded = result.rounded && this.isRoundedState(state);
-		result.lineJumps = result.lineJumps && this.isLineJumpState(state);
-		result.image = result.image && this.isImageState(state);
-		result.shadow = result.shadow && this.isShadowState(state);
-		result.fill = result.fill && this.isFillState(state);
-		result.stroke = result.stroke && this.isStrokeState(state);
-		
-		var shape = mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null);
-		result.containsImage = result.containsImage || shape == 'image';
-		graph.mergeStyle(state.style, result.style, initial);
-	}
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isFillState = function(state)
-{
-	return !this.isSpecialColor(state.style[mxConstants.STYLE_FILLCOLOR]) &&
-		(state.view.graph.model.isVertex(state.cell) ||
-		mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null) == 'arrow' ||
-		mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null) == 'filledEdge' ||
-		mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null) == 'flexArrow');
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isStrokeState = function(state)
-{
-	return !this.isSpecialColor(state.style[mxConstants.STYLE_STROKECOLOR]);
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isSpecialColor = function(color)
-{
-	return mxUtils.indexOf([mxConstants.STYLE_STROKECOLOR,
-		mxConstants.STYLE_FILLCOLOR, 'inherit', 'swimlane',
-		'indicated'], color) >= 0;
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isGlassState = function(state)
-{
-	var shape = mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null);
-	
-	return (shape == 'label' || shape == 'rectangle' || shape == 'internalStorage' ||
-			shape == 'ext' || shape == 'umlLifeline' || shape == 'swimlane' ||
-			shape == 'process');
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isRoundedState = function(state)
-{
-	return (state.shape != null) ? state.shape.isRoundable() :
-		mxUtils.indexOf(this.roundableShapes, mxUtils.getValue(state.style,
-		mxConstants.STYLE_SHAPE, null)) >= 0;
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isLineJumpState = function(state)
-{
-	var shape = mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null);
-	var curved = mxUtils.getValue(state.style, mxConstants.STYLE_CURVED, false);
-	
-	return !curved && (shape == 'connector' || shape == 'filledEdge');
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isAutoSizeState = function(state)
-{
-	return mxUtils.getValue(state.style, mxConstants.STYLE_AUTOSIZE, null) == '1';
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isImageState = function(state)
-{
-	var shape = mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null);
-	
-	return (shape == 'label' || shape == 'image');
-};
-
-/**
- * Returns information about the current selection.
- */
-Format.prototype.isShadowState = function(state)
-{
-	var shape = mxUtils.getValue(state.style, mxConstants.STYLE_SHAPE, null);
-	
-	return (shape != 'image');
 };
 
 /**
@@ -409,7 +201,7 @@ Format.prototype.immediateRefresh = function()
 		evt.preventDefault();
 	}));
 
-	var ss = this.getSelectionState();
+	var ss = ui.getSelectionState();
 	var containsLabel = ss.containsLabel;
 	var currentLabel = null;
 	var currentPanel = null;
@@ -684,7 +476,7 @@ BaseFormatPanel.prototype.installInputHandler = function(input, key, defaultValu
 				updating = false;
 			}
 		}
-		else if (value != mxUtils.getValue(this.format.getSelectionState().style, key, defaultValue))
+		else if (value != mxUtils.getValue(ui.getSelectionState().style, key, defaultValue))
 		{
 			if (graph.isEditing())
 			{
@@ -694,7 +486,7 @@ BaseFormatPanel.prototype.installInputHandler = function(input, key, defaultValu
 			graph.getModel().beginUpdate();
 			try
 			{
-				var cells = this.format.getSelectionState().cells;
+				var cells = ui.getSelectionState().cells;
 				graph.setCellStyles(key, value, cells);
 
 				// Handles special case for fontSize where HTML labels are parsed and updated
@@ -762,7 +554,7 @@ BaseFormatPanel.prototype.createPanel = function()
 {
 	var div = document.createElement('div');
 	div.className = 'geFormatSection';
-	div.style.padding = '12px 0px 12px 18px';
+	div.style.padding = '12px 0px 12px 14px';
 	
 	return div;
 };
@@ -786,15 +578,70 @@ BaseFormatPanel.prototype.createTitle = function(title)
 /**
  * 
  */
+BaseFormatPanel.prototype.addAction = function(div, name)
+{
+	var action = this.editorUi.actions.get(name);
+	var btn = null;
+
+	if (action != null && action.isEnabled())
+	{
+		btn = mxUtils.button(action.label, function(evt)
+		{
+			action.funct(evt, evt);
+		});
+		
+		var short = (action.shortcut != null) ? ' (' + action.shortcut + ')' : '';
+		btn.setAttribute('title', action.label + short);
+		btn.style.marginBottom = '2px';
+		btn.style.width = '210px';
+		div.appendChild(btn);
+		result = true;
+	}
+
+	return btn;
+};
+
+/**
+ * 
+ */
+BaseFormatPanel.prototype.addActions = function(div, names)
+{
+	var lastBr = null;
+	var last = null;
+	var count = 0;
+
+	for (var i = 0; i < names.length; i++)
+	{
+		var btn = this.addAction(div, names[i]);
+
+		if (btn != null)
+		{
+			count++;
+
+			if (mxUtils.mod(count, 2) == 0)
+			{
+				last.style.marginRight = '2px';
+				last.style.width = '104px';
+				btn.style.width = '104px';
+				lastBr.parentNode.removeChild(lastBr);
+			}
+
+			lastBr = mxUtils.br(div);
+			last = btn;
+		}
+	}
+
+	return count;
+};
+
+/**
+ * 
+ */
 BaseFormatPanel.prototype.createStepper = function(input, update, step, height, disableFocus, defaultValue, isFloat)
 {
 	step = (step != null) ? step : 1;
-	height = (height != null) ? height : 8;
-	
-	if (mxClient.IS_MT || document.documentMode >= 8)
-	{
-		height = height + 1;
-	} 
+	height = (height != null) ? height : 9;
+	var bigStep = 10 * step;
 	
 	var stepper = document.createElement('div');
 	mxUtils.setPrefixedStyle(stepper.style, 'borderRadius', '3px');
@@ -815,7 +662,11 @@ BaseFormatPanel.prototype.createStepper = function(input, update, step, height, 
 	down.className = 'geBtnDown';
 	stepper.appendChild(down);
 
-	mxEvent.addListener(down, 'click', function(evt)
+	mxEvent.addGestureListeners(down, function(evt)
+	{
+		// Stops text selection on shift+click
+		mxEvent.consume(evt);
+	}, null, function(evt)
 	{
 		if (input.value == '')
 		{
@@ -826,18 +677,22 @@ BaseFormatPanel.prototype.createStepper = function(input, update, step, height, 
 		
 		if (!isNaN(val))
 		{
-			input.value = val - step;
+			input.value = val - (mxEvent.isShiftDown(evt) ? bigStep : step);
 			
 			if (update != null)
 			{
 				update(evt);
 			}
 		}
-		
+
 		mxEvent.consume(evt);
 	});
 	
-	mxEvent.addListener(up, 'click', function(evt)
+	mxEvent.addGestureListeners(up, function(evt)
+	{
+		// Stops text selection on shift+click
+		mxEvent.consume(evt);
+	}, null, function(evt)
 	{
 		if (input.value == '')
 		{
@@ -848,14 +703,14 @@ BaseFormatPanel.prototype.createStepper = function(input, update, step, height, 
 		
 		if (!isNaN(val))
 		{
-			input.value = val + step;
+			input.value = val + (mxEvent.isShiftDown(evt) ? bigStep : step);
 			
 			if (update != null)
 			{
 				update(evt);
 			}
 		}
-		
+
 		mxEvent.consume(evt);
 	});
 	
@@ -892,6 +747,14 @@ BaseFormatPanel.prototype.createStepper = function(input, update, step, height, 
 			}
 		);
 	}
+	else
+	{
+		// Stops propagation on checkbox labels
+		mxEvent.addListener(stepper, 'click', function(evt)
+		{
+			mxEvent.consume(evt);
+		});
+	}
 	
 	return stepper;
 };
@@ -902,25 +765,29 @@ BaseFormatPanel.prototype.createStepper = function(input, update, step, height, 
 BaseFormatPanel.prototype.createOption = function(label, isCheckedFn, setCheckedFn, listener, fn)
 {
 	var div = document.createElement('div');
-	div.style.padding = '6px 0px 1px 0px';
+	div.style.padding = '3px 0px 3px 0px';
 	div.style.whiteSpace = 'nowrap';
+	div.style.textOverflow = 'ellipsis';
 	div.style.overflow = 'hidden';
 	div.style.width = '200px';
 	div.style.height = '18px';
 	
 	var cb = document.createElement('input');
 	cb.setAttribute('type', 'checkbox');
-	cb.style.margin = '0px 6px 0px 0px';
+	cb.style.margin = '1px 6px 0px 0px';
+	cb.style.verticalAlign = 'top';
 	div.appendChild(cb);
 
 	var span = document.createElement('span');
+	span.style.verticalAlign = 'top';
+	span.style.userSelect = 'none';
 	mxUtils.write(span, label);
 	div.appendChild(span);
 
 	var applying = false;
 	var value = isCheckedFn();
 	
-	var apply = function(newValue)
+	var apply = function(newValue, evt)
 	{
 		if (!applying)
 		{
@@ -946,7 +813,7 @@ BaseFormatPanel.prototype.createOption = function(label, isCheckedFn, setChecked
 				// Checks if the color value needs to be updated in the model
 				if (isCheckedFn() != value)
 				{
-					setCheckedFn(value);
+					setCheckedFn(value, evt);
 				}
 			}
 			
@@ -966,7 +833,7 @@ BaseFormatPanel.prototype.createOption = function(label, isCheckedFn, setChecked
 				cb.checked = !cb.checked;
 			}
 			
-			apply(cb.checked);
+			apply(cb.checked, evt);
 		}
 	});
 	
@@ -994,12 +861,11 @@ BaseFormatPanel.prototype.createCellOption = function(label, key, defaultValue, 
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var self = this;
 	
 	enabledValue = (enabledValue != null) ? ((enabledValue == 'null') ? null : enabledValue) : 1;
 	disabledValue = (disabledValue != null) ? ((disabledValue == 'null') ? null : disabledValue) : 0;
 
-	var style = (cells != null) ? graph.getCommonStyle(cells) : this.format.getSelectionState().style;
+	var style = (cells != null) ? graph.getCommonStyle(cells) : ui.getSelectionState().style;
 
 	return this.createOption(label, function()
 	{
@@ -1020,7 +886,7 @@ BaseFormatPanel.prototype.createCellOption = function(label, key, defaultValue, 
 			graph.getModel().beginUpdate();
 			try
 			{
-				var temp = (cells != null) ? cells : self.format.getSelectionState().cells;
+				var temp = (cells != null) ? cells : ui.getSelectionState().cells;
 				var value = (checked) ? enabledValue : disabledValue;
 				graph.setCellStyles(key, value, temp);
 
@@ -1058,10 +924,11 @@ BaseFormatPanel.prototype.createCellOption = function(label, key, defaultValue, 
 /**
  * Adds the given color option.
  */
-BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setColorFn, defaultColor, listener, callbackFn, hideCheckbox)
+BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setColorFn,
+	defaultColor, listener, callbackFn, hideCheckbox, defaultColorValue)
 {
 	var div = document.createElement('div');
-	div.style.padding = '6px 0px 1px 0px';
+	div.style.padding = '3px 0px 3px 0px';
 	div.style.whiteSpace = 'nowrap';
 	div.style.overflow = 'hidden';
 	div.style.width = '200px';
@@ -1069,7 +936,8 @@ BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setCol
 	
 	var cb = document.createElement('input');
 	cb.setAttribute('type', 'checkbox');
-	cb.style.margin = '0px 6px 0px 0px';
+	cb.style.margin = '1px 6px 0px 0px';
+	cb.style.verticalAlign = 'top';
 	
 	if (!hideCheckbox)
 	{
@@ -1077,9 +945,11 @@ BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setCol
 	}
 
 	var span = document.createElement('span');
+	span.style.verticalAlign = 'top';
 	mxUtils.write(span, label);
 	div.appendChild(span);
-	
+
+	var title = 'Shift+Click for Color Dropper';
 	var value = getColorFn();
 	var applying = false;
 	var btn = null;
@@ -1088,12 +958,27 @@ BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setCol
 	{
 		if (!applying)
 		{
+			var defaultValue = (defaultColor == 'null') ? null : defaultColor;
+
 			applying = true;
-			color = (/(^#?[a-zA-Z0-9]*$)/.test(color)) ? color : defaultColor;
-			btn.innerHTML = '<div style="width:' +
-				'36px;height:12px;margin:3px;border:1px solid black;background-color:' +
-				mxUtils.htmlEntities((color != null && color != mxConstants.NONE) ?
-				color : defaultColor) + ';"></div>';
+			color = (/(^#?[a-zA-Z0-9]*$)/.test(color)) ? color : defaultValue;
+			var tempColor = (color != null && color != mxConstants.NONE) ? color : defaultValue;
+
+			var div = document.createElement('div');
+			div.style.width = '36px';
+			div.style.height = '12px';
+			div.style.margin = '3px';
+			div.style.border = '1px solid black';
+			div.style.backgroundColor = (tempColor == 'default') ? defaultColorValue : tempColor;
+			btn.innerHTML = '';
+			btn.appendChild(div);
+
+			if (color != null && color != mxConstants.NONE && color.length > 1 && typeof color === 'string')
+			{
+				var clr = (color.charAt(0) == '#') ? color.substring(1).toUpperCase() : color;
+				var name = ColorDialog.prototype.colorNames[clr];
+				btn.setAttribute('title', (name != null) ? name + ' (' + title + ')' : title);
+			}
 			
 			if (color != null && color != mxConstants.NONE)
 			{
@@ -1112,40 +997,73 @@ BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setCol
 
 			if (callbackFn != null)
 			{
-				callbackFn(color);
+				callbackFn(color == 'null' ? null : color);
 			}
+
+			value = color;
 
 			if (!disableUpdate)
 			{
-				value = color;
-				
 				// Checks if the color value needs to be updated in the model
 				if (forceUpdate || hideCheckbox || getColorFn() != value)
 				{
-					setColorFn(value);
+					setColorFn(value == 'null' ? null : value, value);
 				}
 			}
 			
 			applying = false;
 		}
 	};
+	
+	var clrInput = document.createElement('input');
+	clrInput.setAttribute('type', 'color');
+	clrInput.style.visibility = 'hidden';
+	clrInput.style.width = '0px';
+	clrInput.style.height = '0px';
+	clrInput.style.border = 'none';
+	div.appendChild(clrInput);
 
 	btn = mxUtils.button('', mxUtils.bind(this, function(evt)
 	{
-		this.editorUi.pickColor(value, function(color)
+		var color = value;
+
+		if (color == 'default')
 		{
-			apply(color, null, true);
-		});
+			color = defaultColorValue;
+		}
+		
+		if (mxEvent.isShiftDown(evt) && !mxClient.IS_IE && !mxClient.IS_IE11)
+		{
+			clrInput.value = color;
+			clrInput.click();
+
+			mxEvent.addListener(clrInput, 'input', function()
+			{
+				apply(clrInput.value, null, true);
+			});
+		}
+		else
+		{
+			this.editorUi.pickColor(color, function(newColor)
+			{
+				apply(newColor, null, true);
+			}, defaultColorValue);
+		}
+
 		mxEvent.consume(evt);
 	}));
 	
 	btn.style.position = 'absolute';
-	btn.style.marginTop = '-4px';
-	btn.style.right = '20px';
+	btn.style.marginTop = '-3px';
+	btn.style.left = '178px';
 	btn.style.height = '22px';
 	btn.className = 'geColorBtn';
 	btn.style.display = (cb.checked || hideCheckbox) ? '' : 'none';
 	div.appendChild(btn);
+
+	var clr = (value != null && typeof value === 'string' && value.charAt(0) == '#') ? value.substring(1).toUpperCase() : value;
+	var name = ColorDialog.prototype.colorNames[clr];
+	btn.setAttribute('title', (name != null) ? name + ' (' + title + ')' : title);
 
 	mxEvent.addListener(div, 'click', function(evt)
 	{
@@ -1185,17 +1103,16 @@ BaseFormatPanel.prototype.createColorOption = function(label, getColorFn, setCol
 /**
  * 
  */
-BaseFormatPanel.prototype.createCellColorOption = function(label, colorKey, defaultColor, callbackFn, setStyleFn)
+BaseFormatPanel.prototype.createCellColorOption = function(label, colorKey, defaultColor, callbackFn, setStyleFn, defaultColorValue)
 {
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var self = this;
 	
 	return this.createColorOption(label, function()
 	{
 		// Seems to be null sometimes, not sure why...
-		var state = graph.view.getState(self.format.getSelectionState().cells[0]);
+		var state = graph.view.getState(ui.getSelectionState().cells[0]);
 		
 		if (state != null)
 		{
@@ -1203,12 +1120,12 @@ BaseFormatPanel.prototype.createCellColorOption = function(label, colorKey, defa
 		}
 		
 		return null;
-	}, function(color)
+	}, function(color, realValue)
 	{
 		graph.getModel().beginUpdate();
 		try
 		{
-			var cells = self.format.getSelectionState().cells;
+			var cells = ui.getSelectionState().cells;
 			graph.setCellStyles(colorKey, color, cells);
 
 			if (setStyleFn != null)
@@ -1230,11 +1147,11 @@ BaseFormatPanel.prototype.createCellColorOption = function(label, colorKey, defa
 			this.listener = function()
 			{
 				// Seems to be null sometimes, not sure why...
-				var state = graph.view.getState(self.format.getSelectionState().cells[0]);
+				var state = graph.view.getState(ui.getSelectionState().cells[0]);
 				
 				if (state != null)
 				{
-					apply(mxUtils.getValue(state.style, colorKey, null));
+					apply(mxUtils.getValue(state.style, colorKey, null), true);
 				}
 			};
 			
@@ -1244,7 +1161,7 @@ BaseFormatPanel.prototype.createCellColorOption = function(label, colorKey, defa
 		{
 			graph.getModel().removeListener(this.listener);
 		}
-	}, callbackFn);
+	}, callbackFn, null, defaultColorValue);
 };
 
 /**
@@ -1256,8 +1173,8 @@ BaseFormatPanel.prototype.addArrow = function(elt, height)
 	
 	var arrow = document.createElement('div');
 	arrow.style.display = 'inline-block';
-	arrow.style.padding = '6px';
 	arrow.style.paddingRight = '4px';
+	arrow.style.padding = '6px';
 	
 	var m = (10 - height);
 	
@@ -1276,8 +1193,17 @@ BaseFormatPanel.prototype.addArrow = function(elt, height)
 	
 	arrow.style.height = height + 'px';
 	arrow.style.borderLeft = '1px solid #a0a0a0';
-	arrow.innerHTML = '<img border="0" src="' + ((mxClient.IS_SVG) ? 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHBJREFUeNpidHB2ZyAGsACxDRBPIKCuA6TwCBB/h2rABu4A8SYmKCcXiP/iUFgAxL9gCi8A8SwsirZCMQMTkmANEH9E4v+CmsaArvAdyNFI/FlQ92EoBIE+qCRIUz168DBgsU4OqhinQpgHMABAgAEALY4XLIsJ20oAAAAASUVORK5CYII=' :
-		IMAGE_PATH + '/dropdown.png') + '" style="margin-bottom:4px;">';
+
+	var img = document.createElement('img');
+	img.setAttribute('border', '0');
+	img.setAttribute('valign', 'middle');
+	img.setAttribute('src', Toolbar.prototype.dropDownImage);
+	arrow.appendChild(img);
+
+	var img = arrow.getElementsByTagName('img')[0];
+	img.style.position = 'relative';
+	img.style.left = '1px';
+	img.style.top = (mxClient.IS_FF) ? '0px' : '-4px';
 	mxUtils.setOpacity(arrow, 70);
 	
 	var symbol = elt.getElementsByTagName('div')[0];
@@ -1315,13 +1241,18 @@ BaseFormatPanel.prototype.addUnitInput = function(container, unit, right, width,
 	input.style.position = 'absolute';
 	input.style.textAlign = 'right';
 	input.style.marginTop = '-2px';
-	input.style.right = (right + 12) + 'px';
+	input.style.left = (228 - right - width) + 'px';
 	input.style.width = width + 'px';
+	input.style.height = '21px';
+	input.style.border = '1px solid rgb(160, 160, 160)';
+	input.style.borderRadius = '4px';
+	input.style.boxSizing = 'border-box';
+
 	container.appendChild(input);
 	
 	var stepper = this.createStepper(input, update, step, null, disableFocus, null, isFloat);
 	stepper.style.marginTop = (marginTop - 2) + 'px';
-	stepper.style.right = right + 'px';
+	stepper.style.left = (228 - right) + 'px';
 	container.appendChild(stepper);
 
 	return input;
@@ -1332,9 +1263,10 @@ BaseFormatPanel.prototype.addUnitInput = function(container, unit, right, width,
  */
 BaseFormatPanel.prototype.createRelativeOption = function(label, key, width, handler, init)
 {
-	width = (width != null) ? width : 44;
+	width = (width != null) ? width : 52;
 	
-	var graph = this.editorUi.editor.graph;
+	var ui = this.editorUi;
+	var graph = ui.editor.graph;
 	var div = this.createPanel();
 	div.style.paddingTop = '10px';
 	div.style.paddingBottom = '10px';
@@ -1351,7 +1283,7 @@ BaseFormatPanel.prototype.createRelativeOption = function(label, key, width, han
 		{
 			var value = parseInt(input.value);
 			value = Math.min(100, Math.max(0, (isNaN(value)) ? 100 : value));
-			var state = graph.view.getState(this.format.getSelectionState().cells[0]);
+			var state = graph.view.getState(ui.getSelectionState().cells[0]);
 			
 			if (state != null && value != mxUtils.getValue(state.style, key, 100))
 			{
@@ -1361,7 +1293,7 @@ BaseFormatPanel.prototype.createRelativeOption = function(label, key, width, han
 					value = null;
 				}
 				
-				var cells = this.format.getSelectionState().cells;
+				var cells = ui.getSelectionState().cells;
 				graph.setCellStyles(key, value, cells);
 				this.editorUi.fireEvent(new mxEventObject('styleChanged', 'keys', [key],
 					'values', [value], 'cells', cells));
@@ -1373,7 +1305,7 @@ BaseFormatPanel.prototype.createRelativeOption = function(label, key, width, han
 		mxEvent.consume(evt);
 	});
 
-	var input = this.addUnitInput(div, '%', 20, width, update, 10, -14, handler != null);
+	var input = this.addUnitInput(div, '%', 16, width, update, 10, -15, handler != null);
 
 	if (key != null)
 	{
@@ -1381,7 +1313,7 @@ BaseFormatPanel.prototype.createRelativeOption = function(label, key, width, han
 		{
 			if (force || input != document.activeElement)
 			{
-				var ss = this.format.getSelectionState();
+				var ss = ui.getSelectionState();
 				var tmp = parseInt(mxUtils.getValue(ss.style, key, 100));
 				input.value = (isNaN(tmp)) ? '' : tmp + ' %';
 			}
@@ -1428,7 +1360,7 @@ BaseFormatPanel.prototype.addLabel = function(div, title, right, width)
 	var label = document.createElement('div');
 	mxUtils.write(label, title);
 	label.style.position = 'absolute';
-	label.style.right = right + 'px';
+	label.style.left = (240 - right - width) + 'px';
 	label.style.width = width + 'px';
 	label.style.marginTop = '6px';
 	label.style.textAlign = 'center';
@@ -1474,6 +1406,7 @@ BaseFormatPanel.prototype.styleButtons = function(elts)
 		elts[i].style.paddingTop = '3px';
 		elts[i].style.paddingRight = '1px';
 		elts[i].style.margin = '1px';
+		elts[i].style.marginRight = '2px';
 		elts[i].style.width = '24px';
 		elts[i].style.height = '20px';
 		elts[i].className += ' geColorBtn';
@@ -1512,12 +1445,12 @@ mxUtils.extend(ArrangePanel, BaseFormatPanel);
  */
 ArrangePanel.prototype.init = function()
 {
-	var graph = this.editorUi.editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = this.editorUi.getSelectionState();
 
 	if (ss.cells.length > 0)
 	{
 		this.container.appendChild(this.addLayerOps(this.createPanel()));
+		
 		// Special case that adds two panels
 		this.addGeometry(this.container);
 		this.addEdgeGeometry(this.container);
@@ -1527,28 +1460,21 @@ ArrangePanel.prototype.init = function()
 			this.container.appendChild(this.addAngle(this.createPanel()));
 		}
 		
-		if (!ss.containsLabel && ss.edges.length == 0 &&
-			ss.style.shape != 'rectangle' &&
-			ss.style.shape != 'label')
+		if (!ss.containsLabel)
 		{
 			this.container.appendChild(this.addFlip(this.createPanel()));
 		}
+
+		this.container.appendChild(this.addAlign(this.createPanel()));
 		
-		if (ss.vertices.length > 1)
+		if (ss.vertices.length > 1 && !ss.cell && !ss.row)
 		{
-			this.container.appendChild(this.addAlign(this.createPanel()));
 			this.container.appendChild(this.addDistribute(this.createPanel()));
 		}
-		
-		if (graph.isTable(ss.vertices[0]) ||
-			graph.isTableRow(ss.vertices[0]) ||
-			graph.isTableCell(ss.vertices[0]))
-		{
-			this.container.appendChild(this.addTable(this.createPanel()));
-		}
+
+		this.container.appendChild(this.addTable(this.createPanel()));
+		this.container.appendChild(this.addGroupOps(this.createPanel()));
 	}
-	
-	this.container.appendChild(this.addGroupOps(this.createPanel()));
 	
 	if (ss.containsLabel)
 	{
@@ -1557,7 +1483,7 @@ ArrangePanel.prototype.init = function()
 		span.style.width = '100%';
 		span.style.marginTop = '0px';
 		span.style.fontWeight = 'bold';
-		span.style.padding = '10px 0 0 18px';
+		span.style.padding = '10px 0 0 14px';
 		mxUtils.write(span, mxResources.get('style'));
 		this.container.appendChild(span);
 			
@@ -1573,13 +1499,13 @@ ArrangePanel.prototype.addTable = function(div)
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	div.style.paddingTop = '6px';
 	div.style.paddingBottom = '10px';
 
 	var span = document.createElement('div');
-	span.style.marginTop = '2px';
-	span.style.marginBottom = '8px';
+	span.style.marginTop = '0px';
+	span.style.marginBottom = '6px';
 	span.style.fontWeight = 'bold';
 	mxUtils.write(span, mxResources.get('table'));
 	div.appendChild(span);
@@ -1588,84 +1514,195 @@ ArrangePanel.prototype.addTable = function(div)
 	panel.style.position = 'relative';
 	panel.style.paddingLeft = '0px';
 	panel.style.borderWidth = '0px';
+	panel.style.width = '220px';
 	panel.className = 'geToolbarContainer';
 
-	var btns = [
-        ui.toolbar.addButton('geSprite-insertcolumnbefore', mxResources.get('insertColumnBefore'),
- 		mxUtils.bind(this, function()
+	var cell = ss.vertices[0];
+
+	if (graph.getSelectionCount() > 1)
+	{
+		if (graph.isTableCell(cell))
 		{
-			try
-			{
-				graph.insertTableColumn(ss.vertices[0], true);
-			}
-			catch (e)
-			{
-				ui.handleError(e);
-			}
-		}), panel),
-		ui.toolbar.addButton('geSprite-insertcolumnafter', mxResources.get('insertColumnAfter'),
-		mxUtils.bind(this, function()
+			cell = graph.model.getParent(cell);
+		}
+
+		if (graph.isTableRow(cell))
 		{
-			try
+			cell = graph.model.getParent(cell);
+		}
+	}
+
+	var isTable = ss.table || ss.row || ss.cell;
+	var isStack = graph.isStack(cell) ||
+		graph.isStackChild(cell);
+
+	var showCols = isTable;
+	var showRows = isTable;
+
+	if (isStack)
+	{
+		var style = (graph.isStack(cell)) ? ss.style :
+			graph.getCellStyle(graph.model.getParent(cell));
+
+		showRows = style['horizontalStack'] == '0';
+		showCols = !showRows;
+	}
+
+	var btns = [];
+
+	if (showCols)
+	{
+		btns = btns.concat([
+			ui.toolbar.addButton('geSprite-insertcolumnbefore', mxResources.get('insertColumnBefore'),
+			mxUtils.bind(this, function()
 			{
-				graph.insertTableColumn(ss.vertices[0], false);
-			}
-			catch (e)
+				try
+				{
+					if (isStack)
+					{
+						graph.insertLane(cell, true);
+					}
+					else
+					{
+						graph.insertTableColumn(cell, true);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel),
+			ui.toolbar.addButton('geSprite-insertcolumnafter', mxResources.get('insertColumnAfter'),
+			mxUtils.bind(this, function()
 			{
-				ui.handleError(e);
-			}
-		}), panel),
-		ui.toolbar.addButton('geSprite-deletecolumn', mxResources.get('deleteColumn'),
-		mxUtils.bind(this, function()
+				try
+				{
+					if (isStack)
+					{
+						graph.insertLane(cell, false);
+					}
+					else
+					{
+						graph.insertTableColumn(cell, false);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel),
+			ui.toolbar.addButton('geSprite-deletecolumn', mxResources.get('deleteColumn'),
+			mxUtils.bind(this, function()
+			{
+				try
+				{
+					if (isStack)
+					{
+						graph.deleteLane(cell);
+					}
+					else
+					{
+						graph.deleteTableColumn(cell);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel)]);
+	}
+
+	if (showRows)
+	{
+		btns = btns.concat([ui.toolbar.addButton('geSprite-insertrowbefore', mxResources.get('insertRowBefore'),
+			mxUtils.bind(this, function()
+			{
+				try
+				{
+					if (isStack)
+					{
+						graph.insertLane(cell, true);
+					}
+					else
+					{
+						graph.insertTableRow(cell, true);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel),
+			ui.toolbar.addButton('geSprite-insertrowafter', mxResources.get('insertRowAfter'),
+			mxUtils.bind(this, function()
+			{
+				try
+				{
+					if (isStack)
+					{
+						graph.insertLane(cell, false);
+					}
+					else
+					{
+						graph.insertTableRow(cell, false);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel),
+			ui.toolbar.addButton('geSprite-deleterow', mxResources.get('deleteRow'),
+			mxUtils.bind(this, function()
+			{
+				try
+				{
+					if (isStack)
+					{
+						graph.deleteLane(cell);
+					}
+					else
+					{
+						graph.deleteTableRow(cell);
+					}
+				}
+				catch (e)
+				{
+					ui.handleError(e);
+				}
+			}), panel)]);
+	}
+
+	if (btns.length > 0)
+	{
+		this.styleButtons(btns);
+		div.appendChild(panel);
+
+		if (btns.length > 3)
 		{
-			try
-			{
-				graph.deleteTableColumn(ss.vertices[0]);
-			}
-			catch (e)
-			{
-				ui.handleError(e);
-			}
-		}), panel),
-		ui.toolbar.addButton('geSprite-insertrowbefore', mxResources.get('insertRowBefore'),
-		mxUtils.bind(this, function()
+			btns[2].style.marginRight = '10px';
+		}
+
+		var count = 0;
+
+		if (ss.mergeCell != null)
 		{
-			try
-			{
-				graph.insertTableRow(ss.vertices[0], true);
-			}
-			catch (e)
-			{
-				ui.handleError(e);
-			}
-		}), panel),
-		ui.toolbar.addButton('geSprite-insertrowafter', mxResources.get('insertRowAfter'),
-		mxUtils.bind(this, function()
+			count += this.addActions(div, ['mergeCells']);
+		}
+		else if (ss.style['colspan'] > 1 || ss.style['rowspan'] > 1)
 		{
-			try
-			{
-				graph.insertTableRow(ss.vertices[0], false);
-			}
-			catch (e)
-			{
-				ui.handleError(e);
-			}
-		}), panel),
-		ui.toolbar.addButton('geSprite-deleterow', mxResources.get('deleteRow'),
-		mxUtils.bind(this, function()
+			count += this.addActions(div, ['unmergeCells']);
+		}
+
+		if (count > 0)
 		{
-			try
-			{
-				graph.deleteTableRow(ss.vertices[0]);
-			}
-			catch (e)
-			{
-				ui.handleError(e);
-			}
-		}), panel)];
-	this.styleButtons(btns);
-	div.appendChild(panel);
-	btns[2].style.marginRight = '9px';
+			panel.style.paddingBottom = '2px';
+		}
+	}
+	else
+	{
+		div.style.display = 'none';
+	}
 	
 	return div;
 };
@@ -1675,51 +1712,8 @@ ArrangePanel.prototype.addTable = function(div)
  */
 ArrangePanel.prototype.addLayerOps = function(div)
 {
-	var ui = this.editorUi;
-	var graph = ui.editor.graph;
-	
-	var btn = mxUtils.button(mxResources.get('toFront'), function(evt)
-	{
-		ui.actions.get('toFront').funct();
-	})
-	
-	btn.setAttribute('title', mxResources.get('toFront') + ' (' + this.editorUi.actions.get('toFront').shortcut + ')');
-	btn.style.width = '100px';
-	btn.style.marginRight = '2px';
-	div.appendChild(btn);
-	
-	var btn = mxUtils.button(mxResources.get('toBack'), function(evt)
-	{
-		ui.actions.get('toBack').funct();
-	})
-	
-	btn.setAttribute('title', mxResources.get('toBack') + ' (' + this.editorUi.actions.get('toBack').shortcut + ')');
-	btn.style.width = '100px';
-	div.appendChild(btn);
-	
-	if (graph.getSelectionCount() == 1)
-	{
-		mxUtils.br(div);
-		
-		var btn = mxUtils.button(mxResources.get('bringForward'), function(evt)
-		{
-			ui.actions.get('bringForward').funct();
-		})
-		
-		btn.setAttribute('title', mxResources.get('bringForward'));
-		btn.style.width = '100px';
-		btn.style.marginRight = '2px';
-		div.appendChild(btn);
-		
-		var btn = mxUtils.button(mxResources.get('sendBackward'), function(evt)
-		{
-			ui.actions.get('sendBackward').funct();
-		})
-		
-		btn.setAttribute('title', mxResources.get('sendBackward'));
-		btn.style.width = '100px';
-		div.appendChild(btn);
-	}
+	this.addActions(div, ['toFront', 'toBack']);
+	this.addActions(div, ['bringForward', 'sendBackward']);
 	
 	return div;
 };
@@ -1731,193 +1725,97 @@ ArrangePanel.prototype.addGroupOps = function(div)
 {
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
-	var ss = this.format.getSelectionState();
-	var cell = ss.cells[0];
-	var count = 0;
-	var btn = null;
+	var ss = ui.getSelectionState();
 	
 	div.style.paddingTop = '8px';
 	div.style.paddingBottom = '6px';
 
-	if (graph.getSelectionCount() > 1)
+	var count = 0;
+	
+	if (!ss.cell && !ss.row)
 	{
-		btn = mxUtils.button(mxResources.get('group'), function(evt)
-		{
-			ui.actions.get('group').funct();
-		})
-		
-		btn.setAttribute('title', mxResources.get('group') + ' (' + this.editorUi.actions.get('group').shortcut + ')');
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
-		count++;
-	}
-	else if (ss.cells.length == 1 && !graph.getModel().isEdge(cell) && !graph.isSwimlane(cell) &&
-		!graph.isTable(cell) && !ss.row && !ss.cell && graph.getModel().getChildCount(cell) > 0)
-	{
-		btn = mxUtils.button(mxResources.get('ungroup'), function(evt)
-		{
-			ui.actions.get('ungroup').funct();
-		})
-		
-		btn.setAttribute('title', mxResources.get('ungroup') + ' (' +
-			this.editorUi.actions.get('ungroup').shortcut + ')');
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
-		count++;
+		count += this.addActions(div, ['group', 'ungroup', 'copySize', 'pasteSize']) +
+			this.addActions(div, ['removeFromGroup']);
 	}
 	
-	if (graph.getModel().isVertex(graph.getSelectionCell()))
+	var copyBtn = null;
+
+	if (ss.cells.length == 1 && ss.cells[0].value != null && !isNaN(ss.cells[0].value.nodeType))
 	{
-		if (count > 0)
+		copyBtn = mxUtils.button(mxResources.get('copyData'), function(evt)
 		{
-			mxUtils.br(div);
-			count = 0;
-		}
-		
-		var btn = mxUtils.button(mxResources.get('copySize'), function(evt)
-		{
-			ui.actions.get('copySize').funct(evt);
+			if (mxEvent.isShiftDown(evt))
+			{
+				var result = graph.getDataForCells(graph.getSelectionCells());
+
+				var dlg = new EmbedDialog(ui, JSON.stringify(result, null, 2), null, null, function()
+				{
+					console.log(result);
+					ui.alert('Written to Console (Dev Tools)');
+				}, mxResources.get('copyData'), null, 'Console', 'data.json');
+				ui.showDialog(dlg.container, 450, 240, true, true);
+				dlg.init();
+			}
+			else
+			{
+				ui.actions.get('copyData').funct(evt);
+			}
 		});
 		
-		btn.setAttribute('title', mxResources.get('copySize') + ' (' +
-			this.editorUi.actions.get('copySize').shortcut + ')');
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-
-		div.appendChild(btn);
+		copyBtn.setAttribute('title', mxResources.get('copyData') + ' (' +
+			this.editorUi.actions.get('copyData').shortcut + ')' +
+			' Shift+Click to Extract Data');
+		copyBtn.style.marginBottom = '2px';
+		copyBtn.style.width = '210px';
+		div.appendChild(copyBtn);
 		count++;
-		
-		if (ui.copiedSize != null && ss.vertices.length > 0)
-		{
-			var btn2 = mxUtils.button(mxResources.get('pasteSize'), function(evt)
-			{
-				ui.actions.get('pasteSize').funct(evt);
-			});
-			
-			btn2.setAttribute('title', mxResources.get('pasteSize') + ' (' +
-				this.editorUi.actions.get('pasteSize').shortcut + ')');
-			
-			div.appendChild(btn2);
-			count++;
-			
-			btn.style.width = '100px';
-			btn.style.marginBottom = '2px';
-			btn2.style.width = '100px';
-			btn2.style.marginBottom = '2px';
-		}
 	}
-	
-	if (graph.getSelectionCount() > 0)
-	{
-		if (count > 0)
-		{
-			mxUtils.br(div);
-			count = 0;
-		}
+
+	var pasteBtn = null;
 		
-		var btn = mxUtils.button(mxResources.get('copyData'), function(evt)
+	if (ui.copiedValue != null && ss.cells.length > 0)
+	{
+		pasteBtn = mxUtils.button(mxResources.get('pasteData'), function(evt)
 		{
-			ui.actions.get('copyData').funct(evt);
+			ui.actions.get('pasteData').funct(evt);
 		});
 		
-		btn.setAttribute('title', mxResources.get('copyData') + ' (' +
-				this.editorUi.actions.get('copyData').shortcut + ')');
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-
-		div.appendChild(btn);
+		pasteBtn.setAttribute('title', mxResources.get('pasteData') + ' (' +
+			this.editorUi.actions.get('pasteData').shortcut + ')');
+		pasteBtn.style.marginBottom = '2px';
+		pasteBtn.style.width = '210px';
+		div.appendChild(pasteBtn);
 		count++;
-		
-		if (ui.copiedValue != null && ss.cells.length > 0)
+
+		if (copyBtn != null)
 		{
-			var btn2 = mxUtils.button(mxResources.get('pasteData'), function(evt)
-			{
-				ui.actions.get('pasteData').funct(evt);
-			});
-			
-			btn2.setAttribute('title', mxResources.get('pasteData') + ' (' +
-				this.editorUi.actions.get('pasteData').shortcut + ')');
-			
-			div.appendChild(btn2);
-			count++;
-			
-			btn.style.width = '100px';
-			btn.style.marginBottom = '2px';
-			btn2.style.width = '100px';
-			btn2.style.marginBottom = '2px';
+			copyBtn.style.width = '104px';
+			pasteBtn.style.width = '104px';
+			pasteBtn.style.marginBottom = '2px';
+			copyBtn.style.marginBottom = '2px';
+			copyBtn.style.marginRight = '2px';
 		}
+	}
+
+	if (copyBtn != null || pasteBtn != null)
+	{
+		mxUtils.br(div);
 	}
 	
-	if (ss.cells.length == 1 && graph.getModel().isVertex(cell) && !ss.row &&
-		!ss.cell && graph.getModel().isVertex(graph.getModel().getParent(cell)))
+	var clearWaypoints = this.addAction(div, 'clearWaypoints');
+
+	if (clearWaypoints != null)
 	{
-		if (count > 0)
-		{
-			mxUtils.br(div);
-		}
-		
-		btn = mxUtils.button(mxResources.get('removeFromGroup'), function(evt)
-		{
-			ui.actions.get('removeFromGroup').funct();
-		})
-		
-		btn.setAttribute('title', mxResources.get('removeFromGroup'));
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
+		mxUtils.br(div);
+		clearWaypoints.setAttribute('title', mxResources.get('clearWaypoints') +
+			' (' + this.editorUi.actions.get('clearWaypoints').shortcut + ')' +
+			' Shift+Click to Clear Anchor Points');
 		count++;
 	}
-	else if (ss.cells.length > 0)
-	{
-		if (count > 0)
-		{
-			mxUtils.br(div);
-		}
-		
-		btn = mxUtils.button(mxResources.get('clearWaypoints'), mxUtils.bind(this, function(evt)
-		{
-			this.editorUi.actions.get('clearWaypoints').funct(evt);
-		}));
-		
-		btn.setAttribute('title', mxResources.get('clearWaypoints') + ' (' + this.editorUi.actions.get('clearWaypoints').shortcut + ')');
-		btn.style.width = '202px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
 
-		count++;
-	}
-	
-	if (ss.cells.length == 1)
+	if (graph.getSelectionCount() == 1)
 	{
-		if (count > 0)
-		{
-			mxUtils.br(div);
-		}
-		
-		btn = mxUtils.button(mxResources.get('editData'), mxUtils.bind(this, function(evt)
-		{
-			this.editorUi.actions.get('editData').funct();
-		}));
-		
-		btn.setAttribute('title', mxResources.get('editData') + ' (' + this.editorUi.actions.get('editData').shortcut + ')');
-		btn.style.width = '100px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
-		count++;
-
-		btn = mxUtils.button(mxResources.get('editLink'), mxUtils.bind(this, function(evt)
-		{
-			this.editorUi.actions.get('editLink').funct();
-		}));
-		
-		btn.setAttribute('title', mxResources.get('editLink') + ' (' + this.editorUi.actions.get('editLink').shortcut + ')');
-		btn.style.width = '100px';
-		btn.style.marginLeft = '2px';
-		btn.style.marginBottom = '2px';
-		div.appendChild(btn);
-		count++;
+		count += this.addActions(div, ['editData', 'editLink']);
 	}
 	
 	if (count == 0)
@@ -1933,34 +1831,43 @@ ArrangePanel.prototype.addGroupOps = function(div)
  */
 ArrangePanel.prototype.addAlign = function(div)
 {
+	var ss = this.editorUi.getSelectionState();
 	var graph = this.editorUi.editor.graph;
 	div.style.paddingTop = '6px';
-	div.style.paddingBottom = '12px';
+	div.style.paddingBottom = '8px';
 	div.appendChild(this.createTitle(mxResources.get('align')));
 	
 	var stylePanel = document.createElement('div');
 	stylePanel.style.position = 'relative';
+	stylePanel.style.whiteSpace = 'nowrap';
 	stylePanel.style.paddingLeft = '0px';
+	stylePanel.style.paddingBottom = '2px';
 	stylePanel.style.borderWidth = '0px';
+	stylePanel.style.width = '220px';
 	stylePanel.className = 'geToolbarContainer';
-	
-	var left = this.editorUi.toolbar.addButton('geSprite-alignleft', mxResources.get('left'),
-		function() { graph.alignCells(mxConstants.ALIGN_LEFT); }, stylePanel);
-	var center = this.editorUi.toolbar.addButton('geSprite-aligncenter', mxResources.get('center'),
-		function() { graph.alignCells(mxConstants.ALIGN_CENTER); }, stylePanel);
-	var right = this.editorUi.toolbar.addButton('geSprite-alignright', mxResources.get('right'),
-		function() { graph.alignCells(mxConstants.ALIGN_RIGHT); }, stylePanel);
 
-	var top = this.editorUi.toolbar.addButton('geSprite-aligntop', mxResources.get('top'),
-		function() { graph.alignCells(mxConstants.ALIGN_TOP); }, stylePanel);
-	var middle = this.editorUi.toolbar.addButton('geSprite-alignmiddle', mxResources.get('middle'),
-		function() { graph.alignCells(mxConstants.ALIGN_MIDDLE); }, stylePanel);
-	var bottom = this.editorUi.toolbar.addButton('geSprite-alignbottom', mxResources.get('bottom'),
-		function() { graph.alignCells(mxConstants.ALIGN_BOTTOM); }, stylePanel);
-	
-	this.styleButtons([left, center, right, top, middle, bottom]);
-	right.style.marginRight = '6px';
+	if (ss.vertices.length > 1)
+	{
+		var left = this.editorUi.toolbar.addButton('geSprite-alignleft', mxResources.get('left'),
+			function() { graph.alignCells(mxConstants.ALIGN_LEFT); }, stylePanel);
+		var center = this.editorUi.toolbar.addButton('geSprite-aligncenter', mxResources.get('center'),
+			function() { graph.alignCells(mxConstants.ALIGN_CENTER); }, stylePanel);
+		var right = this.editorUi.toolbar.addButton('geSprite-alignright', mxResources.get('right'),
+			function() { graph.alignCells(mxConstants.ALIGN_RIGHT); }, stylePanel);
+
+		var top = this.editorUi.toolbar.addButton('geSprite-aligntop', mxResources.get('top'),
+			function() { graph.alignCells(mxConstants.ALIGN_TOP); }, stylePanel);
+		var middle = this.editorUi.toolbar.addButton('geSprite-alignmiddle', mxResources.get('middle'),
+			function() { graph.alignCells(mxConstants.ALIGN_MIDDLE); }, stylePanel);
+		var bottom = this.editorUi.toolbar.addButton('geSprite-alignbottom', mxResources.get('bottom'),
+			function() { graph.alignCells(mxConstants.ALIGN_BOTTOM); }, stylePanel);
+		
+		this.styleButtons([left, center, right, top, middle, bottom]);
+			right.style.marginRight = '10px';
+	}
+
 	div.appendChild(stylePanel);
+	this.addActions(div, ['snapToGrid']);
 	
 	return div;
 };
@@ -1975,6 +1882,7 @@ ArrangePanel.prototype.addFlip = function(div)
 	var graph = editor.graph;
 	div.style.paddingTop = '6px';
 	div.style.paddingBottom = '10px';
+	var ss = this.editorUi.getSelectionState();
 
 	var span = document.createElement('div');
 	span.style.marginTop = '2px';
@@ -1985,21 +1893,21 @@ ArrangePanel.prototype.addFlip = function(div)
 	
 	var btn = mxUtils.button(mxResources.get('horizontal'), function(evt)
 	{
-		graph.toggleCellStyles(mxConstants.STYLE_FLIPH, false);
+		graph.flipCells(ss.cells, true);
 	})
 	
 	btn.setAttribute('title', mxResources.get('horizontal'));
-	btn.style.width = '100px';
+	btn.style.width = '104px';
 	btn.style.marginRight = '2px';
 	div.appendChild(btn);
 	
 	var btn = mxUtils.button(mxResources.get('vertical'), function(evt)
 	{
-		graph.toggleCellStyles(mxConstants.STYLE_FLIPV, false);
+		graph.flipCells(ss.cells, false);
 	})
 	
 	btn.setAttribute('title', mxResources.get('vertical'));
-	btn.style.width = '100px';
+	btn.style.width = '104px';
 	div.appendChild(btn);
 	
 	return div;
@@ -2024,7 +1932,7 @@ ArrangePanel.prototype.addDistribute = function(div)
 	})
 	
 	btn.setAttribute('title', mxResources.get('horizontal'));
-	btn.style.width = '100px';
+	btn.style.width = '104px';
 	btn.style.marginRight = '2px';
 	div.appendChild(btn);
 	
@@ -2034,7 +1942,7 @@ ArrangePanel.prototype.addDistribute = function(div)
 	})
 	
 	btn.setAttribute('title', mxResources.get('vertical'));
-	btn.style.width = '100px';
+	btn.style.width = '104px';
 	div.appendChild(btn);
 	
 	return div;
@@ -2048,7 +1956,7 @@ ArrangePanel.prototype.addAngle = function(div)
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 
 	div.style.paddingBottom = '8px';
 	
@@ -2067,7 +1975,7 @@ ArrangePanel.prototype.addAngle = function(div)
 		mxUtils.write(span, mxResources.get('angle'));
 		div.appendChild(span);
 		
-		input = this.addUnitInput(div, '°', 20, 44, function()
+		input = this.addUnitInput(div, '°', 16, 52, function()
 		{
 			update.apply(this, arguments);
 		});
@@ -2099,7 +2007,7 @@ ArrangePanel.prototype.addAngle = function(div)
 		})
 		
 		btn.setAttribute('title', label + ' (' + this.editorUi.actions.get('turn').shortcut + ')');
-		btn.style.width = '202px';
+		btn.style.width = '210px';
 		div.appendChild(btn);
 		
 		if (input != null)
@@ -2114,7 +2022,7 @@ ArrangePanel.prototype.addAngle = function(div)
 		{
 			if (force || document.activeElement != input)
 			{
-				ss = this.format.getSelectionState();
+				ss = ui.getSelectionState();
 				var tmp = parseFloat(mxUtils.getValue(ss.style, mxConstants.STYLE_ROTATION, 0));
 				input.value = (isNaN(tmp)) ? '' : tmp  + '°';
 			}
@@ -2143,6 +2051,8 @@ BaseFormatPanel.prototype.getUnit = function()
 			return '"';
 		case mxConstants.MILLIMETERS:
 			return 'mm';
+		case mxConstants.METERS:
+			return 'm';
 	}
 };
 
@@ -2163,6 +2073,8 @@ BaseFormatPanel.prototype.fromUnit = function(value)
 			return value * mxConstants.PIXELS_PER_INCH;
 		case mxConstants.MILLIMETERS:
 			return value * mxConstants.PIXELS_PER_MM;
+		case mxConstants.METERS:
+			return value * mxConstants.PIXELS_PER_MM * 1000;
 	}
 };
 
@@ -2183,6 +2095,8 @@ BaseFormatPanel.prototype.getUnitStep = function()
 			return 0.1;
 		case mxConstants.MILLIMETERS:
 			return 0.5;
+		case mxConstants.METERS:
+			return 0.001;
 	}
 };
 
@@ -2195,7 +2109,7 @@ ArrangePanel.prototype.addGeometry = function(container)
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
 	var model = graph.getModel();
-	var rect = this.format.getSelectionState();
+	var rect = ui.getSelectionState();
 
 	var div = this.createPanel();
 	div.style.paddingBottom = '8px';
@@ -2209,11 +2123,11 @@ ArrangePanel.prototype.addGeometry = function(container)
 	div.appendChild(span);
 
 	var widthUpdate, heightUpdate, leftUpdate, topUpdate;
-	var width = this.addUnitInput(div, this.getUnit(), 84, 44, function()
+	var width = this.addUnitInput(div, this.getUnit(), 87, 52, function()
 	{
 		widthUpdate.apply(this, arguments);
 	}, this.getUnitStep(), null, null, this.isFloatUnit());
-	var height = this.addUnitInput(div, this.getUnit(), 20, 44, function()
+	var height = this.addUnitInput(div, this.getUnit(), 16, 52, function()
 	{
 		heightUpdate.apply(this, arguments);
 	}, this.getUnitStep(), null, null, this.isFloatUnit());
@@ -2252,10 +2166,10 @@ ArrangePanel.prototype.addGeometry = function(container)
 	}
 	else
 	{
-		this.addLabel(div, mxResources.get('width'), 84);
+		this.addLabel(div, mxResources.get('width'), 87);
 	}
 	
-	this.addLabel(div, mxResources.get('height'), 20);
+	this.addLabel(div, mxResources.get('height'), 16);
 	mxUtils.br(div);
 
 	var wrapper = document.createElement('div');
@@ -2265,7 +2179,7 @@ ArrangePanel.prototype.addGeometry = function(container)
 	wrapper.style.textAlign = 'right';
 	var opt = this.createCellOption(mxResources.get('constrainProportions'),
 		mxConstants.STYLE_ASPECT, null, 'fixed', 'null');
-	opt.style.width = '100%';
+	opt.style.width = '210px';
 	wrapper.appendChild(opt);
 		
 	if (!rect.cell && !rect.row)
@@ -2296,7 +2210,7 @@ ArrangePanel.prototype.addGeometry = function(container)
 			
 			if (constrainCheckbox.checked)
 			{
-				geo.height = Math.round((geo.height  * value * 100) / geo.width) / 100;
+				geo.height = Math.round((geo.height * value * 100) / geo.width) / 100;
 			}
 			
 			geo.width = value;
@@ -2345,23 +2259,23 @@ ArrangePanel.prototype.addGeometry = function(container)
 	mxUtils.write(span, mxResources.get('position'));
 	div2.appendChild(span);
 	
-	var left = this.addUnitInput(div2, this.getUnit(), 84, 44, function()
+	var left = this.addUnitInput(div2, this.getUnit(), 87, 52, function()
 	{
 		leftUpdate.apply(this, arguments);
 	}, this.getUnitStep(), null, null, this.isFloatUnit());
-	var top = this.addUnitInput(div2, this.getUnit(), 20, 44, function()
+	var top = this.addUnitInput(div2, this.getUnit(), 16, 52, function()
 	{
 		topUpdate.apply(this, arguments);
 	}, this.getUnitStep(), null, null, this.isFloatUnit());
 
 	mxUtils.br(div2);
 
-	this.addLabel(div2, mxResources.get('left'), 84);
-	this.addLabel(div2, mxResources.get('top'), 20);
+	this.addLabel(div2, mxResources.get('left'), 87);
+	this.addLabel(div2, mxResources.get('top'), 16);
 	
 	var listener = mxUtils.bind(this, function(sender, evt, force)
 	{
-		rect = this.format.getSelectionState();
+		rect = ui.getSelectionState();
 
 		if (!rect.containsLabel && rect.vertices.length == graph.getSelectionCount() &&
 			rect.width != null && rect.height != null)
@@ -2465,7 +2379,7 @@ ArrangePanel.prototype.addGeometry = function(container)
 				}));
 				
 				btn.setAttribute('title', mxResources.get('center'));
-				btn.style.width = '202px';
+				btn.style.width = '210px';
 				btn.style.position = 'absolute';
 				mxUtils.br(div2);
 				mxUtils.br(div2);
@@ -2501,7 +2415,7 @@ ArrangePanel.prototype.addGeometryHandler = function(input, fn)
 				graph.getModel().beginUpdate();
 				try
 				{
-					var cells = panel.format.getSelectionState().cells;
+					var cells = ui.getSelectionState().cells;
 					
 					for (var i = 0; i < cells.length; i++)
 					{
@@ -2557,7 +2471,6 @@ ArrangePanel.prototype.addEdgeGeometryHandler = function(input, fn)
     var ui = this.editorUi;
     var graph = ui.editor.graph;
     var initialValue = null;
-	var panel = this;
 
     function update(evt)
     {
@@ -2574,7 +2487,7 @@ ArrangePanel.prototype.addEdgeGeometryHandler = function(input, fn)
                 graph.getModel().beginUpdate();
                 try
                 {
-                    var cells = panel.format.getSelectionState().cells;
+                    var cells = ui.getSelectionState().cells;
 
                     for (var i = 0; i < cells.length; i++)
                     {
@@ -2622,7 +2535,7 @@ ArrangePanel.prototype.addEdgeGeometry = function(container)
 {
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
-	var rect = this.format.getSelectionState();
+	var rect = ui.getSelectionState();
 	var div = this.createPanel();
 	
 	var span = document.createElement('div');
@@ -2634,7 +2547,7 @@ ArrangePanel.prototype.addEdgeGeometry = function(container)
 	div.appendChild(span);
 
 	var widthUpdate, xtUpdate, ytUpdate, xsUpdate, ysUpdate;
-	var width = this.addUnitInput(div, 'pt', 20, 44, function()
+	var width = this.addUnitInput(div, 'pt', 12, 44, function()
 	{
 		widthUpdate.apply(this, arguments);
 	});
@@ -2650,7 +2563,7 @@ ArrangePanel.prototype.addEdgeGeometry = function(container)
 		
 		if (value != mxUtils.getValue(rect.style, 'width', mxCellRenderer.defaultShapes['flexArrow'].prototype.defaultWidth))
 		{
-			var cells = this.format.getSelectionState().cells;
+			var cells = ui.getSelectionState().cells;
 			graph.setCellStyles('width', value, cells);
 			ui.fireEvent(new mxEventObject('styleChanged', 'keys', ['width'],
 					'values', [value], 'cells', cells));
@@ -2672,22 +2585,21 @@ ArrangePanel.prototype.addEdgeGeometry = function(container)
 	span.style.position = 'absolute';
 	span.style.width = '70px';
 	span.style.marginTop = '0px';
-	span.style.fontWeight = 'bold';
-	mxUtils.write(span, 'Start');
+	mxUtils.write(span, mxResources.get('linestart'));
 	divs.appendChild(span);
 
-	var xs = this.addUnitInput(divs, 'pt', 84, 44, function()
+	var xs = this.addUnitInput(divs, 'pt', 87, 52, function()
 	{
 		xsUpdate.apply(this, arguments);
 	});
-	var ys = this.addUnitInput(divs, 'pt', 20, 44, function()
+	var ys = this.addUnitInput(divs, 'pt', 16, 52, function()
 	{
 		ysUpdate.apply(this, arguments);
 	});
 
 	mxUtils.br(divs);
-	this.addLabel(divs, mxResources.get('left'), 84);
-	this.addLabel(divs, mxResources.get('top'), 20);
+	this.addLabel(divs, mxResources.get('left'), 87);
+	this.addLabel(divs, mxResources.get('top'), 16);
 	container.appendChild(divs);
 	this.addKeyHandler(xs, listener);
 	this.addKeyHandler(ys, listener);
@@ -2699,29 +2611,28 @@ ArrangePanel.prototype.addEdgeGeometry = function(container)
 	span.style.position = 'absolute';
 	span.style.width = '70px';
 	span.style.marginTop = '0px';
-	span.style.fontWeight = 'bold';
-	mxUtils.write(span, 'End');
+	mxUtils.write(span, mxResources.get('lineend'));
 	divt.appendChild(span);
 
-	var xt = this.addUnitInput(divt, 'pt', 84, 44, function()
+	var xt = this.addUnitInput(divt, 'pt', 87, 52, function()
 	{
 		xtUpdate.apply(this, arguments);
 	});
-	var yt = this.addUnitInput(divt, 'pt', 20, 44, function()
+	var yt = this.addUnitInput(divt, 'pt', 16, 52, function()
 	{
 		ytUpdate.apply(this, arguments);
 	});
 
 	mxUtils.br(divt);
-	this.addLabel(divt, mxResources.get('left'), 84);
-	this.addLabel(divt, mxResources.get('top'), 20);
+	this.addLabel(divt, mxResources.get('left'), 87);
+	this.addLabel(divt, mxResources.get('top'), 16);
 	container.appendChild(divt);
 	this.addKeyHandler(xt, listener);
 	this.addKeyHandler(yt, listener);
 
 	var listener = mxUtils.bind(this, function(sender, evt, force)
 	{
-		rect = this.format.getSelectionState();
+		rect = ui.getSelectionState();
 		var cell = rect.cells[0];
 		
 		if (rect.style.shape == 'link' || rect.style.shape == 'flexArrow')
@@ -2824,10 +2735,10 @@ TextFormatPanel.prototype.addFont = function(container)
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	
 	var title = this.createTitle(mxResources.get('font'));
-	title.style.paddingLeft = '18px';
+	title.style.paddingLeft = '14px';
 	title.style.paddingTop = '10px';
 	title.style.paddingBottom = '6px';
 	container.appendChild(title);
@@ -2851,7 +2762,7 @@ TextFormatPanel.prototype.addFont = function(container)
 		cssMenu.style.overflow = 'hidden';
 		cssMenu.style.margin = '0px';
 		this.addArrow(cssMenu);
-		cssMenu.style.width = '192px';
+		cssMenu.style.width = '200px';
 		cssMenu.style.height = '15px';
 		
 		var arrow = cssMenu.getElementsByTagName('div')[0];
@@ -2875,7 +2786,7 @@ TextFormatPanel.prototype.addFont = function(container)
 	fontMenu.style.margin = '0px';
 	
 	this.addArrow(fontMenu);
-	fontMenu.style.width = '192px';
+	fontMenu.style.width = '200px';
 	fontMenu.style.height = '15px';
 	
 	var stylePanel2 = stylePanel.cloneNode(false);
@@ -2910,18 +2821,30 @@ TextFormatPanel.prototype.addFont = function(container)
 		function(evt)
 		{
 			graph.cellEditor.alignText(mxConstants.ALIGN_LEFT, evt);
+			ui.fireEvent(new mxEventObject('styleChanged',
+				'keys', [mxConstants.STYLE_ALIGN],
+				'values', [mxConstants.ALIGN_LEFT],
+				'cells', ss.cells));
 		} : callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_ALIGN], [mxConstants.ALIGN_LEFT])), stylePanel3);
 	var center = this.editorUi.toolbar.addButton('geSprite-center', mxResources.get('center'),
 		(graph.cellEditor.isContentEditing()) ?
 		function(evt)
 		{
 			graph.cellEditor.alignText(mxConstants.ALIGN_CENTER, evt);
+			ui.fireEvent(new mxEventObject('styleChanged',
+				'keys', [mxConstants.STYLE_ALIGN],
+				'values', [mxConstants.ALIGN_CENTER],
+				'cells', ss.cells));
 		} : callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_ALIGN], [mxConstants.ALIGN_CENTER])), stylePanel3);
 	var right = this.editorUi.toolbar.addButton('geSprite-right', mxResources.get('right'),
 		(graph.cellEditor.isContentEditing()) ?
 		function(evt)
 		{
 			graph.cellEditor.alignText(mxConstants.ALIGN_RIGHT, evt);
+			ui.fireEvent(new mxEventObject('styleChanged',
+				'keys', [mxConstants.STYLE_ALIGN],
+				'values', [mxConstants.ALIGN_RIGHT],
+				'cells', ss.cells));
 		} : callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_ALIGN], [mxConstants.ALIGN_RIGHT])), stylePanel3);
 
 	this.styleButtons([left, center, right]);
@@ -2945,11 +2868,14 @@ TextFormatPanel.prototype.addFont = function(container)
 	}
 	
 	var top = this.editorUi.toolbar.addButton('geSprite-top', mxResources.get('top'),
-		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN], [mxConstants.ALIGN_TOP])), stylePanel3);
+		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN],
+			[mxConstants.ALIGN_TOP])), stylePanel3);
 	var middle = this.editorUi.toolbar.addButton('geSprite-middle', mxResources.get('middle'),
-		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN], [mxConstants.ALIGN_MIDDLE])), stylePanel3);
+		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN],
+			[mxConstants.ALIGN_MIDDLE])), stylePanel3);
 	var bottom = this.editorUi.toolbar.addButton('geSprite-bottom', mxResources.get('bottom'),
-		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN], [mxConstants.ALIGN_BOTTOM])), stylePanel3);
+		callFn(this.editorUi.menus.createStyleChangeFunction([mxConstants.STYLE_VERTICAL_ALIGN],
+			[mxConstants.ALIGN_BOTTOM])), stylePanel3);
 	
 	this.styleButtons([top, middle, bottom]);
 	
@@ -2989,7 +2915,7 @@ TextFormatPanel.prototype.addFont = function(container)
 			{
 				document.execCommand('superscript', false, null);
 			}, stylePanel3)]);
-		sub.style.marginLeft = '9px';
+		sub.style.marginLeft = '10px';
 		
 		var tmp = stylePanel3.cloneNode(false);
 		tmp.style.paddingTop = '4px';
@@ -3024,14 +2950,14 @@ TextFormatPanel.prototype.addFont = function(container)
 					graph.cellEditor.toggleViewMode();
 				}, tmp)];
 		this.styleButtons(btns);
-		btns[btns.length - 2].style.marginLeft = '9px';
+		btns[btns.length - 2].style.marginLeft = '10px';
 		
 		container.appendChild(tmp);
 	}
 	else
 	{
-		fontStyleItems[2].style.marginRight = '9px';
-		right.style.marginRight = '9px';
+		fontStyleItems[2].style.marginRight = '12px';
+		right.style.marginRight = '12px';
 	}
 	
 	// Label position
@@ -3046,8 +2972,10 @@ TextFormatPanel.prototype.addFont = function(container)
 	// Adds label position options
 	var positionSelect = document.createElement('select');
 	positionSelect.style.position = 'absolute';
-	positionSelect.style.right = '20px';
-	positionSelect.style.width = '97px';
+	positionSelect.style.left = '126px';
+	positionSelect.style.width = '98px';
+	positionSelect.style.border = '1px solid rgb(160, 160, 160)';
+	positionSelect.style.borderRadius = '4px';
 	positionSelect.style.marginTop = '-2px';
 	
 	var directions = ['topLeft', 'top', 'topRight', 'left', 'center', 'right', 'bottomLeft', 'bottom', 'bottomRight'];
@@ -3086,8 +3014,10 @@ TextFormatPanel.prototype.addFont = function(container)
 	// handle multiple different styles for current selection
 	var dirSelect = document.createElement('select');
 	dirSelect.style.position = 'absolute';
-	dirSelect.style.right = '20px';
-	dirSelect.style.width = '97px';
+	dirSelect.style.border = '1px solid rgb(160, 160, 160)';
+	dirSelect.style.left = '126px';
+	dirSelect.style.width = '98px';
+	dirSelect.style.borderRadius = '4px';
 	dirSelect.style.marginTop = '-2px';
 
 	// NOTE: For automatic we use the value null since automatic
@@ -3145,16 +3075,17 @@ TextFormatPanel.prototype.addFont = function(container)
 		});
 	}
 
-	// Font size
+	// Fontsize
 	var input = document.createElement('input');
+	input.style.position = 'absolute';
+	input.style.border = '1px solid rgb(160, 160, 160)';
 	input.style.textAlign = 'right';
 	input.style.marginTop = '4px';
-	
-	input.style.position = 'absolute';
-	input.style.right = '32px';
-	
-	input.style.width = '40px';
-	input.style.height = '17px';
+	input.style.left = '161px';
+	input.style.width = '53px';
+	input.style.borderRadius = '4px';
+	input.style.height = '23px';
+	input.style.boxSizing = 'border-box';
 	stylePanel2.appendChild(input);
 	
 	// Workaround for font size 4 if no text is selected is update font size below
@@ -3200,6 +3131,10 @@ TextFormatPanel.prototype.addFont = function(container)
 						}
 					}
 				}
+
+				ui.fireEvent(new mxEventObject('styleChanged',
+					'keys', [mxConstants.STYLE_FONTSIZE],
+					'values', [fontSize], 'cells', ss.cells));
 			};
 			
 			// Wraps text node or mixed selection with leading text in a font element
@@ -3295,7 +3230,7 @@ TextFormatPanel.prototype.addFont = function(container)
 	var stepper = this.createStepper(input, inputUpdate, 1, 10, true, Menus.prototype.defaultFontSize);
 	stepper.style.display = input.style.display;
 	stepper.style.marginTop = '4px';
-	stepper.style.right = '20px';
+	stepper.style.left = '214px';
 	
 	stylePanel2.appendChild(stepper);
 	
@@ -3303,10 +3238,10 @@ TextFormatPanel.prototype.addFont = function(container)
 	arrow.style.cssFloat = 'right';
 	
 	var bgColorApply = null;
-	var currentBgColor = '#ffffff';
+	var currentBgColor = graph.shapeBackgroundColor;
 	
 	var fontColorApply = null;
-	var currentFontColor = '#000000';
+	var currentFontColor = graph.shapeForegroundColor;
 		
 	var bgPanel = (graph.cellEditor.isContentEditing()) ? this.createColorOption(mxResources.get('backgroundColor'), function()
 	{
@@ -3314,23 +3249,32 @@ TextFormatPanel.prototype.addFont = function(container)
 	}, function(color)
 	{
 		document.execCommand('backcolor', false, (color != mxConstants.NONE) ? color : 'transparent');
-	}, '#ffffff',
+		ui.fireEvent(new mxEventObject('styleChanged',
+			'keys', [mxConstants.STYLE_LABEL_BACKGROUNDCOLOR],
+			'values', [color], 'cells', ss.cells));
+	}, graph.shapeBackgroundColor,
 	{
 		install: function(apply) { bgColorApply = apply; },
 		destroy: function() { bgColorApply = null; }
-	}, null, true) : this.createCellColorOption(mxResources.get('backgroundColor'), mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, '#ffffff', null, function(color)
+	}, null, true) : this.createCellColorOption(mxResources.get('backgroundColor'),
+		mxConstants.STYLE_LABEL_BACKGROUNDCOLOR, 'default', null, function(color)
 	{
 		graph.updateLabelElements(ss.cells, function(elt)
 		{
 			elt.style.backgroundColor = null;
 		});
-	});
+	}, graph.shapeBackgroundColor);
 	bgPanel.style.fontWeight = 'bold';
 
-	var borderPanel = this.createCellColorOption(mxResources.get('borderColor'), mxConstants.STYLE_LABEL_BORDERCOLOR, '#000000');
+	var borderPanel = this.createCellColorOption(mxResources.get('borderColor'),
+		mxConstants.STYLE_LABEL_BORDERCOLOR, 'default', null, null,
+		graph.shapeForegroundColor);
 	borderPanel.style.fontWeight = 'bold';
 	
-	var defs = (ss.vertices.length >= 1) ? graph.stylesheet.getDefaultVertexStyle() : graph.stylesheet.getDefaultEdgeStyle();
+	var defs = (ss.vertices.length >= 1) ?
+		graph.stylesheet.getDefaultVertexStyle() :
+		graph.stylesheet.getDefaultEdgeStyle();
+
 	var panel = (graph.cellEditor.isContentEditing()) ? this.createColorOption(mxResources.get('fontColor'), function()
 	{
 		return currentFontColor;
@@ -3355,6 +3299,9 @@ TextFormatPanel.prototype.addFont = function(container)
 
 			document.execCommand('forecolor', false, (color != mxConstants.NONE) ?
 				color : 'transparent');
+			ui.fireEvent(new mxEventObject('styleChanged',
+				'keys', [mxConstants.STYLE_FONTCOLOR],
+				'values', [color], 'cells', ss.cells));
 
 			// Finds the new or changed font element
 			var newFonts = graph.cellEditor.textarea.getElementsByTagName('font');
@@ -3394,13 +3341,16 @@ TextFormatPanel.prototype.addFont = function(container)
 		{
 			document.execCommand('forecolor', false, (color != mxConstants.NONE) ?
 				color : 'transparent');
+			ui.fireEvent(new mxEventObject('styleChanged',
+				'keys', [mxConstants.STYLE_FONTCOLOR],
+				'values', [color], 'cells', ss.cells));
 		}
-	}, (defs[mxConstants.STYLE_FONTCOLOR] != null) ? defs[mxConstants.STYLE_FONTCOLOR] : '#000000',
+	}, (defs[mxConstants.STYLE_FONTCOLOR] != null) ? defs[mxConstants.STYLE_FONTCOLOR] : graph.shapeForegroundColor,
 	{
 		install: function(apply) { fontColorApply = apply; },
 		destroy: function() { fontColorApply = null; }
-	}, null, true) : this.createCellColorOption(mxResources.get('fontColor'), mxConstants.STYLE_FONTCOLOR,
-		(defs[mxConstants.STYLE_FONTCOLOR] != null) ? defs[mxConstants.STYLE_FONTCOLOR] : '#000000', function(color)
+	}, null, true) : this.createCellColorOption(mxResources.get('fontColor'),
+		mxConstants.STYLE_FONTCOLOR, 'default', function(color)
 	{
 		if (color == mxConstants.NONE)
 		{
@@ -3423,14 +3373,14 @@ TextFormatPanel.prototype.addFont = function(container)
 			graph.setCellStyles(mxConstants.STYLE_NOLABEL, null, ss.cells);
 		}
 		
-		graph.updateCellStyles(mxConstants.STYLE_FONTCOLOR, color, ss.cells);
+		graph.setCellStyles(mxConstants.STYLE_FONTCOLOR, color, ss.cells);
 
 		graph.updateLabelElements(ss.cells, function(elt)
 		{
 			elt.removeAttribute('color');
 			elt.style.color = null;
 		});
-	});
+	}, graph.shapeForegroundColor);
 	panel.style.fontWeight = 'bold';
 	
 	colorPanel.appendChild(panel);
@@ -3451,12 +3401,9 @@ TextFormatPanel.prototype.addFont = function(container)
 	{
 		var state = graph.view.getState(cell);
 		
-		return state == null ||
-			this.format.isAutoSizeState(state) ||
-			graph.getModel().isEdge(cell) ||
-			(!graph.isTableRow(cell) &&
-			!graph.isTableCell(cell) &&
-			!graph.isCellResizable(cell));
+		return state == null || graph.isAutoSizeState(state) ||
+			graph.getModel().isEdge(cell) || (!graph.isTableRow(cell) &&
+			!graph.isTableCell(cell) && !graph.isCellResizable(cell));
 	}));
 	
 	var wwOpt = this.createCellOption(mxResources.get('wordWrap'), mxConstants.STYLE_WHITE_SPACE,
@@ -3489,38 +3436,38 @@ TextFormatPanel.prototype.addFont = function(container)
 	spacingPanel.appendChild(span);
 
 	var topUpdate, globalUpdate, leftUpdate, bottomUpdate, rightUpdate;
-	var topSpacing = this.addUnitInput(spacingPanel, 'pt', 91, 44, function()
+	var topSpacing = this.addUnitInput(spacingPanel, 'pt', 87, 52, function()
 	{
 		topUpdate.apply(this, arguments);
 	});
-	var globalSpacing = this.addUnitInput(spacingPanel, 'pt', 20, 44, function()
+	var globalSpacing = this.addUnitInput(spacingPanel, 'pt', 16, 52, function()
 	{
 		globalUpdate.apply(this, arguments);
 	});
 
 	mxUtils.br(spacingPanel);
-	this.addLabel(spacingPanel, mxResources.get('top'), 91);
-	this.addLabel(spacingPanel, mxResources.get('global'), 20);
+	this.addLabel(spacingPanel, mxResources.get('top'), 87);
+	this.addLabel(spacingPanel, mxResources.get('global'), 16);
 	mxUtils.br(spacingPanel);
 	mxUtils.br(spacingPanel);
 
-	var leftSpacing = this.addUnitInput(spacingPanel, 'pt', 162, 44, function()
+	var leftSpacing = this.addUnitInput(spacingPanel, 'pt', 158, 52, function()
 	{
 		leftUpdate.apply(this, arguments);
 	});
-	var bottomSpacing = this.addUnitInput(spacingPanel, 'pt', 91, 44, function()
+	var bottomSpacing = this.addUnitInput(spacingPanel, 'pt', 87, 52, function()
 	{
 		bottomUpdate.apply(this, arguments);
 	});
-	var rightSpacing = this.addUnitInput(spacingPanel, 'pt', 20, 44, function()
+	var rightSpacing = this.addUnitInput(spacingPanel, 'pt', 16, 52, function()
 	{
 		rightUpdate.apply(this, arguments);
 	});
 
 	mxUtils.br(spacingPanel);
-	this.addLabel(spacingPanel, mxResources.get('left'), 162);
-	this.addLabel(spacingPanel, mxResources.get('bottom'), 91);
-	this.addLabel(spacingPanel, mxResources.get('right'), 20);
+	this.addLabel(spacingPanel, mxResources.get('left'), 158);
+	this.addLabel(spacingPanel, mxResources.get('bottom'), 87);
+	this.addLabel(spacingPanel, mxResources.get('right'), 16);
 	
 	if (!graph.cellEditor.isContentEditing())
 	{
@@ -3565,7 +3512,7 @@ TextFormatPanel.prototype.addFont = function(container)
 			if (node != null && graph.cellEditor.textarea != null && node != graph.cellEditor.textarea &&
 				graph.cellEditor.textarea.contains(node))
 			{
-				node.style.lineHeight = value + '%';
+				node.style.lineHeight = value / 100;
 			}
 			
 			input.value = value + ' %';
@@ -3607,7 +3554,7 @@ TextFormatPanel.prototype.addFont = function(container)
 				}, insertPanel),				
 				this.editorUi.toolbar.addMenuFunctionInContainer(insertPanel, 'geSprite-table', mxResources.get('table'), false, mxUtils.bind(this, function(menu)
 				{
-					this.editorUi.menus.addInsertTableItem(menu);
+					this.editorUi.menus.addInsertTableItem(menu, null, null, false);
 				}))];
 		this.styleButtons(insertBtns);
 		this.styleButtons(btns);
@@ -3714,7 +3661,7 @@ TextFormatPanel.prototype.addFont = function(container)
 					}
 				}), tablePanel)];
 		this.styleButtons(btns);
-		btns[2].style.marginRight = '9px';
+		btns[2].style.marginRight = '10px';
 		
 		var wrapper3 = this.createPanel();
 		wrapper3.style.paddingTop = '10px';
@@ -3839,7 +3786,7 @@ TextFormatPanel.prototype.addFont = function(container)
 					}
 				}, tablePanel2)];
 		this.styleButtons(btns);
-		btns[2].style.marginRight = '9px';
+		btns[2].style.marginRight = '10px';
 		
 		wrapper3.appendChild(tablePanel2);
 		container.appendChild(wrapper3);
@@ -3856,7 +3803,7 @@ TextFormatPanel.prototype.addFont = function(container)
 	
 	var listener = mxUtils.bind(this, function(sender, evt, force)
 	{
-		ss = this.format.getSelectionState();
+		ss = ui.getSelectionState();
 		var fontStyle = mxUtils.getValue(ss.style, mxConstants.STYLE_FONTSTYLE, 0);
 		setSelected(fontStyleItems[0], (fontStyle & mxConstants.FONT_BOLD) == mxConstants.FONT_BOLD);
 		setSelected(fontStyleItems[1], (fontStyle & mxConstants.FONT_ITALIC) == mxConstants.FONT_ITALIC);
@@ -4174,42 +4121,32 @@ TextFormatPanel.prototype.addFont = function(container)
 								}
 							}
 							
-							// Converts rgb(r,g,b) values
-							var color = css.color.replace(
-								    /\brgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/g,
-								    function($0, $1, $2, $3) {
-								        return "#" + ("0"+Number($1).toString(16)).substr(-2) + ("0"+Number($2).toString(16)).substr(-2) + ("0"+Number($3).toString(16)).substr(-2);
-								    });
-							var color2 = css.backgroundColor.replace(
-								    /\brgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/g,
-								    function($0, $1, $2, $3) {
-								        return "#" + ("0"+Number($1).toString(16)).substr(-2) + ("0"+Number($2).toString(16)).substr(-2) + ("0"+Number($3).toString(16)).substr(-2);
-								    });
-							
 							// Updates the color picker for the current font
 							if (fontColorApply != null)
 							{
-								if (color.charAt(0) == '#')
+								if (css.color == 'rgba(0, 0, 0, 0)' ||
+									css.color == 'transparent')
 								{
-									currentFontColor = color;
+									currentFontColor = mxConstants.NONE;
 								}
 								else
 								{
-									currentFontColor = '#000000';
+									currentFontColor = mxUtils.rgba2hex(css.color)
 								}
-								
+
 								fontColorApply(currentFontColor, true);
 							}
 							
 							if (bgColorApply != null)
 							{
-								if (color2.charAt(0) == '#')
+								if (css.backgroundColor == 'rgba(0, 0, 0, 0)' ||
+									css.backgroundColor == 'transparent')
 								{
-									currentBgColor = color2;
+									currentBgColor = mxConstants.NONE;
 								}
 								else
 								{
-									currentBgColor = null;
+									currentBgColor = mxUtils.rgba2hex(css.backgroundColor);
 								}
 								
 								bgColorApply(currentBgColor, true);
@@ -4272,7 +4209,7 @@ StyleFormatPanel.prototype.init = function()
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	
 	if (!ss.containsLabel && ss.cells.length > 0)
 	{
@@ -4281,15 +4218,15 @@ StyleFormatPanel.prototype.init = function()
 		{
 			this.container.appendChild(this.addSvgStyles(this.createPanel()));
 		}
-		
-		if (!ss.containsImage || ss.style.shape == 'image')
+
+		if (ss.fill)
 		{
 			this.container.appendChild(this.addFill(this.createPanel()));
 		}
 	
 		this.container.appendChild(this.addStroke(this.createPanel()));
 		this.container.appendChild(this.addLineJumps(this.createPanel()));
-		var opacityPanel = this.createRelativeOption(mxResources.get('opacity'), mxConstants.STYLE_OPACITY, 41);
+		var opacityPanel = this.createRelativeOption(mxResources.get('opacity'), mxConstants.STYLE_OPACITY);
 		opacityPanel.style.paddingTop = '8px';
 		opacityPanel.style.paddingBottom = '8px';
 		this.container.appendChild(opacityPanel);
@@ -4327,7 +4264,7 @@ StyleFormatPanel.prototype.addSvgStyles = function(container)
 {
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	container.style.paddingTop = '6px';
 	container.style.paddingBottom = '6px';
 	container.style.fontWeight = 'bold';
@@ -4413,7 +4350,7 @@ StyleFormatPanel.prototype.addSvgRule = function(container, rule, svg, styleElem
 					
 					graph.setCellStyles(mxConstants.STYLE_IMAGE, 'data:image/svg+xml,' +
 						((window.btoa) ? btoa(xml) : Base64.encode(xml, true)),
-						this.format.getSelectionState().cells);
+						ui.getSelectionState().cells);
 				}), '#ffffff',
 				{
 					install: function(apply)
@@ -4444,7 +4381,7 @@ StyleFormatPanel.prototype.addSvgRule = function(container, rule, svg, styleElem
  */
 StyleFormatPanel.prototype.addEditOps = function(div)
 {
-	var ss = this.format.getSelectionState();
+	var ss = this.editorUi.getSelectionState();
 	var btn = null;
 	
 	if (ss.cells.length == 1)
@@ -4455,7 +4392,7 @@ StyleFormatPanel.prototype.addEditOps = function(div)
 		}));
 		
 		btn.setAttribute('title', mxResources.get('editStyle') + ' (' + this.editorUi.actions.get('editStyle').shortcut + ')');
-		btn.style.width = '202px';
+		btn.style.width = '210px';
 		btn.style.marginBottom = '2px';
 		
 		div.appendChild(btn);
@@ -4473,12 +4410,12 @@ StyleFormatPanel.prototype.addEditOps = function(div)
 		
 		if (btn == null)
 		{
-			btn2.style.width = '202px';
+			btn2.style.width = '210px';
 		}
 		else
 		{
-			btn.style.width = '100px';
-			btn2.style.width = '100px';
+			btn.style.width = '104px';
+			btn2.style.width = '104px';
 			btn2.style.marginLeft = '2px';
 		}
 		
@@ -4495,16 +4432,21 @@ StyleFormatPanel.prototype.addFill = function(container)
 {
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	container.style.paddingTop = '6px';
 	container.style.paddingBottom = '6px';
 
 	// Adds gradient direction option
 	var gradientSelect = document.createElement('select');
 	gradientSelect.style.position = 'absolute';
-	gradientSelect.style.marginTop = '-2px';
-	gradientSelect.style.right = '72px';
+	gradientSelect.style.left = '104px';
 	gradientSelect.style.width = '70px';
+	gradientSelect.style.height = '22px';
+	gradientSelect.style.padding = '0px';
+	gradientSelect.style.marginTop = '-3px';
+	gradientSelect.style.borderRadius = '4px';
+	gradientSelect.style.border = '1px solid rgb(160, 160, 160)';
+	gradientSelect.style.boxSizing = 'border-box';
 	
 	var fillStyleSelect = gradientSelect.cloneNode(false);
 	
@@ -4518,9 +4460,13 @@ StyleFormatPanel.prototype.addFill = function(container)
 		mxEvent.consume(evt);
 	});
 	
-	var defs = (ss.vertices.length >= 1) ? graph.stylesheet.getDefaultVertexStyle() : graph.stylesheet.getDefaultEdgeStyle();
+	var defs = (ss.vertices.length >= 1) ?
+		graph.stylesheet.getDefaultVertexStyle() :
+		graph.stylesheet.getDefaultEdgeStyle();
+
 	var gradientPanel = this.createCellColorOption(mxResources.get('gradient'), mxConstants.STYLE_GRADIENTCOLOR,
-		(defs[mxConstants.STYLE_GRADIENTCOLOR] != null) ? defs[mxConstants.STYLE_GRADIENTCOLOR] : '#ffffff', function(color)
+		(defs[mxConstants.STYLE_GRADIENTCOLOR] != null) ? defs[mxConstants.STYLE_GRADIENTCOLOR] : '#ffffff',
+		function(color)
 	{
 		if (color == null || color == mxConstants.NONE)
 		{
@@ -4532,25 +4478,25 @@ StyleFormatPanel.prototype.addFill = function(container)
 		}
 	}, function(color)
 	{
-		graph.updateCellStyles(mxConstants.STYLE_GRADIENTCOLOR, color, graph.getSelectionCells());
+		graph.updateCellStyles({'gradientColor': color}, graph.getSelectionCells());
 	});
 
 	var fillKey = (ss.style.shape == 'image') ? mxConstants.STYLE_IMAGE_BACKGROUND : mxConstants.STYLE_FILLCOLOR;
-	var label = (ss.style.shape == 'image') ? mxResources.get('background') : mxResources.get('fill');
-	
-	var defs = (ss.vertices.length >= 1) ? graph.stylesheet.getDefaultVertexStyle() : graph.stylesheet.getDefaultEdgeStyle();
-	var fillPanel = this.createCellColorOption(label, fillKey, (defs[fillKey] != null) ? defs[fillKey] : '#ffffff', null, mxUtils.bind(this, function(color)
-	{
-		graph.updateCellStyles(fillKey, color, ss.cells);
-	}));
-	fillPanel.style.fontWeight = 'bold';
 
+	var fillPanel = this.createCellColorOption(mxResources.get('fill'),
+		fillKey, 'default', null, mxUtils.bind(this, function(color)
+	{
+		graph.setCellStyles(fillKey, color, ss.cells);
+	}), graph.shapeBackgroundColor);
+
+	fillPanel.style.fontWeight = 'bold';
 	var tmpColor = mxUtils.getValue(ss.style, fillKey, null);
 	gradientPanel.style.display = (tmpColor != null && tmpColor != mxConstants.NONE &&
 		ss.fill && ss.style.shape != 'image') ? '' : 'none';
 
 	var directions = [mxConstants.DIRECTION_NORTH, mxConstants.DIRECTION_EAST,
-	                  mxConstants.DIRECTION_SOUTH, mxConstants.DIRECTION_WEST];
+	                  mxConstants.DIRECTION_SOUTH, mxConstants.DIRECTION_WEST,
+					  mxConstants.DIRECTION_RADIAL];
 
 	for (var i = 0; i < directions.length; i++)
 	{
@@ -4574,7 +4520,7 @@ StyleFormatPanel.prototype.addFill = function(container)
 
 	var listener = mxUtils.bind(this, function()
 	{
-		ss = this.format.getSelectionState();
+		ss = ui.getSelectionState();
 		var value = mxUtils.getValue(ss.style, mxConstants.STYLE_GRADIENT_DIRECTION, mxConstants.DIRECTION_SOUTH);
 		var fillStyle = mxUtils.getValue(ss.style, 'fillStyle', 'auto');
 		
@@ -4588,9 +4534,9 @@ StyleFormatPanel.prototype.addFill = function(container)
 		fillStyleSelect.value = fillStyle;
 		container.style.display = (ss.fill) ? '' : 'none';
 		
-		var fillColor = mxUtils.getValue(ss.style, mxConstants.STYLE_FILLCOLOR, null);
-			
-		if (!ss.fill || ss.containsImage || fillColor == null || fillColor == mxConstants.NONE || ss.style.shape == 'filledEdge')
+		var fillColor = mxUtils.getValue(ss.style, fillKey, null);
+		
+		if (!ss.fill || fillColor == null || fillColor == mxConstants.NONE || ss.style.shape == 'filledEdge')
 		{
 			fillStyleSelect.style.display = 'none';
 			gradientPanel.style.display = 'none';
@@ -4598,7 +4544,8 @@ StyleFormatPanel.prototype.addFill = function(container)
 		else
 		{
 			fillStyleSelect.style.display = (ss.style.sketch == '1') ? '' : 'none';
-			gradientPanel.style.display = (ss.style.sketch != '1' || fillStyle == 'solid' || fillStyle == 'auto') ? '' : 'none';
+			gradientPanel.style.display = (!ss.containsImage && (ss.style.sketch != '1' ||
+				fillStyle == 'solid' || fillStyle == 'auto')) ? '' : 'none';
 		}
 	});
 	
@@ -4609,12 +4556,16 @@ StyleFormatPanel.prototype.addFill = function(container)
 	mxEvent.addListener(gradientSelect, 'change', function(evt)
 	{
 		graph.setCellStyles(mxConstants.STYLE_GRADIENT_DIRECTION, gradientSelect.value, ss.cells);
+		ui.fireEvent(new mxEventObject('styleChanged', 'keys', [mxConstants.STYLE_GRADIENT_DIRECTION],
+			'values', [gradientSelect.value], 'cells', ss.cells));
 		mxEvent.consume(evt);
 	});
 	
 	mxEvent.addListener(fillStyleSelect, 'change', function(evt)
 	{
 		graph.setCellStyles('fillStyle', fillStyleSelect.value, ss.cells);
+		ui.fireEvent(new mxEventObject('styleChanged', 'keys', ['fillStyle'],
+			'values', [fillStyleSelect.value], 'cells', ss.cells));
 		mxEvent.consume(evt);
 	});
 	
@@ -4637,12 +4588,13 @@ StyleFormatPanel.prototype.addFill = function(container)
  */
 StyleFormatPanel.prototype.getCustomColors = function()
 {
-	var ss = this.format.getSelectionState();
+	var ss = this.editorUi.getSelectionState();
 	var result = [];
 	
-	if (ss.style.shape == 'swimlane' || ss.style.shape == 'table')
+	if (ss.swimlane)
 	{
-		result.push({title: mxResources.get('laneColor'), key: 'swimlaneFillColor', defaultValue: '#ffffff'});
+		result.push({title: mxResources.get('laneColor'),
+			key: 'swimlaneFillColor', defaultValue: 'default'});
 	}
 	
 	return result;
@@ -4655,9 +4607,9 @@ StyleFormatPanel.prototype.addStroke = function(container)
 {
 	var ui = this.editorUi;
 	var graph = ui.editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	
-	container.style.paddingTop = '4px';
+	container.style.paddingTop = '6px';
 	container.style.paddingBottom = '4px';
 	container.style.whiteSpace = 'normal';
 	
@@ -4672,9 +4624,14 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	// Adds gradient direction option
 	var styleSelect = document.createElement('select');
 	styleSelect.style.position = 'absolute';
-	styleSelect.style.marginTop = '-2px';
-	styleSelect.style.right = '72px';
+	styleSelect.style.height = '22px';
+	styleSelect.style.padding = '0px';
+	styleSelect.style.marginTop = '-3px';
+	styleSelect.style.boxSizing = 'border-box';
+	styleSelect.style.left = '94px';
 	styleSelect.style.width = '80px';
+	styleSelect.style.border = '1px solid rgb(160, 160, 160)';
+	styleSelect.style.borderRadius = '4px';
 
 	var styles = ['sharp', 'rounded', 'curved'];
 
@@ -4728,12 +4685,11 @@ StyleFormatPanel.prototype.addStroke = function(container)
 
 	var strokeKey = (ss.style.shape == 'image') ? mxConstants.STYLE_IMAGE_BORDER : mxConstants.STYLE_STROKECOLOR;
 	var label = (ss.style.shape == 'image') ? mxResources.get('border') : mxResources.get('line');
-	
-	var defs = (ss.vertices.length >= 1) ? graph.stylesheet.getDefaultVertexStyle() : graph.stylesheet.getDefaultEdgeStyle();
-	var lineColor = this.createCellColorOption(label, strokeKey, (defs[strokeKey] != null) ? defs[strokeKey] : '#000000', null, mxUtils.bind(this, function(color)
+
+	var lineColor = this.createCellColorOption(label, strokeKey, 'default', null, mxUtils.bind(this, function(color)
 	{
-		graph.updateCellStyles(strokeKey, color, ss.cells);
-	}));
+		graph.setCellStyles(strokeKey, color, ss.cells);
+	}), graph.shapeForegroundColor);
 	
 	lineColor.appendChild(styleSelect);
 	colorPanel.appendChild(lineColor);
@@ -4743,9 +4699,11 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	stylePanel.style.fontWeight = 'normal';
 	stylePanel.style.whiteSpace = 'nowrap';
 	stylePanel.style.position = 'relative';
-	stylePanel.style.paddingLeft = '16px'
+	stylePanel.style.paddingLeft = '0px';
 	stylePanel.style.marginBottom = '2px';
+	stylePanel.style.overflow = 'hidden';
 	stylePanel.style.marginTop = '2px';
+	stylePanel.style.width = '220px';
 	stylePanel.className = 'geToolbarContainer';
 
 	var addItem = mxUtils.bind(this, function(menu, width, cssName, keys, values)
@@ -4798,9 +4756,15 @@ StyleFormatPanel.prototype.addStroke = function(container)
 
 	// Stroke width
 	var input = document.createElement('input');
+	input.style.position = 'absolute';
 	input.style.textAlign = 'right';
-	input.style.marginTop = (uiTheme == 'min') ? '0px' : '2px';
-	input.style.width = '41px';
+	input.style.marginTop = '2px';
+	input.style.width = '52px';
+	input.style.height = '21px';
+	input.style.left = '146px';
+	input.style.border = '1px solid rgb(160, 160, 160)';
+	input.style.borderRadius = '4px';
+	input.style.boxSizing = 'border-box';
 	input.setAttribute('title', mxResources.get('linewidth'));
 	
 	stylePanel.appendChild(input);
@@ -4844,23 +4808,16 @@ StyleFormatPanel.prototype.addStroke = function(container)
 
 	var stepper = this.createStepper(input, update, 1, 9);
 	stepper.style.display = input.style.display;
-	stepper.style.marginTop = (uiTheme == 'min') ? '0px' : '2px';
+	stepper.style.marginTop = '2px';
+	stepper.style.left = '198px';
 	stylePanel.appendChild(stepper);
 
 	var altStepper = this.createStepper(altInput, altUpdate, 1, 9);
 	altStepper.style.display = altInput.style.display;
-	altStepper.style.marginTop = (uiTheme == 'min') ? '0px' : '2px';
-	altStylePanel.appendChild(altStepper);
-	
-	input.style.position = 'absolute';
-	input.style.height = '15px';
-	input.style.left = '141px';
-	stepper.style.left = '190px';
-
+	altStepper.style.marginTop = '2px';
 	altInput.style.position = 'absolute';
-	altInput.style.left = '141px';
-	altInput.style.height = '15px';
-	altStepper.style.left = '190px';
+	altStepper.style.left = '198px';
+	altStylePanel.appendChild(altStepper);
 	
 	mxEvent.addListener(input, 'blur', update);
 	mxEvent.addListener(input, 'change', update);
@@ -4894,46 +4851,63 @@ StyleFormatPanel.prototype.addStroke = function(container)
 		{
 			var item = this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.NONE, 0], 'geIcon', null, false);
 			item.setAttribute('title', mxResources.get('none'));
-			item.firstChild.firstChild.innerHTML = '<font style="font-size:10px;">' + mxUtils.htmlEntities(mxResources.get('none')) + '</font>';
+
+			var font = document.createElement('font');
+			font.style.fontSize = '10px';
+			mxUtils.write(font, mxResources.get('none'));
+			item.firstChild.firstChild.appendChild(font);
 
 			if (ss.style.shape == 'connector' || ss.style.shape == 'filledEdge')
 			{
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC, 1], 'geIcon geSprite geSprite-startclassic', null, false).setAttribute('title', mxResources.get('classic'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC_THIN, 1], 'geIcon geSprite geSprite-startclassicthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OPEN, 0], 'geIcon geSprite geSprite-startopen', null, false).setAttribute('title', mxResources.get('openArrow'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OPEN_THIN, 0], 'geIcon geSprite geSprite-startopenthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['openAsync', 0], 'geIcon geSprite geSprite-startopenasync', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK, 1], 'geIcon geSprite geSprite-startblock', null, false).setAttribute('title', mxResources.get('block'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK_THIN, 1], 'geIcon geSprite geSprite-startblockthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['async', 1], 'geIcon geSprite geSprite-startasync', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OVAL, 1], 'geIcon geSprite geSprite-startoval', null, false).setAttribute('title', mxResources.get('oval'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND, 1], 'geIcon geSprite geSprite-startdiamond', null, false).setAttribute('title', mxResources.get('diamond'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND_THIN, 1], 'geIcon geSprite geSprite-startthindiamond', null, false).setAttribute('title', mxResources.get('diamondThin'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC, 0], 'geIcon geSprite geSprite-startclassictrans', null, false).setAttribute('title', mxResources.get('classic'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC_THIN, 0], 'geIcon geSprite geSprite-startclassicthintrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK, 0], 'geIcon geSprite geSprite-startblocktrans', null, false).setAttribute('title', mxResources.get('block'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK_THIN, 0], 'geIcon geSprite geSprite-startblockthintrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['async', 0], 'geIcon geSprite geSprite-startasynctrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OVAL, 0], 'geIcon geSprite geSprite-startovaltrans', null, false).setAttribute('title', mxResources.get('oval'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND, 0], 'geIcon geSprite geSprite-startdiamondtrans', null, false).setAttribute('title', mxResources.get('diamond'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND_THIN, 0], 'geIcon geSprite geSprite-startthindiamondtrans', null, false).setAttribute('title', mxResources.get('diamondThin'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['box', 0], 'geIcon geSprite geSvgSprite geSprite-box', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['halfCircle', 0], 'geIcon geSprite geSvgSprite geSprite-halfCircle', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['dash', 0], 'geIcon geSprite geSprite-startdash', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['cross', 0], 'geIcon geSprite geSprite-startcross', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['circlePlus', 0], 'geIcon geSprite geSprite-startcircleplus', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['circle', 1], 'geIcon geSprite geSprite-startcircle', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERone', 0], 'geIcon geSprite geSprite-starterone', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERmandOne', 0], 'geIcon geSprite geSprite-starteronetoone', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERmany', 0], 'geIcon geSprite geSprite-startermany', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERoneToMany', 0], 'geIcon geSprite geSprite-starteronetomany', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERzeroToOne', 1], 'geIcon geSprite geSprite-starteroneopt', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERzeroToMany', 1], 'geIcon geSprite geSprite-startermanyopt', null, false);
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC, 1], null, null, false, Format.classicFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC_THIN, 1], null, null, false, Format.classicThinFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OPEN, 0], null, null, false, Format.openFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OPEN_THIN, 0], null, null, false, Format.openThinFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['openAsync', 0], null, null, false, Format.openAsyncFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK, 1], null, null, false, Format.blockFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK_THIN, 1], null, null, false, Format.blockThinFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['async', 1], null, null, false, Format.asyncFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OVAL, 1], null, null, false, Format.ovalFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND, 1], null, null, false, Format.diamondFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND_THIN, 1], null, null, false, Format.diamondThinFilledMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC, 0], null, null, false, Format.classicMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_CLASSIC_THIN, 0], null, null, false, Format.classicThinMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK, 0], null, null, false, Format.blockMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_BLOCK_THIN, 0], null, null, false, Format.blockThinMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['async', 0], null, null, false, Format.asyncMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_OVAL, 0], null, null, false, Format.ovalMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND, 0], null, null, false, Format.diamondMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], [mxConstants.ARROW_DIAMOND_THIN, 0], null, null, false, Format.diamondThinMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['box', 0], null, null, false, Format.boxMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['halfCircle', 0], null, null, false, Format.halfCircleMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['dash', 0], null, null, false, Format.dashMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['cross', 0], null, null, false, Format.crossMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['circlePlus', 0], null, null, false, Format.circlePlusMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['circle', 1], null, null, false, Format.circleMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['baseDash', 0], null, null, false, Format.baseDashMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERone', 0], null, null, false, Format.EROneMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERmandOne', 0], null, null, false, Format.ERmandOneMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERmany', 0], null, null, false, Format.ERmanyMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERoneToMany', 0], null, null, false, Format.ERoneToManyMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERzeroToOne', 0], null, null, false, Format.ERzeroToOneMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['ERzeroToMany', 0], null, null, false, Format.ERzeroToManyMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['doubleBlock', 0], null, null, false, Format.doubleBlockMarkerImage.src));
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW, 'startFill'], ['doubleBlock', 1], null, null, false, Format.doubleBlockFilledMarkerImage.src));
 			}
 			else
 			{
 				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_STARTARROW], [mxConstants.ARROW_BLOCK], 'geIcon geSprite geSprite-startblocktrans', null, false).setAttribute('title', mxResources.get('block'));
 			}
+
+			menu.div.style.width = '40px';
+
+			window.setTimeout(mxUtils.bind(this, function()
+			{
+				if (menu.div != null)
+				{
+					mxUtils.fit(menu.div);
+				}
+			}), 0);
 		}
 	}));
 
@@ -4943,51 +4917,73 @@ StyleFormatPanel.prototype.addStroke = function(container)
 		{
 			var item = this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.NONE, 0], 'geIcon', null, false);
 			item.setAttribute('title', mxResources.get('none'));
-			item.firstChild.firstChild.innerHTML = '<font style="font-size:10px;">' + mxUtils.htmlEntities(mxResources.get('none')) + '</font>';
+
+			var font = document.createElement('font');
+			font.style.fontSize = '10px';
+			mxUtils.write(font, mxResources.get('none'));
+			item.firstChild.firstChild.appendChild(font);
 			
 			if (ss.style.shape == 'connector' || ss.style.shape == 'filledEdge')
 			{
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC, 1], 'geIcon geSprite geSprite-endclassic', null, false).setAttribute('title', mxResources.get('classic'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC_THIN, 1], 'geIcon geSprite geSprite-endclassicthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OPEN, 0], 'geIcon geSprite geSprite-endopen', null, false).setAttribute('title', mxResources.get('openArrow'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OPEN_THIN, 0], 'geIcon geSprite geSprite-endopenthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['openAsync', 0], 'geIcon geSprite geSprite-endopenasync', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK, 1], 'geIcon geSprite geSprite-endblock', null, false).setAttribute('title', mxResources.get('block'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK_THIN, 1], 'geIcon geSprite geSprite-endblockthin', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['async', 1], 'geIcon geSprite geSprite-endasync', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OVAL, 1], 'geIcon geSprite geSprite-endoval', null, false).setAttribute('title', mxResources.get('oval'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND, 1], 'geIcon geSprite geSprite-enddiamond', null, false).setAttribute('title', mxResources.get('diamond'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND_THIN, 1], 'geIcon geSprite geSprite-endthindiamond', null, false).setAttribute('title', mxResources.get('diamondThin'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC, 0], 'geIcon geSprite geSprite-endclassictrans', null, false).setAttribute('title', mxResources.get('classic'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC_THIN, 0], 'geIcon geSprite geSprite-endclassicthintrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK, 0], 'geIcon geSprite geSprite-endblocktrans', null, false).setAttribute('title', mxResources.get('block'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK_THIN, 0], 'geIcon geSprite geSprite-endblockthintrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['async', 0], 'geIcon geSprite geSprite-endasynctrans', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OVAL, 0], 'geIcon geSprite geSprite-endovaltrans', null, false).setAttribute('title', mxResources.get('oval'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND, 0], 'geIcon geSprite geSprite-enddiamondtrans', null, false).setAttribute('title', mxResources.get('diamond'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND_THIN, 0], 'geIcon geSprite geSprite-endthindiamondtrans', null, false).setAttribute('title', mxResources.get('diamondThin'));
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['box', 0], 'geIcon geSprite geSvgSprite geFlipSprite geSprite-box', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['halfCircle', 0], 'geIcon geSprite geSvgSprite geFlipSprite geSprite-halfCircle', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['dash', 0], 'geIcon geSprite geSprite-enddash', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['cross', 0], 'geIcon geSprite geSprite-endcross', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['circlePlus', 0], 'geIcon geSprite geSprite-endcircleplus', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['circle', 1], 'geIcon geSprite geSprite-endcircle', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERone', 0], 'geIcon geSprite geSprite-enderone', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERmandOne', 0], 'geIcon geSprite geSprite-enderonetoone', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERmany', 0], 'geIcon geSprite geSprite-endermany', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERoneToMany', 0], 'geIcon geSprite geSprite-enderonetomany', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERzeroToOne', 1], 'geIcon geSprite geSprite-enderoneopt', null, false);
-				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERzeroToMany', 1], 'geIcon geSprite geSprite-endermanyopt', null, false);
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC, 1], null, null, false, Format.classicFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC_THIN, 1], null, null, false, Format.classicThinFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OPEN, 0], null, null, false, Format.openFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OPEN_THIN, 0], null, null, false, Format.openThinFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['openAsync', 0], null, null, false, Format.openAsyncFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK, 1], null, null, false, Format.blockFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK_THIN, 1], null, null, false, Format.blockThinFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['async', 1], null, null, false, Format.asyncFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OVAL, 1], null, null, false, Format.ovalFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND, 1], null, null, false, Format.diamondFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND_THIN, 1], null, null, false, Format.diamondThinFilledMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC, 0], null, null, false, Format.classicMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_CLASSIC_THIN, 0], null, null, false, Format.classicThinMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK, 0], null, null, false, Format.blockMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_BLOCK_THIN, 0], null, null, false, Format.blockThinMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['async', 0], null, null, false, Format.asyncMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_OVAL, 0], null, null, false, Format.ovalMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND, 0], null, null, false, Format.diamondMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], [mxConstants.ARROW_DIAMOND_THIN, 0], null, null, false, Format.diamondThinMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['box', 0], null, null, false, Format.boxMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['halfCircle', 0], null, null, false, Format.halfCircleMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['dash', 0], null, null, false, Format.dashMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['cross', 0], null, null, false, Format.crossMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['circlePlus', 0], null, null, false, Format.circlePlusMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['circle', 0], null, null, false, Format.circleMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['baseDash', 0], null, null, false, Format.baseDashMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERone', 0], null, null, false, Format.EROneMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERmandOne', 0], null, null, false, Format.ERmandOneMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERmany', 0], null, null, false, Format.ERmanyMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERoneToMany', 0], null, null, false, Format.ERoneToManyMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERzeroToOne', 0], null, null, false, Format.ERzeroToOneMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['ERzeroToMany', 0], null, null, false, Format.ERzeroToManyMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['doubleBlock', 0], null, null, false, Format.doubleBlockMarkerImage.src), 'scaleX(-1)');
+				Format.processMenuIcon(this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW, 'endFill'], ['doubleBlock', 1], null, null, false, Format.doubleBlockFilledMarkerImage.src), 'scaleX(-1)');
 			}
 			else
 			{
 				this.editorUi.menus.edgeStyleChange(menu, '', [mxConstants.STYLE_ENDARROW], [mxConstants.ARROW_BLOCK], 'geIcon geSprite geSprite-endblocktrans', null, false).setAttribute('title', mxResources.get('block'));
 			}
+
+			menu.div.style.width = '40px';
+
+			window.setTimeout(mxUtils.bind(this, function()
+			{
+				if (menu.div != null)
+				{
+					mxUtils.fit(menu.div);
+				}
+			}), 0);
 		}
 	}));
 
-	this.addArrow(edgeShape, 8);
-	this.addArrow(edgeStyle);
+	var elt = this.addArrow(edgeShape, 8);
+	elt.nextSibling.style.position = 'relative';
+	elt.nextSibling.style.top = '-2px';
+	elt = this.addArrow(edgeStyle, 10);
+	elt.nextSibling.style.position = 'relative';
+	elt.nextSibling.style.top = '-3px';
+	edgeStyle.getElementsByTagName('img')[0].style.top = '-1px';
 	this.addArrow(lineStart);
 	this.addArrow(lineEnd);
 	
@@ -5000,22 +4996,26 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	altSymbol.style.width = '22px';
 	
 	var solid = document.createElement('div');
-	solid.style.width = '85px';
+	solid.style.width = '84px';
 	solid.style.height = '1px';
 	solid.style.borderBottom = '1px solid ' + this.defaultStrokeColor;
-	solid.style.marginBottom = '9px';
+	solid.style.marginBottom = '7px';
 	symbol.appendChild(solid);
 	
 	var altSolid = document.createElement('div');
 	altSolid.style.width = '23px';
 	altSolid.style.height = '1px';
 	altSolid.style.borderBottom = '1px solid ' + this.defaultStrokeColor;
-	altSolid.style.marginBottom = '9px';
+	altSolid.style.marginBottom = '7px';
 	altSymbol.appendChild(altSolid);
 
 	pattern.style.height = '15px';
+	pattern.style.marginLeft = '16px';
 	altPattern.style.height = '15px';
+	altPattern.style.marginLeft = '3px';
+	edgeShape.style.marginLeft = '10px';
 	edgeShape.style.height = '15px';
+	edgeStyle.style.marginLeft = '10px';
 	edgeStyle.style.height = '17px';
 	lineStart.style.marginLeft = '3px';
 	lineStart.style.height = '17px';
@@ -5027,13 +5027,12 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	container.appendChild(stylePanel);
 
 	var arrowPanel = stylePanel.cloneNode(false);
-	arrowPanel.style.paddingBottom = '6px';
-	arrowPanel.style.paddingTop = '4px';
+	arrowPanel.style.padding = '5px 4px 6px 0px';
 	arrowPanel.style.fontWeight = 'normal';
 	
 	var span = document.createElement('div');
 	span.style.position = 'absolute';
-	span.style.marginLeft = '3px';
+	span.style.marginLeft = '0px';
 	span.style.marginBottom = '12px';
 	span.style.marginTop = '2px';
 	span.style.fontWeight = 'normal';
@@ -5043,11 +5042,11 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	arrowPanel.appendChild(span);
 	
 	var endSpacingUpdate, endSizeUpdate;
-	var endSpacing = this.addUnitInput(arrowPanel, 'pt', 74, 33, function()
+	var endSpacing = this.addUnitInput(arrowPanel, 'pt', 98, 52, function()
 	{
 		endSpacingUpdate.apply(this, arguments);
 	});
-	var endSize = this.addUnitInput(arrowPanel, 'pt', 20, 33, function()
+	var endSize = this.addUnitInput(arrowPanel, 'pt', 30, 52, function()
 	{
 		endSizeUpdate.apply(this, arguments);
 	});
@@ -5063,18 +5062,18 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	arrowPanel.appendChild(span);
 	
 	var startSpacingUpdate, startSizeUpdate;
-	var startSpacing = this.addUnitInput(arrowPanel, 'pt', 74, 33, function()
+	var startSpacing = this.addUnitInput(arrowPanel, 'pt', 98, 52, function()
 	{
 		startSpacingUpdate.apply(this, arguments);
 	});
-	var startSize = this.addUnitInput(arrowPanel, 'pt', 20, 33, function()
+	var startSize = this.addUnitInput(arrowPanel, 'pt', 30, 52, function()
 	{
 		startSizeUpdate.apply(this, arguments);
 	});
 
 	mxUtils.br(arrowPanel);
-	this.addLabel(arrowPanel, mxResources.get('spacing'), 74, 50);
-	this.addLabel(arrowPanel, mxResources.get('size'), 20, 50);
+	this.addLabel(arrowPanel, mxResources.get('spacing'), 98, 52);
+	this.addLabel(arrowPanel, mxResources.get('size'), 30, 52);
 	mxUtils.br(arrowPanel);
 	
 	var perimeterPanel = colorPanel.cloneNode(false);
@@ -5097,7 +5096,7 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	perimeterPanel.appendChild(span);
 	
 	var perimeterUpdate;
-	var perimeterSpacing = this.addUnitInput(perimeterPanel, 'pt', 20, 41, function()
+	var perimeterSpacing = this.addUnitInput(perimeterPanel, 'pt', 30, 52, function()
 	{
 		perimeterUpdate.apply(this, arguments);
 	});
@@ -5114,8 +5113,7 @@ StyleFormatPanel.prototype.addStroke = function(container)
 	
 	var listener = mxUtils.bind(this, function(sender, evt, force)
 	{
-		ss = this.format.getSelectionState();
-		var color = mxUtils.getValue(ss.style, strokeKey, null);
+		ss = ui.getSelectionState();
 
 		if (force || document.activeElement != input)
 		{
@@ -5233,7 +5231,13 @@ StyleFormatPanel.prototype.addStroke = function(container)
 			altStylePanel.style.display = 'none';
 			stylePanel.style.display = '';
 		}
-		
+
+		if (Graph.lineJumpsEnabled && ss.edges.length > 0 &&
+			ss.vertices.length == 0 && ss.lineJumps)
+		{
+			container.style.borderBottomStyle = 'none';
+		}
+
 		function updateArrow(marker, fill, elt, prefix)
 		{
 			var markerDiv = elt.getElementsByTagName('div')[0];
@@ -5241,17 +5245,24 @@ StyleFormatPanel.prototype.addStroke = function(container)
 			if (markerDiv != null)
 			{
 				markerDiv.className = ui.getCssClassForMarker(prefix, ss.style.shape, marker, fill);
-				
+				markerDiv.nextSibling.style.marginLeft = '1px';
+				markerDiv.nextSibling.style.paddingRight = '5px';
+
 				if (markerDiv.className == 'geSprite geSprite-noarrow')
 				{
 					markerDiv.innerHTML = mxUtils.htmlEntities(mxResources.get('none'));
 					markerDiv.style.backgroundImage = 'none';
 					markerDiv.style.verticalAlign = 'top';
-					markerDiv.style.marginTop = '5px';
+					markerDiv.style.marginTop = '4px';
 					markerDiv.style.fontSize = '10px';
 					markerDiv.style.filter = 'none';
 					markerDiv.style.color = this.defaultStrokeColor;
 					markerDiv.nextSibling.style.marginTop = '0px';
+				}
+				else
+				{
+					markerDiv.nextSibling.style.position = 'relative';
+					markerDiv.nextSibling.style.top = '-2px';
 				}
 			}
 			
@@ -5347,32 +5358,37 @@ StyleFormatPanel.prototype.addStroke = function(container)
  */
 StyleFormatPanel.prototype.addLineJumps = function(container)
 {
-	var ss = this.format.getSelectionState();
+	var ui = this.editorUi;
+	var editor = ui.editor;
+	var graph = editor.graph;
+	var ss = ui.getSelectionState();
 	
 	if (Graph.lineJumpsEnabled && ss.edges.length > 0 &&
 		ss.vertices.length == 0 && ss.lineJumps)
 	{
-		container.style.padding = '8px 0px 24px 18px';
-		
-		var ui = this.editorUi;
-		var editor = ui.editor;
-		var graph = editor.graph;
+		container.style.padding = '2px 0px 24px 14px';
 		
 		var span = document.createElement('div');
 		span.style.position = 'absolute';
-		span.style.fontWeight = 'bold';
-		span.style.width = '80px';
+		span.style.maxWidth = '82px';
+		span.style.overflow = 'hidden';
+		span.style.textOverflow = 'ellipsis';
 		
 		mxUtils.write(span, mxResources.get('lineJumps'));
 		container.appendChild(span);
 		
 		var styleSelect = document.createElement('select');
 		styleSelect.style.position = 'absolute';
+		styleSelect.style.height = '21px';
+		styleSelect.style.padding = '0px';
 		styleSelect.style.marginTop = '-2px';
+		styleSelect.style.boxSizing = 'border-box';
 		styleSelect.style.right = '76px';
-		styleSelect.style.width = '62px';
+		styleSelect.style.width = '54px';
+		styleSelect.style.border = '1px solid rgb(160, 160, 160)';
+		styleSelect.style.borderRadius = '4px';
 
-		var styles = ['none', 'arc', 'gap', 'sharp'];
+		var styles = ['none', 'arc', 'gap', 'sharp', 'line'];
 
 		for (var i = 0; i < styles.length; i++)
 		{
@@ -5409,7 +5425,7 @@ StyleFormatPanel.prototype.addLineJumps = function(container)
 		
 		var jumpSizeUpdate;
 		
-		var jumpSize = this.addUnitInput(container, 'pt', 22, 33, function()
+		var jumpSize = this.addUnitInput(container, 'pt', 16, 42, function()
 		{
 			jumpSizeUpdate.apply(this, arguments);
 		});
@@ -5419,7 +5435,7 @@ StyleFormatPanel.prototype.addLineJumps = function(container)
 		
 		var listener = mxUtils.bind(this, function(sender, evt, force)
 		{
-			ss = this.format.getSelectionState();
+			ss = ui.getSelectionState();
 			styleSelect.value = mxUtils.getValue(ss.style, 'jumpStyle', 'none');
 
 			if (force || document.activeElement != jumpSize)
@@ -5451,16 +5467,16 @@ StyleFormatPanel.prototype.addEffects = function(div)
 	var ui = this.editorUi;
 	var editor = ui.editor;
 	var graph = editor.graph;
-	var ss = this.format.getSelectionState();
+	var ss = ui.getSelectionState();
 	
-	div.style.paddingTop = '0px';
-	div.style.paddingBottom = '2px';
+	div.style.paddingTop = '4px';
+	div.style.paddingBottom = '0px';
 
 	var table = document.createElement('table');
 
-	table.style.width = '100%';
+	table.style.width = '210px';
 	table.style.fontWeight = 'bold';
-	table.style.paddingRight = '20px';
+	table.style.tableLayout = 'fixed';
 	var tbody = document.createElement('tbody');
 	var row = document.createElement('tr');
 	row.style.padding = '0px';
@@ -5491,7 +5507,7 @@ StyleFormatPanel.prototype.addEffects = function(div)
 
 	var listener = mxUtils.bind(this, function(sender, evt, force)
 	{
-		ss = this.format.getSelectionState();
+		ss = ui.getSelectionState();
 		
 		left.innerHTML = '';
 		right.innerHTML = '';
@@ -5502,7 +5518,7 @@ StyleFormatPanel.prototype.addEffects = function(div)
 			addOption(mxResources.get('rounded'), mxConstants.STYLE_ROUNDED, 0);
 		}
 		
-		if (ss.style.shape == 'swimlane')
+		if (ss.swimlane)
 		{
 			addOption(mxResources.get('divider'), 'swimlaneLine', 1);
 		}
@@ -5534,15 +5550,8 @@ StyleFormatPanel.prototype.addStyleOps = function(div)
 {
 	div.style.paddingTop = '10px';
 	div.style.paddingBottom = '10px';
-	
-	var btn = mxUtils.button(mxResources.get('setAsDefaultStyle'), mxUtils.bind(this, function(evt)
-	{
-		this.editorUi.actions.get('setAsDefaultStyle').funct();
-	}));
-	
-	btn.setAttribute('title', mxResources.get('setAsDefaultStyle') + ' (' + this.editorUi.actions.get('setAsDefaultStyle').shortcut + ')');
-	btn.style.width = '202px';
-	div.appendChild(btn);
+
+	this.addActions(div, ['setAsDefaultStyle']);
 
 	return div;
 };
@@ -5567,6 +5576,12 @@ DiagramStylePanel.prototype.init = function()
 	var editor = ui.editor;
 	var graph = editor.graph;
 
+	this.darkModeChangedListener = mxUtils.bind(this, function()
+	{
+		this.format.cachedStyleEntries = [];
+	});
+
+	ui.addListener('darkModeChanged', this.darkModeChangedListener);
 	this.container.appendChild(this.addView(this.createPanel()));
 };
 
@@ -5579,6 +5594,7 @@ DiagramStylePanel.prototype.addView = function(div)
 	var editor = ui.editor;
 	var graph = editor.graph;
 	var model = graph.getModel();
+	var gridColor = graph.view.gridColor;
 
 	div.style.whiteSpace = 'normal';
 
@@ -5587,13 +5603,12 @@ DiagramStylePanel.prototype.addView = function(div)
 	var curved = graph.currentEdgeStyle['curved'] == '1';
 
 	var opts = document.createElement('div');
-	opts.style.paddingBottom = '12px';
 	opts.style.marginRight = '16px';
 	div.style.paddingTop = '8px';
 	
 	var table = document.createElement('table');
 
-	table.style.width = '100%';
+	table.style.width = '210px';
 	table.style.fontWeight = 'bold';
 	
 	var tbody = document.createElement('tbody');
@@ -5607,35 +5622,41 @@ DiagramStylePanel.prototype.addView = function(div)
 	
 	var right = left.cloneNode(true);
 	right.style.paddingLeft = '8px';
-	row.appendChild(left);
+
+	// Sketch
+	if (urlParams['sketch'] != '1')
+	{
+		opts.style.paddingBottom = '12px';
+		row.appendChild(left);
+
+		left.appendChild(this.createOption(mxResources.get('sketch'), function()
+		{
+			return sketch;
+		}, function(checked)
+		{
+			sketch = checked;
+			
+			if (checked)
+			{
+				graph.currentEdgeStyle['sketch'] = '1';
+				graph.currentVertexStyle['sketch'] = '1';
+			}
+			else
+			{
+				delete graph.currentEdgeStyle['sketch'];
+				delete graph.currentVertexStyle['sketch'];
+			}
+			
+			graph.updateCellStyles({'sketch': (checked) ? '1' : null}, graph.getVerticesAndEdges());
+		}, null, function(div)
+		{
+			div.style.width = 'auto';
+		}));
+	}
+	
 	row.appendChild(right);
 	tbody.appendChild(row);
 	table.appendChild(tbody);
-	
-	// Sketch
-	left.appendChild(this.createOption(mxResources.get('sketch'), function()
-	{
-		return sketch;
-	}, function(checked)
-	{
-		sketch = checked;
-		
-		if (checked)
-		{
-			graph.currentEdgeStyle['sketch'] = '1';
-			graph.currentVertexStyle['sketch'] = '1';
-		}
-		else
-		{
-			delete graph.currentEdgeStyle['sketch'];
-			delete graph.currentVertexStyle['sketch'];
-		}
-		
-		graph.updateCellStyles('sketch', (checked) ? '1' : null, graph.getVerticesAndEdges());
-	}, null, function(div)
-	{
-		div.style.width = 'auto';
-	}));
 	
 	// Rounded
 	right.appendChild(this.createOption(mxResources.get('rounded'), function()
@@ -5647,48 +5668,53 @@ DiagramStylePanel.prototype.addView = function(div)
 		
 		if (checked)
 		{
+			graph.currentEdgeStyle['rounded'] = '1';
 			graph.currentVertexStyle['rounded'] = '1';
 		}
 		else
 		{
+			delete graph.currentEdgeStyle['rounded'];
 			delete graph.currentVertexStyle['rounded'];
 		}
 		
-		graph.updateCellStyles('rounded', (checked) ? '1' : null, graph.getVerticesAndEdges(true, true));
+		graph.updateCellStyles({'rounded': (checked) ? '1' : '0'}, graph.getVerticesAndEdges());
 	}, null, function(div)
 	{
 		div.style.width = 'auto';
 	}));
 	
 	// Curved
-	left = left.cloneNode(false);
-	right = right.cloneNode(false);
-	row = row.cloneNode(false);
-	row.appendChild(left);
-	row.appendChild(right);
-	tbody.appendChild(row);
+	if (urlParams['sketch'] != '1')
+	{
+		left = left.cloneNode(false);
+		right = right.cloneNode(false);
+		row = row.cloneNode(false);
+		row.appendChild(left);
+		row.appendChild(right);
+		tbody.appendChild(row);
 
-	left.appendChild(this.createOption(mxResources.get('curved'), function()
-	{
-		return curved;
-	}, function(checked)
-	{
-		curved = checked;
-		
-		if (checked)
+		left.appendChild(this.createOption(mxResources.get('curved'), function()
 		{
-			graph.currentEdgeStyle['curved'] = '1';
-		}
-		else
+			return curved;
+		}, function(checked)
 		{
-			delete graph.currentEdgeStyle['curved'];
-		}
-		
-		graph.updateCellStyles('curved', (checked) ? '1' : null, graph.getVerticesAndEdges(false, true));
-	}, null, function(div)
-	{
-		div.style.width = 'auto';
-	}));
+			curved = checked;
+			
+			if (checked)
+			{
+				graph.currentEdgeStyle['curved'] = '1';
+			}
+			else
+			{
+				delete graph.currentEdgeStyle['curved'];
+			}
+			
+			graph.updateCellStyles({'curved': (checked) ? '1' : null}, graph.getVerticesAndEdges(false, true));
+		}, null, function(div)
+		{
+			div.style.width = 'auto';
+		}));
+	}
 
 	opts.appendChild(table);
 	div.appendChild(opts);
@@ -5709,8 +5735,8 @@ DiagramStylePanel.prototype.addView = function(div)
 				// Handles special label background color
 				if (style['labelBackgroundColor'] != null)
 				{
-					graph.updateCellStyles('labelBackgroundColor', (graphStyle != null) ?
-						graphStyle.background : null, [cells[i]]);
+					graph.updateCellStyles({'labelBackgroundColor': (graphStyle != null) ?
+						graphStyle.background : null}, [cells[i]]);
 				}
 				
 				var edge = model.isEdge(cells[i]);
@@ -5792,43 +5818,49 @@ DiagramStylePanel.prototype.addView = function(div)
 		}
 	});
 	
-	var btn = mxUtils.button(mxResources.get('reset'), mxUtils.bind(this, function(evt)
+	if (urlParams['sketch'] != '1')
 	{
-		var all = graph.getVerticesAndEdges(true, true);
-		
-		if (all.length > 0)
+		var btn = mxUtils.button(mxResources.get('reset'), mxUtils.bind(this, function(evt)
 		{
-			model.beginUpdate();
-			try
+			var all = graph.getVerticesAndEdges(true, true);
+			
+			if (all.length > 0)
 			{
-				graph.updateCellStyles('sketch', null, all);
-				graph.updateCellStyles('rounded', null, all);
-				graph.updateCellStyles('curved', null, graph.getVerticesAndEdges(false, true));
+				model.beginUpdate();
+				try
+				{
+					graph.updateCellStyles({'sketch': null, 'rounded': null}, all);
+					graph.updateCellStyles({'curved': null}, graph.getVerticesAndEdges(false, true));
+				}
+				finally
+				{
+					model.endUpdate();
+				}
 			}
-			finally
-			{
-				model.endUpdate();
-			}
-		}
+			
+			ui.clearDefaultStyle();
+		}));
 		
-		graph.defaultVertexStyle = mxUtils.clone(ui.initialDefaultVertexStyle);
-		graph.defaultEdgeStyle = mxUtils.clone(ui.initialDefaultEdgeStyle);
-		ui.clearDefaultStyle();
-	}));
-	
-	btn.setAttribute('title', mxResources.get('reset'));
-	btn.style.textOverflow = 'ellipsis';
-	btn.style.maxWidth = '90px';
-	right.appendChild(btn);
+		btn.setAttribute('title', mxResources.get('reset'));
+		btn.style.textOverflow = 'ellipsis';
+		btn.style.maxWidth = '90px';
+		right.appendChild(btn);
+	}
 	
 	var createPreview = mxUtils.bind(this, function(commonStyle, vertexStyle, edgeStyle, graphStyle, container)
 	{
 		// Wrapper needed to catch events
 		var div = document.createElement('div');
-		div.style.cssText = 'position:absolute;display:inline-block;width:100%;height:100%;overflow:hidden;pointer-events:none;';
+		div.style.position = 'absolute';
+		div.style.display = 'inline-block';
+		div.style.overflow = 'hidden';
+		div.style.pointerEvents = 'none';
+		div.style.width = '100%';
+		div.style.height = '100%';
 		container.appendChild(div);
 		
 		var graph2 = new Graph(div, null, null, graph.getStylesheet());
+
 		graph2.resetViewOnRootChange = false;
 		graph2.foldingEnabled = false;
 		graph2.gridEnabled = false;
@@ -5838,9 +5870,10 @@ DiagramStylePanel.prototype.addView = function(div)
 		graph2.setPanning(false);
 		graph2.setEnabled(false);
 		
-		graph2.getCellStyle = function(cell)
+		graph2.getCellStyle = function(cell, resolve)
 		{
-			var result = mxUtils.clone(Graph.prototype.getCellStyle.apply(this, arguments));
+			resolve = (resolve != null) ? resolve : true;
+			var result = mxUtils.clone(graph.getCellStyle.apply(this, arguments));
 			var defaultStyle = graph.stylesheet.getDefaultVertexStyle();
 			var appliedStyle = vertexStyle;
 			
@@ -5854,6 +5887,11 @@ DiagramStylePanel.prototype.addView = function(div)
 			applyStyle(commonStyle, result, cell, graphStyle, graph2);
 			applyStyle(appliedStyle, result, cell, graphStyle, graph2);
 			
+			if (resolve)
+			{
+				result = graph.postProcessCellStyle(cell, result);
+			}
+
 			return result;
 		};
 		
@@ -5884,6 +5922,16 @@ DiagramStylePanel.prototype.addView = function(div)
 		this.format.cachedStyleEntries = [];
 	}
 
+	function addKeys(style, result)
+	{
+		for (var key in style)
+		{
+			result.push(key);
+		}
+
+		return result;
+	};
+
 	var addEntry = mxUtils.bind(this, function(commonStyle, vertexStyle, edgeStyle, graphStyle, index)
 	{
 		var panel = this.format.cachedStyleEntries[index];
@@ -5891,8 +5939,15 @@ DiagramStylePanel.prototype.addView = function(div)
 		if (panel == null)
 		{
 			panel = document.createElement('div');
-			panel.style.cssText = 'display:inline-block;position:relative;width:96px;height:90px;' +
-				'cursor:pointer;border:1px solid gray;margin:2px;overflow:hidden;';
+			panel.style.display = 'inline-block';
+			panel.style.position = 'relative';
+			panel.style.width = '96px';
+			panel.style.height = '90px';
+			panel.style.cursor = 'pointer';
+			panel.style.border = '1px solid gray';
+			panel.style.borderRadius = '8px';
+			panel.style.margin = '2px';
+			panel.style.overflow = 'hidden';
 	
 			if (graphStyle != null && graphStyle.background != null)
 			{
@@ -5907,15 +5962,19 @@ DiagramStylePanel.prototype.addView = function(div)
 			}), null, mxUtils.bind(this, function(evt)
 			{
 				panel.style.opacity = 1;
-				graph.defaultVertexStyle = mxUtils.clone(ui.initialDefaultVertexStyle);
-				graph.defaultEdgeStyle = mxUtils.clone(ui.initialDefaultEdgeStyle);
+				graph.currentVertexStyle = mxUtils.clone(graph.defaultVertexStyle);
+				graph.currentEdgeStyle = mxUtils.clone(graph.defaultEdgeStyle);
 				
-				applyStyle(commonStyle, graph.defaultVertexStyle);
-				applyStyle(commonStyle, graph.defaultEdgeStyle);
-				applyStyle(vertexStyle, graph.defaultVertexStyle);
-				applyStyle(edgeStyle, graph.defaultEdgeStyle);
-				ui.clearDefaultStyle();
-				
+				applyStyle(commonStyle, graph.currentVertexStyle);
+				applyStyle(commonStyle, graph.currentEdgeStyle);
+				applyStyle(vertexStyle, graph.currentVertexStyle);
+				applyStyle(edgeStyle, graph.currentEdgeStyle);
+
+				if (urlParams['sketch'] == '1')
+				{
+					sketch = Editor.sketchMode;
+				}
+							
 				if (sketch)
 				{
 					graph.currentEdgeStyle['sketch'] = '1';
@@ -5950,14 +6009,15 @@ DiagramStylePanel.prototype.addView = function(div)
 				model.beginUpdate();
 				try
 				{
-					updateCells(defaultStyles, graphStyle);
+					updateCells(addKeys(commonStyle, defaultStyles.slice()), graphStyle);
 					
 					var change = new ChangePageSetup(ui, (graphStyle != null) ? graphStyle.background : null);
 					change.ignoreImage = true;
 					model.execute(change);
 						
-					model.execute(new ChangeGridColor(ui, (graphStyle != null && graphStyle.gridColor != null) ?
-						graphStyle.gridColor : graph.view.defaultGridColor));
+					model.execute(new ChangeGridColor(ui,
+						(graphStyle != null && graphStyle.gridColor != null) ?
+						graphStyle.gridColor : gridColor));
 				}
 				finally
 				{
@@ -5973,10 +6033,11 @@ DiagramStylePanel.prototype.addView = function(div)
 	
 				graph.background = (graphStyle != null) ? graphStyle.background : null;
 				graph.view.gridColor = (graphStyle != null && graphStyle.gridColor != null) ?
-					graphStyle.gridColor : graph.view.defaultGridColor;
+					graphStyle.gridColor : gridColor;
 				
-				graph.getCellStyle = function(cell)
+				graph.getCellStyle = function(cell, resolve)
 				{
+					resolve = (resolve != null) ? resolve : true;
 					var result = mxUtils.clone(prev.apply(this, arguments));
 					
 					var defaultStyle = graph.stylesheet.getDefaultVertexStyle();
@@ -5991,6 +6052,11 @@ DiagramStylePanel.prototype.addView = function(div)
 					removeStyles(result, defaultStyles, defaultStyle);
 					applyStyle(commonStyle, result, cell, graphStyle);
 					applyStyle(appliedStyle, result, cell, graphStyle);
+					
+					if (resolve)
+					{
+						result = this.postProcessCellStyle(cell, result);
+					}
 					
 					return result;
 				};
@@ -6092,19 +6158,37 @@ DiagramStylePanel.prototype.addView = function(div)
 		if (pageCount < 15)
 		{
 			var left = document.createElement('div');
-			left.style.cssText = 'position:absolute;left:0px;top:4px;bottom:0px;width:20px;margin:0px;opacity:0.5;' +
-				'background-repeat:no-repeat;background-position:center center;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQBAMAAADQT4M0AAAAIVBMVEUAAAB2dnZ4eHh3d3d1dXVxcXF2dnZ2dnZ2dnZxcXF2dnYmb3w1AAAACnRSTlMAfCTkhhvb7cQSPH2JPgAAADRJREFUCNdjwACMAmBKaiGYs2oJmLPKAZ3DabU8AMRTXpUKopislqFyVzCAuUZgikkBZjoAcMYLnp53P/UAAAAASUVORK5CYII=);';
+			left.style.position = 'absolute';
+			left.style.left = '0px';
+			left.style.top = '0px';
+			left.style.bottom = '0px';
+			left.style.width = '24px';
+			left.style.height = '24px';
+			left.style.margin = '0px';
+			left.style.cursor = 'pointer';
+			left.style.opacity = '0.5';
+			left.style.backgroundRepeat = 'no-repeat';
+			left.style.backgroundPosition = 'center center';
+			left.style.backgroundSize = '24px 24px';
+			left.style.backgroundImage = 'url(' + Editor.previousImage + ')';
+			
+			if (Editor.isDarkMode())
+			{
+				left.style.filter = 'invert(100%)';
+			}
+			
+			var right = left.cloneNode(false);
+			right.style.backgroundImage = 'url(' + Editor.nextImage + ')';
+			right.style.left = '';
+			right.style.right = '2px';
+
+			switcher.appendChild(left);
+			switcher.appendChild(right);
 			
 			mxEvent.addListener(left, 'click', mxUtils.bind(this, function()
 			{
 				selectPage(mxUtils.mod(this.format.currentStylePage - 1, pageCount));
 			}));
-			
-			var right = document.createElement('div');
-			right.style.cssText = 'position:absolute;right:2px;top:4px;bottom:0px;width:20px;margin:0px;opacity:0.5;' +
-				'background-repeat:no-repeat;background-position:center center;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQBAMAAADQT4M0AAAAIVBMVEUAAAB2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnYBuwCcAAAACnRSTlMAfCTkhhvb7cQSPH2JPgAAADZJREFUCNdjQAOMAmBKaiGY8loF5rKswsZlrVo8AUiFrTICcbIWK8A5DF1gDoMymMPApIAwHwCS0Qx/U7qCBQAAAABJRU5ErkJggg==);';
-			switcher.appendChild(left);
-			switcher.appendChild(right);
 			
 			mxEvent.addListener(right, 'click', mxUtils.bind(this, function()
 			{
@@ -6136,6 +6220,20 @@ DiagramStylePanel.prototype.addView = function(div)
 	return div;
 };
 
+/**
+ * Adds the label menu items to the given menu and parent.
+ */
+ DiagramStylePanel.prototype.destroy = function()
+ {
+	 BaseFormatPanel.prototype.destroy.apply(this, arguments);
+	 
+	 if (this.darkModeChangedListener)
+	 {
+		 this.editorUi.removeListener(this.darkModeChangedListener);
+		 this.darkModeChangedListener = null;
+	 }
+ };
+ 
 /**
  * Adds the label menu items to the given menu and parent.
  */
@@ -6226,7 +6324,8 @@ DiagramFormatPanel.prototype.addView = function(div)
 		}, function(color)
 		{
 			var change = new ChangePageSetup(ui, color);
-			change.ignoreImage = true;
+			change.ignoreImage = color != null &&
+				color != mxConstants.NONE;
 			
 			graph.model.execute(change);
 		}, '#ffffff',
@@ -6248,18 +6347,28 @@ DiagramFormatPanel.prototype.addView = function(div)
 		
 		if (this.showBackgroundImageOption)
 		{
-			var btn = mxUtils.button(mxResources.get('image'), function(evt)
+			var label = bg.getElementsByTagName('span')[0];
+			label.style.display = 'inline-block';
+			label.style.textOverflow = 'ellipsis';
+			label.style.overflow = 'hidden';
+			label.style.maxWidth = '68px';
+
+			if (mxClient.IS_FF)
+			{
+				label.style.marginTop = '1px';
+			}
+
+			var btn = mxUtils.button(mxResources.get('change'), function(evt)
 			{
 				ui.showBackgroundImageDialog(null, ui.editor.graph.backgroundImage);
 				mxEvent.consume(evt);
 			})
 		
-			btn.style.position = 'absolute';
 			btn.className = 'geColorBtn';
-			btn.style.marginTop = '-4px';
-			btn.style.paddingBottom = (document.documentMode == 11 || mxClient.IS_MT) ? '0px' : '2px';
+			btn.style.position = 'absolute';
+			btn.style.marginTop = '-3px';
 			btn.style.height = '22px';
-			btn.style.right = '72px';
+			btn.style.left = '118px';
 			btn.style.width = '56px';
 		
 			bg.appendChild(btn);
@@ -6372,7 +6481,12 @@ DiagramFormatPanel.prototype.addGridOption = function(container)
 	var input = document.createElement('input');
 	input.style.position = 'absolute';
 	input.style.textAlign = 'right';
-	input.style.width = '38px';
+	input.style.width = '48px';
+	input.style.marginTop = '-2px';
+	input.style.height = '21px';
+	input.style.border = '1px solid rgb(160, 160, 160)';
+	input.style.borderRadius = '4px';
+	input.style.boxSizing = 'border-box';
 	input.value = this.inUnit(graph.getGridSize()) + ' ' + this.getUnit(); 
 	
 	var stepper = this.createStepper(input, update, this.getUnitStep(), null, null, null, this.isFloatUnit());
@@ -6401,6 +6515,7 @@ DiagramFormatPanel.prototype.addGridOption = function(container)
 		
 		if (value != graph.getGridSize())
 		{
+			mxGraph.prototype.gridSize = value;
 			graph.setGridSize(value)
 		}
 
@@ -6411,104 +6526,58 @@ DiagramFormatPanel.prototype.addGridOption = function(container)
 	mxEvent.addListener(input, 'blur', update);
 	mxEvent.addListener(input, 'change', update);
 
-	if (mxClient.IS_SVG)
+	input.style.right = '78px';
+	stepper.style.marginTop = '-17px';
+	stepper.style.right = '66px';
+
+	var panel = this.createColorOption(mxResources.get('grid'), function()
 	{
-		input.style.marginTop = '-2px';
-		input.style.right = '84px';
-		stepper.style.marginTop = (mxClient.IS_FF) ? '-16px' : '-18px';
-		stepper.style.right = '72px';
-	
-		var panel = this.createColorOption(mxResources.get('grid'), function()
-		{
-			var color = graph.view.gridColor;
+		var color = graph.view.gridColor;
 
-			return (graph.isGridEnabled()) ? color : null;
-		}, function(color)
-		{
-			var enabled = graph.isGridEnabled();
-			
-			if (color == mxConstants.NONE)
-			{
-				graph.setGridEnabled(false);
-			}
-			else
-			{
-				graph.setGridEnabled(true);
-				ui.setGridColor(color);
-			}
-
-			input.style.display = (graph.isGridEnabled()) ? '' : 'none';
-			stepper.style.display = input.style.display;
-			
-			if (enabled != graph.isGridEnabled())
-			{
-				ui.fireEvent(new mxEventObject('gridEnabledChanged'));
-			}
-		}, Editor.isDarkMode() ? graph.view.defaultDarkGridColor : graph.view.defaultGridColor,
-		{
-			install: function(apply)
-			{
-				this.listener = function()
-				{
-					apply((graph.isGridEnabled()) ? graph.view.gridColor : null);
-				};
-				
-				ui.addListener('gridColorChanged', this.listener);
-				ui.addListener('gridEnabledChanged', this.listener);
-			},
-			destroy: function()
-			{
-				ui.removeListener(this.listener);
-			}
-		});
-
-		panel.appendChild(input);
-		panel.appendChild(stepper);
-		container.appendChild(panel);
-	}
-	else
+		return (graph.isGridEnabled()) ? color : null;
+	}, function(color)
 	{
-		input.style.marginTop = '2px';
-		input.style.right = '32px';
-		stepper.style.marginTop = '2px';
-		stepper.style.right = '20px';
+		var enabled = graph.isGridEnabled();
 		
-		container.appendChild(input);
-		container.appendChild(stepper);
+		if (color == mxConstants.NONE)
+		{
+			graph.setGridEnabled(false);
+		}
+		else
+		{
+			graph.setGridEnabled(true);
+			ui.setGridColor(color);
+		}
+
+		input.style.display = (graph.isGridEnabled()) ? '' : 'none';
+		stepper.style.display = input.style.display;
 		
-		container.appendChild(this.createOption(mxResources.get('grid'), function()
+		if (enabled != graph.isGridEnabled())
 		{
-			return graph.isGridEnabled();
-		}, function(checked)
-		{
-			graph.setGridEnabled(checked);
-			
-			if (graph.isGridEnabled())
-			{
-				graph.view.gridColor = '#e0e0e0';
-			}
-			
+			graph.defaultGridEnabled = graph.isGridEnabled();
 			ui.fireEvent(new mxEventObject('gridEnabledChanged'));
-		},
+		}
+	}, Editor.isDarkMode() ? graph.view.defaultDarkGridColor : graph.view.defaultGridColor,
+	{
+		install: function(apply)
 		{
-			install: function(apply)
+			this.listener = function()
 			{
-				this.listener = function()
-				{
-					input.style.display = (graph.isGridEnabled()) ? '' : 'none';
-					stepper.style.display = input.style.display;
-					
-					apply(graph.isGridEnabled());
-				};
-				
-				ui.addListener('gridEnabledChanged', this.listener);
-			},
-			destroy: function()
-			{
-				ui.removeListener(this.listener);
-			}
-		}));
-	}
+				apply((graph.isGridEnabled()) ? graph.view.gridColor : null);
+			};
+			
+			ui.addListener('gridColorChanged', this.listener);
+			ui.addListener('gridEnabledChanged', this.listener);
+		},
+		destroy: function()
+		{
+			ui.removeListener(this.listener);
+		}
+	});
+
+	panel.appendChild(input);
+	panel.appendChild(stepper);
+	container.appendChild(panel);
 };
 
 /**
@@ -6578,26 +6647,8 @@ DiagramFormatPanel.prototype.addPaperSize = function(div)
  */
 DiagramFormatPanel.prototype.addStyleOps = function(div)
 {
-	var btn = mxUtils.button(mxResources.get('editData'), mxUtils.bind(this, function(evt)
-	{
-		this.editorUi.actions.get('editData').funct();
-	}));
-	
-	btn.setAttribute('title', mxResources.get('editData') + ' (' + this.editorUi.actions.get('editData').shortcut + ')');
-	btn.style.width = '202px';
-	btn.style.marginBottom = '2px';
-	div.appendChild(btn);
-
-	mxUtils.br(div);
-	
-	btn = mxUtils.button(mxResources.get('clearDefaultStyle'), mxUtils.bind(this, function(evt)
-	{
-		this.editorUi.actions.get('clearDefaultStyle').funct();
-	}));
-	
-	btn.setAttribute('title', mxResources.get('clearDefaultStyle') + ' (' + this.editorUi.actions.get('clearDefaultStyle').shortcut + ')');
-	btn.style.width = '202px';
-	div.appendChild(btn);
+	this.addActions(div, ['editData']);
+	this.addActions(div, ['clearDefaultStyle']);
 
 	return div;
 };
